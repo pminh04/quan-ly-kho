@@ -170,6 +170,7 @@
     <Compile Include="Model\phieunhapmodel.cs" />
     <Compile Include="Model\phieuxuatmodel.cs" />
     <Compile Include="Model\sanphammodel.cs" />
+    <Compile Include="Model\thongke_model.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -267,6 +268,12 @@
     <Compile Include="View\taikhoan\thongtintaikhoan.Designer.cs">
       <DependentUpon>thongtintaikhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\thongke\thongkeform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\thongke\thongkeform.Designer.cs">
+      <DependentUpon>thongkeform.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\xuathang\xuathangform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +330,9 @@
     <EmbeddedResource Include="View\taikhoan\thongtintaikhoan.resx">
       <DependentUpon>thongtintaikhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\thongke\thongkeform.resx">
+      <DependentUpon>thongkeform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\xuathang\xuathangform.resx">
       <DependentUpon>xuathangform.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,7 +352,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="View\thongke\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\icons1\icons8-add-male-user-group-40.png" />

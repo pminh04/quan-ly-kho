@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnnhapexcel = new System.Windows.Forms.Button();
+            this.btnxuatexcel = new System.Windows.Forms.Button();
+            this.btnxoa = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtmax = new System.Windows.Forms.TextBox();
             this.txtmin = new System.Windows.Forms.TextBox();
@@ -40,10 +44,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tablechitietphieuxuat = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnnhapexcel = new System.Windows.Forms.Button();
-            this.btnxuatexcel = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
-            this.btnsua = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -65,8 +65,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnnhapexcel);
             this.groupBox1.Controls.Add(this.btnxuatexcel);
             this.groupBox1.Controls.Add(this.btnxoa);
@@ -78,109 +76,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.txtmax);
-            this.groupBox3.Controls.Add(this.txtmin);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox3.Location = new System.Drawing.Point(633, 13);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(539, 127);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Lọc theo giá";
-            // 
-            // txtmax
-            // 
-            this.txtmax.Location = new System.Drawing.Point(336, 53);
-            this.txtmax.Name = "txtmax";
-            this.txtmax.Size = new System.Drawing.Size(176, 27);
-            this.txtmax.TabIndex = 3;
-            // 
-            // txtmin
-            // 
-            this.txtmin.Location = new System.Drawing.Point(67, 53);
-            this.txtmin.Name = "txtmin";
-            this.txtmin.Size = new System.Drawing.Size(175, 27);
-            this.txtmin.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(276, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Đến";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Từ";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.tablechitietphieuxuat);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(11, 173);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1190, 514);
-            this.panel2.TabIndex = 9;
-            // 
-            // tablechitietphieuxuat
-            // 
-            this.tablechitietphieuxuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tablechitietphieuxuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablechitietphieuxuat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablechitietphieuxuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablechitietphieuxuat.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tablechitietphieuxuat.EnableHeadersVisualStyles = false;
-            this.tablechitietphieuxuat.Location = new System.Drawing.Point(8, 49);
-            this.tablechitietphieuxuat.Name = "tablechitietphieuxuat";
-            this.tablechitietphieuxuat.RowHeadersWidth = 51;
-            this.tablechitietphieuxuat.RowTemplate.Height = 24;
-            this.tablechitietphieuxuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablechitietphieuxuat.Size = new System.Drawing.Size(1164, 497);
-            this.tablechitietphieuxuat.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(474, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CHI TIẾT PHIẾU XUẤT";
             // 
             // btnnhapexcel
             // 
@@ -244,7 +139,109 @@
             this.btnsua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnsua.UseVisualStyleBackColor = true;
             // 
-            // chitietphieuxuat
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtmax);
+            this.groupBox3.Controls.Add(this.txtmin);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox3.Location = new System.Drawing.Point(633, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(539, 127);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Lọc theo giá";
+            // 
+            // txtmax
+            // 
+            this.txtmax.Location = new System.Drawing.Point(336, 53);
+            this.txtmax.Name = "txtmax";
+            this.txtmax.Size = new System.Drawing.Size(176, 27);
+            this.txtmax.TabIndex = 3;
+            // 
+            // txtmin
+            // 
+            this.txtmin.Location = new System.Drawing.Point(67, 53);
+            this.txtmin.Name = "txtmin";
+            this.txtmin.Size = new System.Drawing.Size(175, 27);
+            this.txtmin.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(276, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Đến";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Từ";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.tablechitietphieuxuat);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(11, 173);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1190, 514);
+            this.panel2.TabIndex = 9;
+            // 
+            // tablechitietphieuxuat
+            // 
+            this.tablechitietphieuxuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tablechitietphieuxuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablechitietphieuxuat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.tablechitietphieuxuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablechitietphieuxuat.DefaultCellStyle = dataGridViewCellStyle10;
+            this.tablechitietphieuxuat.EnableHeadersVisualStyles = false;
+            this.tablechitietphieuxuat.Location = new System.Drawing.Point(8, 49);
+            this.tablechitietphieuxuat.Name = "tablechitietphieuxuat";
+            this.tablechitietphieuxuat.RowHeadersWidth = 51;
+            this.tablechitietphieuxuat.RowTemplate.Height = 24;
+            this.tablechitietphieuxuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablechitietphieuxuat.Size = new System.Drawing.Size(1164, 497);
+            this.tablechitietphieuxuat.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(474, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CHI TIẾT PHIẾU XUẤT";
+            // 
+            // phieuxuatform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -252,7 +249,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "chitietphieuxuat";
+            this.Name = "phieuxuatform";
             this.Text = "phieuxuat";
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

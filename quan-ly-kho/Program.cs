@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using quan_ly_kho.View.nhacungcap;
+using quan_ly_kho.View.thongke;
 
 namespace quan_ly_kho
 {
@@ -17,7 +18,7 @@ namespace quan_ly_kho
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new nhacungcapform());
+            Application.Run(new thongkeform());
         }
     }
 }

@@ -88,14 +88,41 @@ namespace quan_ly_kho.Controller
             box.ValueMember = ma;
         }
 
-        public static int count()
+        public static void load1cbox(ComboBox box, string sql, string dulieu)
+        {
+            if (con.State == ConnectionState.Closed) { con.Open(); }
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            SqlDataAdapter ad = new SqlDataAdapter();
+            ad.SelectCommand = cmd;
+
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+
+            cmd.Dispose();
+            con.Close();
+
+            DataRow r = dt.NewRow();
+            r[dulieu] = "-- Chọn dữ liệu --";
+            dt.Rows.InsertAt(r, 0);
+
+
+            box.Items.Clear();
+            box.DataSource = dt;
+            box.DisplayMember = dulieu;
+            box.ValueMember = dulieu;
+
+        }
+
+        public static int count(string t)
         {
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
 
-            string sql = "select count(*) from Products";
+            string sql = "select count(*) from " + t;
             SqlCommand cmd = new SqlCommand(sql, con);
 
             int count = (int)cmd.ExecuteScalar();
