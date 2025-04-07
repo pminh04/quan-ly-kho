@@ -205,11 +205,23 @@
     <Compile Include="View\nhaphang\nhaphangform.Designer.cs">
       <DependentUpon>nhaphangform.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\phieunhap\chitietphieunhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\phieunhap\chitietphieunhap.Designer.cs">
+      <DependentUpon>chitietphieunhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\phieunhap\phieunhapform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\phieunhap\phieunhapform.Designer.cs">
       <DependentUpon>phieunhapform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\phieunhap\suachitietphieunhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\phieunhap\suachitietphieunhap.Designer.cs">
+      <DependentUpon>suachitietphieunhap.cs</DependentUpon>
     </Compile>
     <Compile Include="View\sanpham\addsanpham.cs">
       <SubType>Form</SubType>
@@ -255,8 +267,14 @@
     <EmbeddedResource Include="View\nhaphang\nhaphangform.resx">
       <DependentUpon>nhaphangform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\phieunhap\chitietphieunhap.resx">
+      <DependentUpon>chitietphieunhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\phieunhap\phieunhapform.resx">
       <DependentUpon>phieunhapform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\phieunhap\suachitietphieunhap.resx">
+      <DependentUpon>suachitietphieunhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\sanpham\addsanpham.resx">
       <DependentUpon>addsanpham.cs</DependentUpon>

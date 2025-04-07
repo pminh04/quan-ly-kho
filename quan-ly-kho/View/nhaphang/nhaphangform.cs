@@ -314,5 +314,10 @@ namespace quan_ly_kho.View.nhaphang
             CapNhatTongTien();
             CapNhatSTT();
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
     }
 }

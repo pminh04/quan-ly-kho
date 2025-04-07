@@ -197,6 +197,7 @@
             this.nhaphang.TabIndex = 1;
             this.nhaphang.Text = "Nhập hàng";
             this.nhaphang.UseVisualStyleBackColor = false;
+            this.nhaphang.Click += new System.EventHandler(this.nhaphang_Click);
             // 
             // panel5
             // 
