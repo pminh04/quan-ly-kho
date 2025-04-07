@@ -89,7 +89,7 @@
             this.sidebar.Controls.Add(this.panel10);
             this.sidebar.Location = new System.Drawing.Point(12, 70);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(271, 668);
+            this.sidebar.Size = new System.Drawing.Size(271, 699);
             this.sidebar.TabIndex = 0;
             // 
             // sppanel
@@ -251,6 +251,7 @@
             this.xuathang.TabIndex = 1;
             this.xuathang.Text = "Xuất hàng";
             this.xuathang.UseVisualStyleBackColor = false;
+            this.xuathang.Click += new System.EventHandler(this.xuathang_Click);
             // 
             // panel7
             // 
@@ -277,6 +278,7 @@
             this.phieuxuat.TabIndex = 1;
             this.phieuxuat.Text = "Phiếu xuất";
             this.phieuxuat.UseVisualStyleBackColor = false;
+            this.phieuxuat.Click += new System.EventHandler(this.phieuxuat_Click);
             // 
             // panel8
             // 
@@ -343,7 +345,7 @@
             this.title.Controls.Add(this.panel9);
             this.title.Location = new System.Drawing.Point(12, 12);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1242, 52);
+            this.title.Size = new System.Drawing.Size(1387, 52);
             this.title.TabIndex = 3;
             // 
             // timkiemtext
@@ -351,7 +353,7 @@
             this.timkiemtext.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timkiemtext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timkiemtext.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timkiemtext.Location = new System.Drawing.Point(473, 11);
+            this.timkiemtext.Location = new System.Drawing.Point(545, 11);
             this.timkiemtext.Name = "timkiemtext";
             this.timkiemtext.Size = new System.Drawing.Size(447, 28);
             this.timkiemtext.TabIndex = 3;
@@ -360,7 +362,7 @@
             // 
             this.timkiemp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timkiemp.Controls.Add(this.timkiembtn);
-            this.timkiemp.Location = new System.Drawing.Point(926, 8);
+            this.timkiemp.Location = new System.Drawing.Point(998, 8);
             this.timkiemp.Name = "timkiemp";
             this.timkiemp.Size = new System.Drawing.Size(58, 37);
             this.timkiemp.TabIndex = 0;
@@ -383,7 +385,7 @@
             this.timkiemcbx.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timkiemcbx.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timkiemcbx.FormattingEnabled = true;
-            this.timkiemcbx.Location = new System.Drawing.Point(364, 11);
+            this.timkiemcbx.Location = new System.Drawing.Point(436, 11);
             this.timkiemcbx.Name = "timkiemcbx";
             this.timkiemcbx.Size = new System.Drawing.Size(103, 28);
             this.timkiemcbx.TabIndex = 2;
@@ -406,7 +408,7 @@
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.button9);
-            this.panel9.Location = new System.Drawing.Point(1181, 5);
+            this.panel9.Location = new System.Drawing.Point(1326, 5);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(47, 42);
             this.panel9.TabIndex = 0;
@@ -433,7 +435,7 @@
             this.showform.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.showform.Location = new System.Drawing.Point(290, 71);
             this.showform.Name = "showform";
-            this.showform.Size = new System.Drawing.Size(964, 667);
+            this.showform.Size = new System.Drawing.Size(1109, 698);
             this.showform.TabIndex = 4;
             // 
             // mainform
@@ -441,7 +443,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(1266, 750);
+            this.ClientSize = new System.Drawing.Size(1411, 781);
             this.Controls.Add(this.showform);
             this.Controls.Add(this.title);
             this.Controls.Add(this.sidebar);

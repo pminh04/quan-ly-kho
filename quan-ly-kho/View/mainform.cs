@@ -10,7 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using quan_ly_kho.View.nhaphang;
 using quan_ly_kho.View.phieunhap;
+using quan_ly_kho.View.phieuxuat;
 using quan_ly_kho.View.sanpham;
+using quan_ly_kho.View.xuathang;
 
 namespace quan_ly_kho
 {
@@ -115,6 +117,36 @@ namespace quan_ly_kho
         private void nhaphang_Click(object sender, EventArgs e)
         {
             nhaphangform f1 = new nhaphangform();
+            f1.TopLevel = false;
+            f1.FormBorderStyle = FormBorderStyle.None;
+            f1.Dock = DockStyle.Fill;
+            if (showform.Controls.Count > 0)
+            {
+                showform.Controls.Clear();
+            }
+            showform.Controls.Add(f1);
+            f1.BringToFront();
+            f1.Show();
+        }
+
+        private void xuathang_Click(object sender, EventArgs e)
+        {
+            xuathangform f1 = new xuathangform();
+            f1.TopLevel = false;
+            f1.FormBorderStyle = FormBorderStyle.None;
+            f1.Dock = DockStyle.Fill;
+            if (showform.Controls.Count > 0)
+            {
+                showform.Controls.Clear();
+            }
+            showform.Controls.Add(f1);
+            f1.BringToFront();
+            f1.Show();
+        }
+
+        private void phieuxuat_Click(object sender, EventArgs e)
+        {
+            phieuxuatform f1 = new phieuxuatform();
             f1.TopLevel = false;
             f1.FormBorderStyle = FormBorderStyle.None;
             f1.Dock = DockStyle.Fill;

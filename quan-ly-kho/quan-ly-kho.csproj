@@ -164,9 +164,11 @@
     <Compile Include="DAO\phieunhapDAO.cs" />
     <Compile Include="DAO\sanphamDAO.cs" />
     <Compile Include="Model\chitietphieunhap.cs" />
+    <Compile Include="Model\chitietphieuxuat_model.cs" />
     <Compile Include="Model\ncc_model.cs" />
     <Compile Include="Model\nhacungcapmodel.cs" />
     <Compile Include="Model\phieunhapmodel.cs" />
+    <Compile Include="Model\phieuxuatmodel.cs" />
     <Compile Include="Model\sanphammodel.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -223,6 +225,24 @@
     <Compile Include="View\phieunhap\suachitietphieunhap.Designer.cs">
       <DependentUpon>suachitietphieunhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\phieuxuat\capnhatphieuxuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\phieuxuat\capnhatphieuxuat.Designer.cs">
+      <DependentUpon>capnhatphieuxuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\phieuxuat\phieuxuatform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\phieuxuat\phieuxuatform.Designer.cs">
+      <DependentUpon>phieuxuatform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\phieuxuat\px_them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\phieuxuat\px_them.Designer.cs">
+      <DependentUpon>px_them.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\sanpham\addsanpham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +266,12 @@
     </Compile>
     <Compile Include="View\taikhoan\thongtintaikhoan.Designer.cs">
       <DependentUpon>thongtintaikhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\xuathang\xuathangform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\xuathang\xuathangform.Designer.cs">
+      <DependentUpon>xuathangform.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\mainform.resx">
       <DependentUpon>mainform.cs</DependentUpon>
@@ -276,6 +302,15 @@
     <EmbeddedResource Include="View\phieunhap\suachitietphieunhap.resx">
       <DependentUpon>suachitietphieunhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\phieuxuat\capnhatphieuxuat.resx">
+      <DependentUpon>capnhatphieuxuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\phieuxuat\phieuxuatform.resx">
+      <DependentUpon>phieuxuatform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\phieuxuat\px_them.resx">
+      <DependentUpon>px_them.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\sanpham\addsanpham.resx">
       <DependentUpon>addsanpham.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\taikhoan\thongtintaikhoan.resx">
       <DependentUpon>thongtintaikhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\xuathang\xuathangform.resx">
+      <DependentUpon>xuathangform.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -304,6 +342,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="View\thongke\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons\icons1\icons8-add-male-user-group-40.png" />
