@@ -31,15 +31,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dcncc = new System.Windows.Forms.TextBox();
+            this.trangthai = new System.Windows.Forms.TextBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.thembtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.sdtncc = new System.Windows.Forms.TextBox();
-            this.tenncc = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.vaitro = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.mancc = new System.Windows.Forms.TextBox();
+            this.hoten = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,29 +67,29 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dcncc);
+            this.panel1.Controls.Add(this.trangthai);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Controls.Add(this.thembtn);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.sdtncc);
-            this.panel1.Controls.Add(this.tenncc);
+            this.panel1.Controls.Add(this.email);
+            this.panel1.Controls.Add(this.vaitro);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.mancc);
+            this.panel1.Controls.Add(this.hoten);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 693);
             this.panel1.TabIndex = 4;
             // 
-            // dcncc
+            // trangthai
             // 
-            this.dcncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dcncc.Location = new System.Drawing.Point(26, 465);
-            this.dcncc.Name = "dcncc";
-            this.dcncc.Size = new System.Drawing.Size(408, 34);
-            this.dcncc.TabIndex = 13;
+            this.trangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trangthai.Location = new System.Drawing.Point(26, 465);
+            this.trangthai.Name = "trangthai";
+            this.trangthai.Size = new System.Drawing.Size(408, 34);
+            this.trangthai.TabIndex = 13;
             // 
             // btnHuy
             // 
@@ -124,21 +124,21 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Trạng thái";
             // 
-            // sdtncc
+            // email
             // 
-            this.sdtncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sdtncc.Location = new System.Drawing.Point(26, 357);
-            this.sdtncc.Name = "sdtncc";
-            this.sdtncc.Size = new System.Drawing.Size(408, 34);
-            this.sdtncc.TabIndex = 5;
+            this.email.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email.Location = new System.Drawing.Point(26, 357);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(408, 34);
+            this.email.TabIndex = 5;
             // 
-            // tenncc
+            // vaitro
             // 
-            this.tenncc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenncc.Location = new System.Drawing.Point(26, 263);
-            this.tenncc.Name = "tenncc";
-            this.tenncc.Size = new System.Drawing.Size(408, 34);
-            this.tenncc.TabIndex = 4;
+            this.vaitro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vaitro.Location = new System.Drawing.Point(26, 263);
+            this.vaitro.Name = "vaitro";
+            this.vaitro.Size = new System.Drawing.Size(408, 34);
+            this.vaitro.TabIndex = 4;
             // 
             // label4
             // 
@@ -160,13 +160,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Vai trò";
             // 
-            // mancc
+            // hoten
             // 
-            this.mancc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mancc.Location = new System.Drawing.Point(26, 162);
-            this.mancc.Name = "mancc";
-            this.mancc.Size = new System.Drawing.Size(408, 34);
-            this.mancc.TabIndex = 1;
+            this.hoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoten.Location = new System.Drawing.Point(26, 162);
+            this.hoten.Name = "hoten";
+            this.hoten.Size = new System.Drawing.Size(408, 34);
+            this.hoten.TabIndex = 1;
             // 
             // label2
             // 
@@ -199,15 +199,15 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox dcncc;
+        private System.Windows.Forms.TextBox trangthai;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button thembtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox sdtncc;
-        private System.Windows.Forms.TextBox tenncc;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox vaitro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox mancc;
+        private System.Windows.Forms.TextBox hoten;
         private System.Windows.Forms.Label label2;
     }
 }
