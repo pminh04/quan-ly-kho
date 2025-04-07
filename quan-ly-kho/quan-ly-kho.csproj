@@ -158,7 +158,16 @@
     <Compile Include="Controller\Sua.cs" />
     <Compile Include="Controller\Them.cs" />
     <Compile Include="Controller\Xoa.cs" />
+    <Compile Include="DAO\chitietphieunhapDAO.cs" />
+    <Compile Include="DAO\connection.cs" />
+    <Compile Include="DAO\nhacungcapDAO.cs" />
+    <Compile Include="DAO\phieunhapDAO.cs" />
+    <Compile Include="DAO\sanphamDAO.cs" />
+    <Compile Include="Model\chitietphieunhap.cs" />
     <Compile Include="Model\ncc_model.cs" />
+    <Compile Include="Model\nhacungcapmodel.cs" />
+    <Compile Include="Model\phieunhapmodel.cs" />
+    <Compile Include="Model\sanphammodel.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +199,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\sanpham\addsanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\sanpham\sanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\sanpham\updatesanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\taikhoan\thongtintaikhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +231,9 @@
     <EmbeddedResource Include="View\nhacungcap\nhacungcap.resx">
       <DependentUpon>nhacungcap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\sanpham\sanpham.resx">
+      <DependentUpon>sanpham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\taikhoan\thongtintaikhoan.resx">
       <DependentUpon>thongtintaikhoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,47 +252,59 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icons\icons8-trash-can-50.png" />
-    <None Include="icons\icons8-remove-50.png" />
-    <None Include="icons\icons8-search-25.png" />
-    <None Include="icons\icons8-search-30.png" />
-    <None Include="icons\icons8-remove-60.png" />
-    <None Include="icons\icons8-user-40.png" />
-    <None Include="icons\icons8-purchase-order-40.png" />
-    <None Include="icons\icons8-shopping-cart-40.png" />
-    <None Include="icons\icons8-truck-40.png" />
-    <None Include="icons\icons8-chart-bar-40.png" />
-    <None Include="icons\icons8-logout-40.png" />
-    <None Include="icons\icons8-cheque-40.png" />
-    <None Include="icons\icons8-in-transit-40.png" />
-    <None Include="icons\icons8-conference-40.png" />
-    <None Include="icons\icons8-add-male-user-group-80.png" />
-    <None Include="icons\icons8-add-male-user-group-60.png" />
-    <None Include="icons\icons8-edit-60.png" />
-    <None Include="icons\icons8-microsoft-excel-2019-60.png" />
-    <None Include="icons\icons8-export-excel-60.png" />
-    <None Include="icons\icons8-pdf-60.png" />
-    <None Include="icons\icons8-logout-30.png" />
-    <None Include="icons\icons8-add-male-user-group-40.png" />
-    <None Include="icons\icons8-add-male-user-group-50.png" />
-    <None Include="icons\icons8-edit-50.png" />
-    <None Include="icons\icons8-excel-50.png" />
-    <None Include="icons\icons8-pdf-50.png" />
-    <None Include="icons\icons8-export-excel-50.png" />
-    <None Include="icons\icons8-logout-25 %282%29.png" />
-    <Content Include="icons\icons8-product-30.png" />
-    <None Include="icons\icons8-supplier-40.png" />
-    <None Include="icons\icons8-product-401.png" />
-    <None Include="icons\icons8-product-96.png" />
-    <None Include="icons\icons8-product-48.png" />
-    <None Include="icons\icons8-product-40.png" />
-    <Content Include="icons\icons8-product-60.png" />
-    <Content Include="icons\icons8-product-90.png" />
-    <None Include="icons\icons8-shopping-mall-96.png" />
-    <None Include="icons\icons8-shopping-mall-48.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="icons\icons1\icons8-add-male-user-group-40.png" />
+    <Content Include="icons\icons1\icons8-add-male-user-group-50.png" />
+    <Content Include="icons\icons1\icons8-chart-bar-40.png" />
+    <Content Include="icons\icons1\icons8-cheque-40.png" />
+    <Content Include="icons\icons1\icons8-conference-40.png" />
+    <Content Include="icons\icons1\icons8-edit-50.png" />
+    <Content Include="icons\icons1\icons8-excel-50.png" />
+    <Content Include="icons\icons1\icons8-export-excel-50.png" />
+    <Content Include="icons\icons1\icons8-export-excel-60.png" />
+    <Content Include="icons\icons1\icons8-in-transit-40.png" />
+    <Content Include="icons\icons1\icons8-logout-25 %282%29.png" />
+    <Content Include="icons\icons1\icons8-logout-30.png" />
+    <Content Include="icons\icons1\icons8-logout-40.png" />
+    <Content Include="icons\icons1\icons8-microsoft-excel-2019-60.png" />
+    <Content Include="icons\icons1\icons8-pdf-50.png" />
+    <Content Include="icons\icons1\icons8-pdf-60.png" />
+    <Content Include="icons\icons1\icons8-product-40.png" />
+    <Content Include="icons\icons1\icons8-purchase-order-40.png" />
+    <Content Include="icons\icons1\icons8-search-25.png" />
+    <Content Include="icons\icons1\icons8-search-30.png" />
+    <Content Include="icons\icons1\icons8-shopping-cart-40.png" />
+    <Content Include="icons\icons1\icons8-supplier-40.png" />
+    <Content Include="icons\icons1\icons8-trash-can-50.png" />
+    <Content Include="icons\icons1\icons8-user-40.png" />
+    <Content Include="icons\icons2\excel.png" />
+    <Content Include="icons\icons2\image-removebg-preview %281%29.png" />
+    <Content Include="icons\icons2\image-removebg-preview %282%29.png" />
+    <Content Include="icons\icons2\image-removebg-preview.png" />
+    <Content Include="icons\icons2\khachhang.png" />
+    <Content Include="icons\icons2\logout.png" />
+    <Content Include="icons\icons2\nhacc.png" />
+    <Content Include="icons\icons2\nhaphang.png" />
+    <Content Include="icons\icons2\nhaphangg.png" />
+    <Content Include="icons\icons2\phiếu.png" />
+    <Content Include="icons\icons2\pngtree-user-icon-png-image_1796659 %281%29.jpg" />
+    <Content Include="icons\icons2\pngtree-user-icon-png-image_1796659.jpg" />
+    <Content Include="icons\icons2\rác.png" />
+    <Content Include="icons\icons2\sanpham.png" />
+    <Content Include="icons\icons2\Screenshot 2025-04-04 195953.png" />
+    <Content Include="icons\icons2\Screenshot 2025-04-04 202053.png" />
+    <Content Include="icons\icons2\Screenshot 2025-04-04 202817.png" />
+    <Content Include="icons\icons2\sản phẩm.png" />
+    <Content Include="icons\icons2\sửa.png" />
+    <Content Include="icons\icons2\them.png" />
+    <Content Include="icons\icons2\timkiem.png" />
+    <Content Include="icons\icons2\tonkho.png" />
+    <Content Include="icons\icons2\username.png" />
+    <Content Include="icons\icons2\xoa.png" />
+    <Content Include="icons\icons2\xoáthungrac.png" />
+    <Content Include="icons\icons2\Xuathang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
