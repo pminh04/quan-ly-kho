@@ -2,7 +2,7 @@
 
 namespace quan_ly_kho
 {
-    partial class nhacungcap
+    partial class nhacungcapform
     {
         /// <summary>
         /// Required designer variable.

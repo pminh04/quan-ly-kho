@@ -12,10 +12,10 @@ using quan_ly_kho.View.nhacungcap;
 
 namespace quan_ly_kho
 {
-    public partial class nhacungcap : Form
+    public partial class nhacungcapform : Form
     {
         string table_name = "nhacungcap";
-        public nhacungcap()
+        public nhacungcapform()
         {
             InitializeComponent();
         }

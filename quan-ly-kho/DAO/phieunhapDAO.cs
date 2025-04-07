@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using tu.model;
+using quan_ly_kho.Model;
 
-namespace tu.database
+namespace quan_ly_kho.DAO
 {
     internal class phieunhapDAO
     {

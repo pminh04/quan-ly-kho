@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using quan_ly_kho.View.phieunhap;
+using quan_ly_kho.View.sanpham;
 
 namespace quan_ly_kho
 {
@@ -66,12 +68,37 @@ namespace quan_ly_kho
 
         private void sanpham_Click(object sender, EventArgs e)
         {
-            
+            sanphamform f1 = new sanphamform();
+            f1.TopLevel = false;
+            f1.FormBorderStyle = FormBorderStyle.None;
+            f1.Dock = DockStyle.Fill;
+            if (showform.Controls.Count > 0)
+            {
+                showform.Controls.Clear();
+            }
+            showform.Controls.Add(f1);
+            f1.BringToFront();
+            f1.Show();
         }
 
         private void nhacungcap_Click(object sender, EventArgs e)
         {
-            nhacungcap f1 = new nhacungcap();
+            nhacungcapform f1 = new nhacungcapform();
+            f1.TopLevel = false;
+            f1.FormBorderStyle = FormBorderStyle.None;
+            f1.Dock = DockStyle.Fill;
+            if (showform.Controls.Count > 0)
+            {
+                showform.Controls.Clear();
+            }
+            showform.Controls.Add(f1);
+            f1.BringToFront();
+            f1.Show();
+        }
+
+        private void phieunhap_Click(object sender, EventArgs e)
+        {
+            phieunhapform f1 = new phieunhapform();
             f1.TopLevel = false;
             f1.FormBorderStyle = FormBorderStyle.None;
             f1.Dock = DockStyle.Fill;

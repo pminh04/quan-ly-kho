@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tu.model
+namespace quan_ly_kho.Model
 {
     public class phieunhapmodel
     {

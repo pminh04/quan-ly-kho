@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tu.database
+namespace quan_ly_kho.DAO
 {
     internal class connection
     {
-        public static SqlConnection con = new SqlConnection("Data Source = MSI; Initial Catalog = quanlikho; Persist Security Info = True; User ID = sa; Password = 123456");
+        public static SqlConnection con = new SqlConnection("Data Source=PMINHPRO;Initial Catalog=quanlykho;Persist Security Info=True;User ID=sa;Password=12345");
         public static SqlConnection GetConnection()
         {
            
@@ -20,7 +20,7 @@ namespace tu.database
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Kết nối SQL thất bại: {ex.Message}");
+                Console.WriteLine("Kết nối SQL thất bại:" + ex.Message);
             }
             finally
             {

@@ -5,15 +5,15 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static tu.model.chitietphieunhap;
+using quan_ly_kho.Model;
 
-namespace tu.database
+namespace quan_ly_kho.DAO
 {
     internal class chitietphieunhapDAO
     {
         private SqlConnection con = connection.GetConnection();
 
-        public int Insert(chitietphieunhapmodel ct)
+        public int Insert(chitietphieunhap.chitietphieunhapmodel ct)
         {
             int result = 0;
             try
@@ -102,7 +102,7 @@ namespace tu.database
             return dt;
         }
 
-        public int Update(chitietphieunhapmodel ct)
+        public int Update(chitietphieunhap.chitietphieunhapmodel ct)
         {
             int result = 0;
             try

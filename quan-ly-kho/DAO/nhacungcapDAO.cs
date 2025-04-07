@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tu.database
+namespace quan_ly_kho.DAO
 {
 
     public class nhacungcapDAO

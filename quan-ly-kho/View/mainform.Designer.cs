@@ -223,6 +223,7 @@
             this.phieunhap.TabIndex = 1;
             this.phieunhap.Text = "Phiếu nhập";
             this.phieunhap.UseVisualStyleBackColor = false;
+            this.phieunhap.Click += new System.EventHandler(this.phieunhap_Click);
             // 
             // panel6
             // 
@@ -351,7 +352,7 @@
             this.timkiemtext.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timkiemtext.Location = new System.Drawing.Point(473, 11);
             this.timkiemtext.Name = "timkiemtext";
-            this.timkiemtext.Size = new System.Drawing.Size(447, 24);
+            this.timkiemtext.Size = new System.Drawing.Size(447, 28);
             this.timkiemtext.TabIndex = 3;
             // 
             // timkiemp

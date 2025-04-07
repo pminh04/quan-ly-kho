@@ -31,14 +31,14 @@ insert into taikhoan (hoten, tendangnhap, matkhau, vaitro, trangthai, email) val
 -- tạo bảng `chitietphieunhap`
 create table chitietphieunhap (
     maphieu nvarchar(50) not null,
-    masp nvarchar(50) not null,
+    masanpham nvarchar(50) not null,
     soluong int null,
     dongia float null,
-    constraint pk_chitietphieunhap primary key (maphieu, masp)
+    constraint pk_chitietphieunhap primary key (maphieu, masanpham)
 );
 
 -- chèn dữ liệu vào bảng `chitietphieunhap`
-insert into chitietphieunhap (maphieu, masp, soluong, dongia) values
+insert into chitietphieunhap (maphieu, masanpham, soluong, dongia) values
 ('PN1', 'SP10', 1, 23490000),
 ('PN1', 'SP9', 1, 19490000),
 ('PN10', 'SP2', 1, 23490000),
@@ -47,14 +47,14 @@ insert into chitietphieunhap (maphieu, masp, soluong, dongia) values
 -- tạo bảng `chitietphieuxuat`
 create table chitietphieuxuat (
     maphieu nvarchar(50) not null,
-    masp nvarchar(50) not null,
+    masanpham nvarchar(50) not null,
     soluong int null,
     dongia float null,
-    constraint pk_chitietphieuxuat primary key (maphieu, masp)
+    constraint pk_chitietphieuxuat primary key (maphieu, masanpham)
 );
 
 -- chèn dữ liệu vào bảng `chitietphieuxuat`
-insert into chitietphieuxuat (maphieu, masp, soluong, dongia) values
+insert into chitietphieuxuat (maphieu, masanpham, soluong, dongia) values
 ('PX1', 'SP1', 1, 23490000),
 ('PX1', 'SP10', 13, 19490000),
 ('PX1', 'SP3', 1, 15000000),
@@ -148,17 +148,17 @@ insert into phieuxuat (maphieu, thoigiantao, nguoitao, tongtien, makhachhang) va
 
 -- tạo bảng `sanpham`
 create table sanpham (
-    masp nvarchar(50) not null,
-    tensp nvarchar(100) null,
+    masanpham nvarchar(50) not null,
+    tensanpham nvarchar(100) null,
     soluong int not null default 0,
     dongia float not null default 0,
-    xuatsu nvarchar(50) null,
+    xuatxu nvarchar(50) null,
     trangthai int null,
-    constraint pk_sanpham primary key (masp)
+    constraint pk_sanpham primary key (masanpham)
 );
 
 -- chèn dữ liệu vào bảng `sanpham`
-insert into sanpham (masp, tensp, soluong, dongia, xuatsu, trangthai) values
+insert into sanpham (masanpham, tensanpham, soluong, dongia, xuatxu, trangthai) values
 ('SP1', N'GẠCH ỐP', 36, 250000, N'Việt Nam', 1),
 ('SP10', N'GẠCH LÓT', 106, 350000, N'Việt Nam', 1),
 ('SP2', N'GẠCH LÁT ĐƯỜNG', 78, 226000, N'Việt Nam', 1),
@@ -173,11 +173,15 @@ insert into sanpham (masp, tensp, soluong, dongia, xuatsu, trangthai) values
 -- thêm ràng buộc khóa ngoại
 alter table chitietphieunhap
     add constraint fk_chitietphieunhap_phieunhap foreign key (maphieu) references phieunhap (maphieu),
-        constraint fk_chitietphieunhap_sanpham foreign key (masp) references sanpham (masp);
+        constraint fk_chitietphieunhap_sanpham foreign key (masanpham) references sanpham (masanpham);
 
 alter table chitietphieuxuat
     add constraint fk_chitietphieuxuat_phieuxuat foreign key (maphieu) references phieuxuat (maphieu),
-        constraint fk_chitietphieuxuat_sanpham foreign key (masp) references sanpham (masp);
+        constraint fk_chitietphieuxuat_sanpham foreign key (masanpham) references sanpham (masanpham);
 
 commit transaction;
 go
+
+select * from sanpham
+SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
+
