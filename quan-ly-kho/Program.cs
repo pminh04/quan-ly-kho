@@ -17,7 +17,7 @@ namespace quan_ly_kho
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new nhacungcap());
+            Application.Run(new mainform());
         }
     }
 }
