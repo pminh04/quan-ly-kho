@@ -98,5 +98,10 @@ namespace quan_ly_kho.View.sanpham
             f1.BringToFront();
             f1.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

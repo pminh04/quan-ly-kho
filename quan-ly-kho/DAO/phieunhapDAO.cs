@@ -130,6 +130,32 @@ namespace quan_ly_kho.DAO
             }
             return dt;
         }
+        public DataTable SelectByGia(float giaTu, float giaDen)
+        {
+            DataTable dt = new DataTable();
 
+            try
+            {
+
+                con.Open();
+                string sql = "SELECT * FROM phieunhap WHERE tongtien BETWEEN @giaTu AND @giaDen";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                adapter.SelectCommand.Parameters.AddWithValue("@giaTu", giaTu);
+                adapter.SelectCommand.Parameters.AddWithValue("@giaDen", giaDen);
+                
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lấy phiếu nhập theo mã thất bại: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+            }
+            
     }
 }

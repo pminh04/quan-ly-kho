@@ -67,6 +67,36 @@ namespace quan_ly_kho.DAO
             return manhacungcap;
         }
 
+        public string GetTenNhaCungCapByMa(string manhacungcap)
+        {
+            string tennhacungcap = null;
+            SqlConnection con = connection.GetConnection();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                con.Open();
+                string sql = "SELECT tennhacungcap FROM nhacungcap WHERE manhacungcap = @manhacungcap";
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                da.SelectCommand.Parameters.AddWithValue("@manhacungcap", manhacungcap);
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    tennhacungcap = dt.Rows[0]["tennhacungcap"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy ten nhà cung cấp: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return tennhacungcap;
+        }
 
 
     }

@@ -101,7 +101,7 @@ namespace quan_ly_kho
 
         private void phieunhap_Click(object sender, EventArgs e)
         {
-            phieunhapform f1 = new phieunhapform();
+            chitietphieunhapform f1 = new chitietphieunhapform();
             f1.TopLevel = false;
             f1.FormBorderStyle = FormBorderStyle.None;
             f1.Dock = DockStyle.Fill;
