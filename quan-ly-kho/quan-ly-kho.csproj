@@ -158,23 +158,47 @@
     <Compile Include="Controller\Sua.cs" />
     <Compile Include="Controller\Them.cs" />
     <Compile Include="Controller\Xoa.cs" />
+    <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\chitietphieunhapDAO.cs" />
     <Compile Include="DAO\connection.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="DAO\nhacungcapDAO.cs" />
     <Compile Include="DAO\phieunhapDAO.cs" />
     <Compile Include="DAO\sanphamDAO.cs" />
+    <Compile Include="Model\Account.cs" />
     <Compile Include="Model\chitietphieunhap.cs" />
     <Compile Include="Model\chitietphieuxuat_model.cs" />
+    <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\ncc_model.cs" />
     <Compile Include="Model\nhacungcapmodel.cs" />
     <Compile Include="Model\phieunhapmodel.cs" />
     <Compile Include="Model\phieuxuatmodel.cs" />
     <Compile Include="Model\sanphammodel.cs" />
-    <Compile Include="Model\thongke_model.cs" />
+    <Compile Include="Controller\SecurityHelper.cs" />
+    <Compile Include="Model\thongke_model_kh.cs" />
+    <Compile Include="Model\thongke_model_sp.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\khachhang\AddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\khachhang\AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\khachhang\ManagementCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\khachhang\ManagementCustomer.Designer.cs">
+      <DependentUpon>ManagementCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\khachhang\UpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\khachhang\UpdateCustomer.Designer.cs">
+      <DependentUpon>UpdateCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="View\mainform.cs">
       <SubType>Form</SubType>
@@ -262,11 +286,29 @@
     <Compile Include="View\sanpham\updatesanpham.Designer.cs">
       <DependentUpon>updatesanpham.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\taikhoan\AddAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\taikhoan\AddAccountForm.Designer.cs">
+      <DependentUpon>AddAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\taikhoan\ManagementAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\taikhoan\ManagementAccount.Designer.cs">
+      <DependentUpon>ManagementAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\taikhoan\thongtintaikhoan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\taikhoan\thongtintaikhoan.Designer.cs">
       <DependentUpon>thongtintaikhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\taikhoan\UpdateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\taikhoan\UpdateAccount.Designer.cs">
+      <DependentUpon>UpdateAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="View\thongke\thongkeform.cs">
       <SubType>Form</SubType>
@@ -280,6 +322,15 @@
     <Compile Include="View\xuathang\xuathangform.Designer.cs">
       <DependentUpon>xuathangform.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\khachhang\AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\khachhang\ManagementCustomer.resx">
+      <DependentUpon>ManagementCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\khachhang\UpdateCustomer.resx">
+      <DependentUpon>UpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\mainform.resx">
       <DependentUpon>mainform.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,8 +378,17 @@
     <EmbeddedResource Include="View\sanpham\updatesanpham.resx">
       <DependentUpon>updatesanpham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\taikhoan\AddAccountForm.resx">
+      <DependentUpon>AddAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\taikhoan\ManagementAccount.resx">
+      <DependentUpon>ManagementAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\taikhoan\thongtintaikhoan.resx">
       <DependentUpon>thongtintaikhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\taikhoan\UpdateAccount.resx">
+      <DependentUpon>UpdateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\thongke\thongkeform.resx">
       <DependentUpon>thongkeform.cs</DependentUpon>
@@ -404,6 +464,35 @@
     <Content Include="icons\icons2\xoa.png" />
     <Content Include="icons\icons2\xoáthungrac.png" />
     <Content Include="icons\icons2\Xuathang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

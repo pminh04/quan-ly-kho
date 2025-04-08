@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,32 @@ namespace quan_ly_kho.DAO
                 con.Close();
             }
             return con;
+        }
+
+        public SqlConnection getConnection
+        {
+            get
+            {
+                return con;
+            }
+        }
+
+        // open the connection 
+        public void openConnection()
+        {
+            if ((con.State == ConnectionState.Closed))
+            {
+                con.Open();
+            }
+        }
+
+
+        public void closeConnection()
+        {
+            if ((con.State == ConnectionState.Open))
+            {
+                con.Close();
+            }
         }
     }
 }

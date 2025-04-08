@@ -23,6 +23,7 @@ namespace quan_ly_kho.View.thongke
 
         private void thongkeform_Load(object sender, EventArgs e)
         {
+            loaddata.show_thongke_kh(tabkh);
             loaddata.show_thongke_sp(sptab);
             soluongsp.Text = DB.count("sanpham").ToString();
             soluongncc.Text = DB.count("nhacungcap").ToString();
@@ -31,16 +32,27 @@ namespace quan_ly_kho.View.thongke
             loaislcbx.SelectedIndex = 0;
         }
 
-        public void get_data()
+        public void search_data_sp()
         {
 
-            thongke_model tk = new thongke_model(
+            thongke_model_sp tk = new thongke_model_sp(
                 loaislcbx.Text,
                 from.Text,
                 to.Text,
                 xuatxucbx.Text
                 );
-            loaddata.search_thongke(sptab, tk);
+            loaddata.search_thongke_sp(sptab, tk);
+        }
+        public void search_data_kh()
+        {
+
+            thongke_model_kh tk_kh = new thongke_model_kh(
+                khfrom.Text,
+                khto.Text,
+                tienfrom.Text,
+                tiento.Text
+                );
+            loaddata.search_thongke_kh(tabkh, tk_kh);
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -50,13 +62,24 @@ namespace quan_ly_kho.View.thongke
 
         private void xuatxucbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //get_data();
+            
 
         }
 
         private void loaislcbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //get_data(); 
+            
+        }
+
+
+        private void timkiem_sp_Click(object sender, EventArgs e)
+        {
+            search_data_sp();
+        }
+
+        private void timkiem_kh_Click(object sender, EventArgs e)
+        {
+            search_data_kh();
         }
     }
 }

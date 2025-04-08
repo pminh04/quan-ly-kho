@@ -18,7 +18,7 @@ namespace quan_ly_kho
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new thongkeform());
+            Application.Run(new mainform());
         }
     }
 }
