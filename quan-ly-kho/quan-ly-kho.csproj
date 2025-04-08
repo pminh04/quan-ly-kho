@@ -160,13 +160,16 @@
     <Compile Include="Controller\Xoa.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\chitietphieunhapDAO.cs" />
+    <Compile Include="DAO\chitietphieuxuatDAO.cs" />
     <Compile Include="DAO\connection.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="DAO\nhacungcapDAO.cs" />
     <Compile Include="DAO\phieunhapDAO.cs" />
+    <Compile Include="DAO\phieuxuatDAO.cs" />
     <Compile Include="DAO\sanphamDAO.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\chitietphieunhap.cs" />
+    <Compile Include="Model\chitietphieuxuat.cs" />
     <Compile Include="Model\chitietphieuxuat_model.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\ncc_model.cs" />

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using quan_ly_kho.Model;
 
 namespace quan_ly_kho.DAO
@@ -14,6 +15,29 @@ namespace quan_ly_kho.DAO
 
 
         private SqlConnection con = connection.GetConnection();
+        public bool TruSoLuong(string masanpham, int soluongTru)
+        {
+            
+            try
+            {
+                con.Open();
+                string sql = "UPDATE sanpham SET soluong = soluong - @soluongTru WHERE masanpham = @masanpham";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@soluongTru", soluongTru);
+                cmd.Parameters.AddWithValue("@masanpham", masanpham);
+                int result = cmd.ExecuteNonQuery();
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi trừ số lượng: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         public int Insert(SanPhamModel sp)
         {
