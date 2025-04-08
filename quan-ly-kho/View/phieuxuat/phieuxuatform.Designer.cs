@@ -218,6 +218,7 @@
             this.btnxuatexcel.FlatAppearance.BorderSize = 0;
             this.btnxuatexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnxuatexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxuatexcel.Image = global::quan_ly_kho.Properties.Resources.icons8_export_excel_50;
             this.btnxuatexcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnxuatexcel.ImageIndex = 5;
             this.btnxuatexcel.ImageList = this.imageList2;

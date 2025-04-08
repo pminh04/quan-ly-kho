@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using quan_ly_kho.Controller;
-using quan_ly_kho.DAO;
 
 namespace quan_ly_kho.View.phieuxuat
 {
