@@ -48,22 +48,36 @@ namespace quan_ly_kho.View.sanpham
                 MessageBox.Show("Đơn giá không hợp lệ");
                 return;
             }
-
             sp.trangthai = 1; // mặc định đang tồn tại
-
-            sanphamDAO dao = new sanphamDAO();
-            int kq = dao.Update(sp);
-
-            if (kq > 0)
+            if (string.IsNullOrWhiteSpace(txtmasanpham.Text) ||
+             string.IsNullOrWhiteSpace(txttensanpham.Text) ||
+             string.IsNullOrWhiteSpace(txtxuatxu.Text) ||
+             string.IsNullOrWhiteSpace(txtsoluong.Text) ||
+             string.IsNullOrWhiteSpace(txtdongia.Text))
             {
-                MessageBox.Show("Sửa thành công");
-                this.DialogResult = DialogResult.OK; // để bên ngoài biết reload
-                this.Close();
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                return;
             }
             else
             {
-                MessageBox.Show("Sửa thất bại");
+                sanphamDAO dao = new sanphamDAO();
+                int kq = dao.Update(sp);
+
+                if (kq > 0)
+                {
+                    MessageBox.Show("Sửa thành công");
+                    this.DialogResult = DialogResult.OK; // để bên ngoài biết reload
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                }
             }
+        }
+        private void txtmasanpham_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

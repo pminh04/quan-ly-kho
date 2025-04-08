@@ -33,6 +33,8 @@ namespace quan_ly_kho.View.nhaphang
                 tablesanpham.Columns["xuatxu"].HeaderText = "Xuất xứ";
                 tablesanpham.Columns["soluong"].HeaderText = "Số lượng";
                 tablesanpham.Columns["dongia"].HeaderText = "Đơn giá";
+                tablesanpham.Columns["dongia"].DefaultCellStyle.Format = "#,##0.##";
+
 
 
             }
@@ -278,44 +280,47 @@ namespace quan_ly_kho.View.nhaphang
         {
             bool isExist = false;
 
-            // Duyệt qua các dòng để kiểm tra trùng mã
             for (int i = 0; i < tablenhaphang.Rows.Count; i++)
             {
                 if (tablenhaphang.Rows[i].Cells["masanpham"].Value != null &&
                     tablenhaphang.Rows[i].Cells["masanpham"].Value.ToString() == masanpham)
                 {
-                    // Nếu đã có, cộng dồn số lượng và cập nhật lại tổng tiền
                     int currentSoluong = Convert.ToInt32(tablenhaphang.Rows[i].Cells["soluong"].Value);
                     currentSoluong += soluong;
+                    decimal tongtien = currentSoluong * dongia;
 
                     tablenhaphang.Rows[i].Cells["soluong"].Value = currentSoluong;
-                    tablenhaphang.Rows[i].Cells["tongtien"].Value = currentSoluong * dongia;
+                    tablenhaphang.Rows[i].Cells["dongia"].Value = dongia.ToString("#,##0.##");
+                    tablenhaphang.Rows[i].Cells["tongtien"].Value = tongtien.ToString("#,##0.##");
 
                     isExist = true;
                     break;
                 }
             }
 
-            // Nếu chưa có thì thêm mới sau khi kiểm tra hết
             if (!isExist)
             {
                 decimal tongtien = soluong * dongia;
                 tablenhaphang.Rows.Add(
-                    tablenhaphang.Rows.Count + 1, // STT
+                    tablenhaphang.Rows.Count + 1,
                     masanpham,
-
                     soluong,
-                    dongia,
-                    tongtien
+                    dongia.ToString("#,##0.##"),
+                    tongtien.ToString("#,##0.##")
                 );
             }
 
-            // Cập nhật tổng tiền
             CapNhatTongTien();
             CapNhatSTT();
         }
 
+
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void tablesanpham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

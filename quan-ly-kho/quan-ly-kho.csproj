@@ -232,23 +232,23 @@
     <Compile Include="View\nhaphang\nhaphangform.Designer.cs">
       <DependentUpon>nhaphangform.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\phieunhap\chitietphieunhap.cs">
+    <Compile Include="View\phieunhap\chitietphieunhapform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\phieunhap\chitietphieunhap.Designer.cs">
-      <DependentUpon>chitietphieunhap.cs</DependentUpon>
+    <Compile Include="View\phieunhap\chitietphieunhapform.Designer.cs">
+      <DependentUpon>chitietphieunhapform.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\phieunhap\phieunhapform.cs">
+    <Compile Include="View\phieunhap\formsuachitietphieunhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\phieunhap\phieunhapform.Designer.cs">
-      <DependentUpon>phieunhapform.cs</DependentUpon>
+    <Compile Include="View\phieunhap\formsuachitietphieunhap.Designer.cs">
+      <DependentUpon>formsuachitietphieunhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\phieunhap\suachitietphieunhap.cs">
+    <Compile Include="View\phieunhap\formxemchitietphieunhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\phieunhap\suachitietphieunhap.Designer.cs">
-      <DependentUpon>suachitietphieunhap.cs</DependentUpon>
+    <Compile Include="View\phieunhap\formxemchitietphieunhap.Designer.cs">
+      <DependentUpon>formxemchitietphieunhap.cs</DependentUpon>
     </Compile>
     <Compile Include="View\phieuxuat\capnhatphieuxuat.cs">
       <SubType>Form</SubType>
@@ -351,14 +351,14 @@
     <EmbeddedResource Include="View\nhaphang\nhaphangform.resx">
       <DependentUpon>nhaphangform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\phieunhap\chitietphieunhap.resx">
-      <DependentUpon>chitietphieunhap.cs</DependentUpon>
+    <EmbeddedResource Include="View\phieunhap\chitietphieunhapform.resx">
+      <DependentUpon>chitietphieunhapform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\phieunhap\phieunhapform.resx">
-      <DependentUpon>phieunhapform.cs</DependentUpon>
+    <EmbeddedResource Include="View\phieunhap\formsuachitietphieunhap.resx">
+      <DependentUpon>formsuachitietphieunhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\phieunhap\suachitietphieunhap.resx">
-      <DependentUpon>suachitietphieunhap.cs</DependentUpon>
+    <EmbeddedResource Include="View\phieunhap\formxemchitietphieunhap.resx">
+      <DependentUpon>formxemchitietphieunhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\phieuxuat\capnhatphieuxuat.resx">
       <DependentUpon>capnhatphieuxuat.cs</DependentUpon>

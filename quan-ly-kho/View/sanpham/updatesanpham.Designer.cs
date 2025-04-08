@@ -193,6 +193,7 @@
             this.txtmasanpham.Name = "txtmasanpham";
             this.txtmasanpham.Size = new System.Drawing.Size(408, 34);
             this.txtmasanpham.TabIndex = 1;
+            this.txtmasanpham.TextChanged += new System.EventHandler(this.txtmasanpham_TextChanged);
             // 
             // label2
             // 

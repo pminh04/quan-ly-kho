@@ -170,6 +170,29 @@ insert into phieuxuat (maphieu, thoigiantao, nguoitao, tongtien, makhachhang) va
 ('PX8', '2024-10-18 22:35:49', 'Admin', 2500000, '1'),
 ('PX9', '2024-10-18 22:48:44', 'admin', 2703000, '6');
 
+-- tạo bảng `sanpham`
+create table sanpham (
+    masanpham nvarchar(50) not null,
+    tensanpham nvarchar(100) null,
+    soluong int not null default 0,
+    dongia float not null default 0,
+    xuatxu nvarchar(50) null,
+    trangthai int null,
+    constraint pk_sanpham primary key (masanpham)
+);
+
+-- chèn dữ liệu vào bảng `sanpham`
+insert into sanpham (masanpham, tensanpham, soluong, dongia, xuatxu, trangthai) values
+('SP1', N'GẠCH ỐP', 36, 250000, N'Việt Nam', 1),
+('SP10', N'GẠCH LÓT', 106, 350000, N'Việt Nam', 1),
+('SP2', N'GẠCH LÁT ĐƯỜNG', 78, 226000, N'Việt Nam', 1),
+('SP3', N'XỐP CÁCH ÂM', 53, 340000, N'Nhật', 1),
+('SP4', N'VÒI HOA SEN', 42, 203000, N'Trung Quốc', 1),
+('SP5', N'TỦ BẾP', 55, 5230000, N'Trung Quốc', 1),
+('SP6', N'TỦ QUẦN ÁO', 72, 12450000, N'Hàn', 1),
+('SP7', N'ĐIỀU HÒA', 43, 15499000, N'Hàn', 1),
+('SP8', N'ĐÈN', 63, 534000, N'Hàn', 1),
+('SP9', N'GHẾ', 10, 2500000, N'Nhật', 1);
 
 -- thêm ràng buộc khóa ngoại
 alter table chitietphieunhap
@@ -182,3 +205,7 @@ alter table chitietphieuxuat
 
 commit transaction;
 go
+
+select * from sanpham
+SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
+

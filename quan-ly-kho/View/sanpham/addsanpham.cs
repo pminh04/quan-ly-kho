@@ -21,13 +21,30 @@ namespace quan_ly_kho.View.sanpham
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            SanPhamModel sp = new SanPhamModel();
+            if (string.IsNullOrWhiteSpace(txtmasanpham.Text) ||
+       string.IsNullOrWhiteSpace(txttensanpham.Text) ||
+       string.IsNullOrWhiteSpace(txtxuatxu.Text) ||
+       string.IsNullOrWhiteSpace(txtsoluong.Text) ||
+       string.IsNullOrWhiteSpace(txtdongia.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                return;
+            }
 
+            // Kiểm tra trùng mã sản phẩm
+            sanphamDAO dao = new sanphamDAO();
+            if (dao.CheckTrungMa(txtmasanpham.Text.Trim()))
+            {
+                MessageBox.Show("Mã sản phẩm đã tồn tại.");
+                return;
+            }
+
+            // Tạo đối tượng sản phẩm
+            SanPhamModel sp = new SanPhamModel();
             sp.masanpham = txtmasanpham.Text.Trim();
             sp.tensanpham = txttensanpham.Text.Trim();
             sp.xuatxu = txtxuatxu.Text.Trim();
 
-            // kiểm tra số lượng và đơn giá có hợp lệ không
             if (int.TryParse(txtsoluong.Text.Trim(), out int soluong))
                 sp.soluong = soluong;
             else
@@ -44,21 +61,24 @@ namespace quan_ly_kho.View.sanpham
                 return;
             }
 
-            sp.trangthai = 1; // mặc định đang tồn tại
+            sp.trangthai = 1;
 
-            sanphamDAO dao = new sanphamDAO();
             int kq = dao.Insert(sp);
-
             if (kq > 0)
             {
                 MessageBox.Show("Thêm thành công");
-                this.DialogResult = DialogResult.OK; // để bên ngoài biết reload
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Thêm thất bại");
             }
+        }
+
+        private void txtmasanpham_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

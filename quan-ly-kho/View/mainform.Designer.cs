@@ -31,32 +31,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainform));
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.sppanel = new System.Windows.Forms.Panel();
-            this.sanpham = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.nhacungcap = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.khachhang = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.nhaphang = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.phieunhap = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.xuathang = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.phieuxuat = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.thongke = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.taikhoan = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Panel();
             this.timkiemtext = new System.Windows.Forms.TextBox();
             this.timkiemp = new System.Windows.Forms.Panel();
-            this.timkiembtn = new System.Windows.Forms.Button();
             this.timkiemcbx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
             this.showform = new System.Windows.Forms.Panel();
+            this.timkiembtn = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.sanpham = new System.Windows.Forms.Button();
+            this.nhacungcap = new System.Windows.Forms.Button();
+            this.khachhang = new System.Windows.Forms.Button();
+            this.nhaphang = new System.Windows.Forms.Button();
+            this.phieunhap = new System.Windows.Forms.Button();
+            this.xuathang = new System.Windows.Forms.Button();
+            this.phieuxuat = new System.Windows.Forms.Button();
+            this.thongke = new System.Windows.Forms.Button();
+            this.taikhoan = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.sppanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,8 +74,6 @@
             // 
             // sidebar
             // 
-            this.sidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.sidebar.BackColor = System.Drawing.Color.Green;
             this.sidebar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sidebar.Controls.Add(this.sppanel);
@@ -102,6 +100,192 @@
             this.sppanel.Size = new System.Drawing.Size(266, 62);
             this.sppanel.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.panel2.Controls.Add(this.nhacungcap);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel2.Location = new System.Drawing.Point(3, 71);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(266, 62);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Window;
+            this.panel3.Controls.Add(this.khachhang);
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel3.Location = new System.Drawing.Point(3, 139);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(266, 62);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Window;
+            this.panel4.Controls.Add(this.nhaphang);
+            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel4.Location = new System.Drawing.Point(3, 207);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(266, 62);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Window;
+            this.panel5.Controls.Add(this.phieunhap);
+            this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel5.Location = new System.Drawing.Point(3, 275);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(266, 62);
+            this.panel5.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.Window;
+            this.panel6.Controls.Add(this.xuathang);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Location = new System.Drawing.Point(3, 343);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(266, 62);
+            this.panel6.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Window;
+            this.panel7.Controls.Add(this.phieuxuat);
+            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel7.Location = new System.Drawing.Point(3, 411);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(266, 62);
+            this.panel7.TabIndex = 6;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.Window;
+            this.panel8.Controls.Add(this.thongke);
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Location = new System.Drawing.Point(3, 479);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(266, 62);
+            this.panel8.TabIndex = 7;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.SystemColors.Window;
+            this.panel10.Controls.Add(this.taikhoan);
+            this.panel10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel10.Location = new System.Drawing.Point(3, 547);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(266, 62);
+            this.panel10.TabIndex = 8;
+            // 
+            // title
+            // 
+            this.title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.title.BackColor = System.Drawing.Color.White;
+            this.title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.title.Controls.Add(this.timkiemtext);
+            this.title.Controls.Add(this.timkiemp);
+            this.title.Controls.Add(this.timkiemcbx);
+            this.title.Controls.Add(this.label1);
+            this.title.Controls.Add(this.panel9);
+            this.title.Location = new System.Drawing.Point(12, 12);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(1502, 52);
+            this.title.TabIndex = 3;
+            // 
+            // timkiemtext
+            // 
+            this.timkiemtext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.timkiemtext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timkiemtext.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timkiemtext.Location = new System.Drawing.Point(603, 11);
+            this.timkiemtext.Name = "timkiemtext";
+            this.timkiemtext.Size = new System.Drawing.Size(447, 28);
+            this.timkiemtext.TabIndex = 3;
+            // 
+            // timkiemp
+            // 
+            this.timkiemp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.timkiemp.Controls.Add(this.timkiembtn);
+            this.timkiemp.Location = new System.Drawing.Point(1056, 8);
+            this.timkiemp.Name = "timkiemp";
+            this.timkiemp.Size = new System.Drawing.Size(58, 37);
+            this.timkiemp.TabIndex = 0;
+            // 
+            // timkiemcbx
+            // 
+            this.timkiemcbx.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.timkiemcbx.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timkiemcbx.FormattingEnabled = true;
+            this.timkiemcbx.Location = new System.Drawing.Point(493, 11);
+            this.timkiemcbx.Name = "timkiemcbx";
+            this.timkiemcbx.Size = new System.Drawing.Size(103, 28);
+            this.timkiemcbx.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(278, 37);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Quản lý kho vật tư";
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.Controls.Add(this.button9);
+            this.panel9.Location = new System.Drawing.Point(1442, 5);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(47, 42);
+            this.panel9.TabIndex = 0;
+            // 
+            // showform
+            // 
+            this.showform.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.showform.BackColor = System.Drawing.Color.White;
+            this.showform.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.showform.Location = new System.Drawing.Point(290, 71);
+            this.showform.Name = "showform";
+            this.showform.Size = new System.Drawing.Size(1222, 698);
+            this.showform.TabIndex = 4;
+            // 
+            // timkiembtn
+            // 
+            this.timkiembtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.timkiembtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.timkiembtn.Image = global::quan_ly_kho.Properties.Resources.icons8_search_25;
+            this.timkiembtn.Location = new System.Drawing.Point(-10, -5);
+            this.timkiembtn.Name = "timkiembtn";
+            this.timkiembtn.Size = new System.Drawing.Size(77, 45);
+            this.timkiembtn.TabIndex = 4;
+            this.timkiembtn.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.Location = new System.Drawing.Point(-14, -6);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(74, 52);
+            this.button9.TabIndex = 1;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
             // sanpham
             // 
             this.sanpham.BackColor = System.Drawing.Color.Green;
@@ -118,16 +302,6 @@
             this.sanpham.Text = "Sản phẩm";
             this.sanpham.UseVisualStyleBackColor = false;
             this.sanpham.Click += new System.EventHandler(this.sanpham_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2.Controls.Add(this.nhacungcap);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Location = new System.Drawing.Point(3, 71);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 62);
-            this.panel2.TabIndex = 1;
             // 
             // nhacungcap
             // 
@@ -146,16 +320,6 @@
             this.nhacungcap.UseVisualStyleBackColor = false;
             this.nhacungcap.Click += new System.EventHandler(this.nhacungcap_Click);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Window;
-            this.panel3.Controls.Add(this.khachhang);
-            this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel3.Location = new System.Drawing.Point(3, 139);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(266, 62);
-            this.panel3.TabIndex = 2;
-            // 
             // khachhang
             // 
             this.khachhang.BackColor = System.Drawing.Color.Green;
@@ -172,16 +336,6 @@
             this.khachhang.Text = "Khách hàng";
             this.khachhang.UseVisualStyleBackColor = false;
             this.khachhang.Click += new System.EventHandler(this.khachhang_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Window;
-            this.panel4.Controls.Add(this.nhaphang);
-            this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel4.Location = new System.Drawing.Point(3, 207);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(266, 62);
-            this.panel4.TabIndex = 3;
             // 
             // nhaphang
             // 
@@ -200,16 +354,6 @@
             this.nhaphang.UseVisualStyleBackColor = false;
             this.nhaphang.Click += new System.EventHandler(this.nhaphang_Click);
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.Window;
-            this.panel5.Controls.Add(this.phieunhap);
-            this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel5.Location = new System.Drawing.Point(3, 275);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(266, 62);
-            this.panel5.TabIndex = 4;
-            // 
             // phieunhap
             // 
             this.phieunhap.BackColor = System.Drawing.Color.Green;
@@ -226,16 +370,6 @@
             this.phieunhap.Text = "Phiếu nhập";
             this.phieunhap.UseVisualStyleBackColor = false;
             this.phieunhap.Click += new System.EventHandler(this.phieunhap_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.Window;
-            this.panel6.Controls.Add(this.xuathang);
-            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Location = new System.Drawing.Point(3, 343);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(266, 62);
-            this.panel6.TabIndex = 5;
             // 
             // xuathang
             // 
@@ -254,16 +388,6 @@
             this.xuathang.UseVisualStyleBackColor = false;
             this.xuathang.Click += new System.EventHandler(this.xuathang_Click);
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.Window;
-            this.panel7.Controls.Add(this.phieuxuat);
-            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel7.Location = new System.Drawing.Point(3, 411);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(266, 62);
-            this.panel7.TabIndex = 6;
-            // 
             // phieuxuat
             // 
             this.phieuxuat.BackColor = System.Drawing.Color.Green;
@@ -280,16 +404,6 @@
             this.phieuxuat.Text = "Phiếu xuất";
             this.phieuxuat.UseVisualStyleBackColor = false;
             this.phieuxuat.Click += new System.EventHandler(this.phieuxuat_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.Window;
-            this.panel8.Controls.Add(this.thongke);
-            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel8.Location = new System.Drawing.Point(3, 479);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(266, 62);
-            this.panel8.TabIndex = 7;
             // 
             // thongke
             // 
@@ -308,16 +422,6 @@
             this.thongke.UseVisualStyleBackColor = false;
             this.thongke.Click += new System.EventHandler(this.thongke_Click);
             // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.SystemColors.Window;
-            this.panel10.Controls.Add(this.taikhoan);
-            this.panel10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel10.Location = new System.Drawing.Point(3, 547);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(266, 62);
-            this.panel10.TabIndex = 8;
-            // 
             // taikhoan
             // 
             this.taikhoan.BackColor = System.Drawing.Color.Green;
@@ -335,118 +439,13 @@
             this.taikhoan.UseVisualStyleBackColor = false;
             this.taikhoan.Click += new System.EventHandler(this.taikhoan_Click);
             // 
-            // title
-            // 
-            this.title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.title.BackColor = System.Drawing.Color.White;
-            this.title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.title.Controls.Add(this.timkiemtext);
-            this.title.Controls.Add(this.timkiemp);
-            this.title.Controls.Add(this.timkiemcbx);
-            this.title.Controls.Add(this.label1);
-            this.title.Controls.Add(this.panel9);
-            this.title.Location = new System.Drawing.Point(12, 12);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1387, 52);
-            this.title.TabIndex = 3;
-            // 
-            // timkiemtext
-            // 
-            this.timkiemtext.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.timkiemtext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timkiemtext.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timkiemtext.Location = new System.Drawing.Point(545, 11);
-            this.timkiemtext.Name = "timkiemtext";
-            this.timkiemtext.Size = new System.Drawing.Size(447, 28);
-            this.timkiemtext.TabIndex = 3;
-            // 
-            // timkiemp
-            // 
-            this.timkiemp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.timkiemp.Controls.Add(this.timkiembtn);
-            this.timkiemp.Location = new System.Drawing.Point(998, 8);
-            this.timkiemp.Name = "timkiemp";
-            this.timkiemp.Size = new System.Drawing.Size(58, 37);
-            this.timkiemp.TabIndex = 0;
-            // 
-            // timkiembtn
-            // 
-            this.timkiembtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.timkiembtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.timkiembtn.Image = global::quan_ly_kho.Properties.Resources.icons8_search_25;
-            this.timkiembtn.Location = new System.Drawing.Point(-10, -5);
-            this.timkiembtn.Name = "timkiembtn";
-            this.timkiembtn.Size = new System.Drawing.Size(77, 45);
-            this.timkiembtn.TabIndex = 4;
-            this.timkiembtn.UseVisualStyleBackColor = true;
-            // 
-            // timkiemcbx
-            // 
-            this.timkiemcbx.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.timkiemcbx.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timkiemcbx.FormattingEnabled = true;
-            this.timkiemcbx.Location = new System.Drawing.Point(436, 11);
-            this.timkiemcbx.Name = "timkiemcbx";
-            this.timkiemcbx.Size = new System.Drawing.Size(103, 28);
-            this.timkiemcbx.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Quản lý kho vật tư";
-            // 
-            // panel9
-            // 
-            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.Controls.Add(this.button9);
-            this.panel9.Location = new System.Drawing.Point(1326, 5);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(47, 42);
-            this.panel9.TabIndex = 0;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(-14, -6);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(74, 52);
-            this.button9.TabIndex = 1;
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // showform
-            // 
-            this.showform.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.showform.BackColor = System.Drawing.Color.White;
-            this.showform.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.showform.Location = new System.Drawing.Point(290, 71);
-            this.showform.Name = "showform";
-            this.showform.Size = new System.Drawing.Size(1109, 698);
-            this.showform.TabIndex = 4;
-            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(1411, 781);
+            this.ClientSize = new System.Drawing.Size(1526, 781);
             this.Controls.Add(this.showform);
             this.Controls.Add(this.title);
             this.Controls.Add(this.sidebar);
