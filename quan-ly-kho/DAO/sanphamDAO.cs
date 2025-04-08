@@ -21,14 +21,14 @@ namespace quan_ly_kho.DAO
             try
             {
                 con.Open();
-                string sql = "INSERT INTO sanpham (masanpham, tensanpham, xuatxu, soluong, dongia, trangthai) VALUES (@masanpham, @tensanpham, @xuatxu,@soluong, @dongia, @trangthai)";
+                string sql = "INSERT INTO sanpham (masanpham, tensanpham, xuatxu, soluong, dongia, trangthai) VALUES (@masanpham, @tensanpham, @xuatxu,@soluong, @dongia, 1)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@masanpham", sp.masanpham);
                 cmd.Parameters.AddWithValue("@tensanpham", sp.tensanpham);
                 cmd.Parameters.AddWithValue("@xuatxu", sp.xuatxu);
                 cmd.Parameters.AddWithValue("@soluong", sp.soluong);
                 cmd.Parameters.AddWithValue("@dongia", sp.dongia);
-                cmd.Parameters.AddWithValue("@trangthai", sp.trangthai);
+               
                 result = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -68,6 +68,7 @@ namespace quan_ly_kho.DAO
             }
             return result;
         }
+       
 
         public int Delete(string masanpham)
         {
@@ -176,6 +177,31 @@ namespace quan_ly_kho.DAO
                 con.Close();
             }
             return result;
+        }
+        public bool CheckTrungMa(string masanpham)
+        {
+            bool isExist = false;
+            try
+            {
+                con.Open();
+                string sql = "SELECT COUNT(*) FROM sanpham WHERE masanpham = @masanpham";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@masanpham", masanpham);
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                {
+                    isExist = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi kiểm tra mã sản phẩm: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return isExist;
         }
 
         public int GetSoLuongExist()

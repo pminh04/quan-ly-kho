@@ -43,6 +43,8 @@ namespace quan_ly_kho.View.phieunhap
                 tablechitietphieunhap.Columns["nguoitao"].HeaderText = "Người tạo";
                 tablechitietphieunhap.Columns["manhacungcap"].HeaderText = "Mã nhà cung cấp";
                 tablechitietphieunhap.Columns["tongtien"].HeaderText = "Tổng tiền";
+                tablechitietphieunhap.Columns["tongtien"].DefaultCellStyle.Format = "#,##0.##";
+
             }
             else
             {

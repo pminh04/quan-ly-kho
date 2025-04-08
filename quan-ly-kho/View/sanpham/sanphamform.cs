@@ -36,6 +36,8 @@ namespace quan_ly_kho.View.sanpham
                 tablesanpham.Columns["xuatxu"].HeaderText = "Xuất xứ";
                 tablesanpham.Columns["soluong"].HeaderText = "Số lượng";
                 tablesanpham.Columns["dongia"].HeaderText = "Đơn giá";
+                tablesanpham.Columns["dongia"].DefaultCellStyle.Format = "#,##0.##";
+
             }
             else
             {
@@ -100,6 +102,7 @@ namespace quan_ly_kho.View.sanpham
             addsanpham f1 = new addsanpham();
             f1.BringToFront();
             f1.Show();
+            LoadTable();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -150,15 +153,15 @@ namespace quan_ly_kho.View.sanpham
             cl2.Value2 = "TÊN SẢN PHẨM";
             cl2.ColumnWidth = 30.0;
 
-            xls.Range cl3 = oSheet.get_Range("C3", "C3");
+            xls.Range cl3 = oSheet.get_Range("D3", "D3");
             cl3.Value2 = "SỐ LƯỢNG";
             cl3.ColumnWidth = 15.0;
 
-            xls.Range cl4 = oSheet.get_Range("D3", "D3");
+            xls.Range cl4 = oSheet.get_Range("E3", "E3");
             cl4.Value2 = "ĐƠN GIÁ";
             cl4.ColumnWidth = 20.0;
 
-            xls.Range cl5 = oSheet.get_Range("E3", "E3");
+            xls.Range cl5 = oSheet.get_Range("C3", "C3");
             cl5.Value2 = "XUẤT XỨ";
             cl5.ColumnWidth = 25.0;
 
@@ -193,11 +196,11 @@ namespace quan_ly_kho.View.sanpham
             range.Borders.LineStyle = xls.Constants.xlSolid;
 
             // Căn giữa cột số lượng
-            xls.Range slCol = oSheet.get_Range("C4", "C" + rowEnd.ToString());
+            xls.Range slCol = oSheet.get_Range("D4", "D" + rowEnd.ToString());
             slCol.HorizontalAlignment = xls.XlHAlign.xlHAlignCenter;
 
             // Định dạng tiền tệ cho đơn giá
-            xls.Range dgCol = oSheet.get_Range("D4", "D" + rowEnd.ToString());
+            xls.Range dgCol = oSheet.get_Range("E4", "E" + rowEnd.ToString());
             dgCol.NumberFormat = "#,##0.00";
         }
 
@@ -210,45 +213,74 @@ namespace quan_ly_kho.View.sanpham
         }
         private void ReadExcel(string filename)
         {
-            if (filename == null)
+            if (string.IsNullOrEmpty(filename))
             {
                 MessageBox.Show("Chưa chọn file");
+                return;
             }
-            else
+
+            xls.Application Excel = new xls.Application();
+            xls.Workbook workbook = null;
+
+            try
             {
-                xls.Application Excel = new xls.Application();
-                Excel.Workbooks.Open(filename);
+                workbook = Excel.Workbooks.Open(filename);
 
-                foreach (xls.Worksheet wsheet in Excel.Worksheets)
+                foreach (xls.Worksheet wsheet in workbook.Worksheets)
                 {
-                    int i = 2;  // dòng bắt đầu đọc
+                    int i = 2; // dòng bắt đầu đọc
 
-                    do
+                    while (true)
                     {
                         if (wsheet.Cells[i, 1].Value == null && wsheet.Cells[i, 2].Value == null)
                         {
                             break;
                         }
 
-                        SanPhamModel sp = new SanPhamModel();
-                        sp.masanpham = wsheet.Cells[i, 1].Value?.ToString();    // mã sản phẩm
-                        sp.tensanpham = wsheet.Cells[i, 2].Value?.ToString();   // tên sản phẩm
-                        sp.xuatxu = wsheet.Cells[i, 3].Value?.ToString();       // xuất xứ
-                        sp.soluong = int.Parse(wsheet.Cells[i, 4].Value.ToString()); // số lượng
-                        sp.dongia = float.Parse(wsheet.Cells[i, 5].Value.ToString()); // đơn giá
-                        sp.trangthai = 1; // mặc định trạng thái là 1 (đang dùng)
+                        try
+                        {
+                            SanPhamModel sp = new SanPhamModel();
+                            sp.masanpham = wsheet.Cells[i, 1].Value?.ToString();
+                            sp.tensanpham = wsheet.Cells[i, 2].Value?.ToString();
+                            sp.xuatxu = wsheet.Cells[i, 3].Value?.ToString();
+                            sp.soluong = int.Parse(wsheet.Cells[i, 4].Value.ToString());
+                            sp.dongia = float.Parse(wsheet.Cells[i, 5].Value.ToString());
+                            sp.trangthai = 1; // luôn gán mặc định là 1
 
-                        sanphamDAO dao = new sanphamDAO();
-                        dao.Insert(sp); // gọi hàm insert như bạn đang có
+                            sanphamDAO dao = new sanphamDAO();
+                            int result = dao.Insert(sp);
+                            if (result == 0)
+                            {
+                                MessageBox.Show("Không thể thêm dòng " + i + ": " + sp.masanpham);
+                            }
+                        }
+                        catch (Exception exRow)
+                        {
+                            MessageBox.Show("Lỗi dòng " + i + ": " + exRow.Message);
+                        }
 
                         i++;
                     }
-                    while (true);
-
-                    Excel.Workbooks.Close();
                 }
+
+                MessageBox.Show("Đã nhập xong từ Excel!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi đọc file Excel: " + ex.Message);
+            }
+            finally
+            {
+                if (workbook != null)
+                {
+                    workbook.Close(false);
+                }
+                Excel.Quit();
             }
         }
 
     }
 }
+
+    
+

@@ -96,6 +96,8 @@ namespace quan_ly_kho.View.phieunhap
                 tablesanpham.Columns["xuatxu"].HeaderText = "Xuất xứ";
                 tablesanpham.Columns["soluong"].HeaderText = "Số lượng";
                 tablesanpham.Columns["dongia"].HeaderText = "Đơn giá";
+                tablesanpham.Columns["dongia"].DefaultCellStyle.Format = "#,##0.##";
+
 
 
             }
