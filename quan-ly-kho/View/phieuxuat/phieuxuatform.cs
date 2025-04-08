@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using quan_ly_kho.Controller;
 using quan_ly_kho.DAO;
 
 namespace quan_ly_kho.View.phieuxuat
@@ -17,6 +18,7 @@ namespace quan_ly_kho.View.phieuxuat
         {
             InitializeComponent();
             LoadTable();
+
         }
 
         private void importexcelbtn_Click(object sender, EventArgs e)
@@ -40,19 +42,19 @@ namespace quan_ly_kho.View.phieuxuat
 
             if (dt != null && dt.Rows.Count > 0)
             {
-                tablechitietphieuxuat.DataSource = dt;
+                tabctpx.DataSource = dt;
 
-                tablechitietphieuxuat.Columns["maphieu"].HeaderText = "Mã phiếu xuất";
-                tablechitietphieuxuat.Columns["thoigiantao"].HeaderText = "Thời gian tạo";
-                tablechitietphieuxuat.Columns["nguoitao"].HeaderText = "Người tạo";
-                tablechitietphieuxuat.Columns["makhachhang"].HeaderText = "Mã khách hàng";
-                tablechitietphieuxuat.Columns["tongtien"].HeaderText = "Tổng tiền";
+                tabctpx.Columns["maphieu"].HeaderText = "Mã phiếu xuất";
+                tabctpx.Columns["thoigiantao"].HeaderText = "Thời gian tạo";
+                tabctpx.Columns["nguoitao"].HeaderText = "Người tạo";
+                tabctpx.Columns["makhachhang"].HeaderText = "Mã khách hàng";
+                tabctpx.Columns["tongtien"].HeaderText = "Tổng tiền";
 
-                tablechitietphieuxuat.Columns["tongtien"].DefaultCellStyle.Format = "#,##0.##";
+                tabctpx.Columns["tongtien"].DefaultCellStyle.Format = "#,##0.##";
             }
             else
             {
-                tablechitietphieuxuat.DataSource = null;
+                tabctpx.DataSource = null;
                 MessageBox.Show("Không có dữ liệu phiếu xuất.");
             }
         }

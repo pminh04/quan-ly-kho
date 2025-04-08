@@ -11,7 +11,7 @@ namespace quan_ly_kho.Controller
 {
     internal class DB
     {
-        public static SqlConnection con = new SqlConnection("Data Source=MSI;Initial Catalog=quanlykho;Persist Security Info=True;User ID=sa;Password=123456");
+        public static SqlConnection con = new SqlConnection("Data Source=PMinhpro;Initial Catalog=quanlykho;Persist Security Info=True;User ID=sa;Password=123456");
 
         public static void insert(string sql)
         {

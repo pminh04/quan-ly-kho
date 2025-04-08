@@ -10,7 +10,7 @@ namespace quan_ly_kho.DAO
 {
     internal class connection
     {
-        public static SqlConnection con = new SqlConnection("Data Source=MSI;Initial Catalog=quanlykho;Persist Security Info=True;User ID=sa;Password=123456");
+        public static SqlConnection con = new SqlConnection("Data Source=PMinhpro;Initial Catalog=quanlykho;Persist Security Info=True;User ID=sa;Password=123456");
         public static SqlConnection GetConnection()
         {
            

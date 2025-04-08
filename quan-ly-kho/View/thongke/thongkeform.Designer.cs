@@ -49,6 +49,11 @@
             this.xuatxucbx = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.sptab = new System.Windows.Forms.DataGridView();
+            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tensp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xuatxu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slnhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.loaislcbx = new System.Windows.Forms.ComboBox();
             this.to = new System.Windows.Forms.TextBox();
@@ -56,27 +61,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tensp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xuatxu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slnhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slxuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tiento = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tienfrom = new System.Windows.Forms.TextBox();
             this.timkiem_kh = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tabkh = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.khto = new System.Windows.Forms.TextBox();
             this.khfrom = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tienfrom = new System.Windows.Forms.TextBox();
-            this.tiento = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -254,7 +254,7 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1614, 951);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sản phẩm";
@@ -276,11 +276,11 @@
             // timkiem_sp
             // 
             this.timkiem_sp.Location = new System.Drawing.Point(349, 43);
-            this.timkiem_sp.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.timkiem_sp.Margin = new System.Windows.Forms.Padding(1);
             this.timkiem_sp.Name = "timkiem_sp";
             this.timkiem_sp.Size = new System.Drawing.Size(111, 30);
             this.timkiem_sp.TabIndex = 6;
-            this.timkiem_sp.Text = "Tìm kiếm";
+            this.timkiem_sp.Text = "Lọc";
             this.timkiem_sp.UseVisualStyleBackColor = true;
             this.timkiem_sp.Click += new System.EventHandler(this.timkiem_sp_Click);
             // 
@@ -324,6 +324,41 @@
             this.sptab.Size = new System.Drawing.Size(1074, 347);
             this.sptab.TabIndex = 1;
             // 
+            // masp
+            // 
+            this.masp.DataPropertyName = "masanpham";
+            this.masp.HeaderText = "Mã sản phẩm";
+            this.masp.MinimumWidth = 6;
+            this.masp.Name = "masp";
+            // 
+            // tensp
+            // 
+            this.tensp.DataPropertyName = "tensanpham";
+            this.tensp.HeaderText = "Tên sản phẩm";
+            this.tensp.MinimumWidth = 6;
+            this.tensp.Name = "tensp";
+            // 
+            // xuatxu
+            // 
+            this.xuatxu.DataPropertyName = "xuatxu";
+            this.xuatxu.HeaderText = "Xuất xứ";
+            this.xuatxu.MinimumWidth = 6;
+            this.xuatxu.Name = "xuatxu";
+            // 
+            // slnhap
+            // 
+            this.slnhap.DataPropertyName = "SoLuongNhap";
+            this.slnhap.HeaderText = "Số lượng nhập";
+            this.slnhap.MinimumWidth = 6;
+            this.slnhap.Name = "slnhap";
+            // 
+            // slxuat
+            // 
+            this.slxuat.DataPropertyName = "SoLuongXuat";
+            this.slxuat.HeaderText = "Số lượng xuất";
+            this.slxuat.MinimumWidth = 6;
+            this.slxuat.Name = "slxuat";
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -336,7 +371,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(14, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(811, 97);
+            this.groupBox1.Size = new System.Drawing.Size(593, 97);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lọc theo số lượng";
@@ -395,46 +430,11 @@
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1614, 951);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Khách hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // masp
-            // 
-            this.masp.DataPropertyName = "masanpham";
-            this.masp.HeaderText = "Mã sản phẩm";
-            this.masp.MinimumWidth = 6;
-            this.masp.Name = "masp";
-            // 
-            // tensp
-            // 
-            this.tensp.DataPropertyName = "tensanpham";
-            this.tensp.HeaderText = "Tên sản phẩm";
-            this.tensp.MinimumWidth = 6;
-            this.tensp.Name = "tensp";
-            // 
-            // xuatxu
-            // 
-            this.xuatxu.DataPropertyName = "xuatxu";
-            this.xuatxu.HeaderText = "Xuất xứ";
-            this.xuatxu.MinimumWidth = 6;
-            this.xuatxu.Name = "xuatxu";
-            // 
-            // slnhap
-            // 
-            this.slnhap.DataPropertyName = "SoLuongNhap";
-            this.slnhap.HeaderText = "Số lượng nhập";
-            this.slnhap.MinimumWidth = 6;
-            this.slnhap.Name = "slnhap";
-            // 
-            // slxuat
-            // 
-            this.slxuat.DataPropertyName = "SoLuongXuat";
-            this.slxuat.HeaderText = "Số lượng xuất";
-            this.slxuat.MinimumWidth = 6;
-            this.slxuat.Name = "slxuat";
             // 
             // groupBox3
             // 
@@ -451,6 +451,30 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lọc theo tổng giá trị";
             // 
+            // tiento
+            // 
+            this.tiento.Location = new System.Drawing.Point(285, 41);
+            this.tiento.Name = "tiento";
+            this.tiento.Size = new System.Drawing.Size(133, 30);
+            this.tiento.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(230, 44);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 20);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Đến";
+            // 
+            // tienfrom
+            // 
+            this.tienfrom.Location = new System.Drawing.Point(68, 42);
+            this.tienfrom.Name = "tienfrom";
+            this.tienfrom.Size = new System.Drawing.Size(133, 30);
+            this.tienfrom.TabIndex = 7;
+            // 
             // timkiem_kh
             // 
             this.timkiem_kh.Location = new System.Drawing.Point(475, 42);
@@ -458,7 +482,7 @@
             this.timkiem_kh.Name = "timkiem_kh";
             this.timkiem_kh.Size = new System.Drawing.Size(111, 30);
             this.timkiem_kh.TabIndex = 6;
-            this.timkiem_kh.Text = "Tìm kiếm";
+            this.timkiem_kh.Text = "Lọc";
             this.timkiem_kh.UseVisualStyleBackColor = true;
             this.timkiem_kh.Click += new System.EventHandler(this.timkiem_kh_Click);
             // 
@@ -468,7 +492,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(23, 47);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 25);
+            this.label7.Size = new System.Drawing.Size(31, 20);
             this.label7.TabIndex = 5;
             this.label7.Text = "Từ";
             // 
@@ -490,6 +514,34 @@
             this.tabkh.RowTemplate.Height = 24;
             this.tabkh.Size = new System.Drawing.Size(1075, 372);
             this.tabkh.TabIndex = 8;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "makhachhang";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã khách hàng";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "tenkhachhang";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách hàng";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "soluongdonhang";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Số lượng đơn hàng";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "tonggiatri";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tổng giá trị";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // groupBox4
             // 
@@ -540,58 +592,6 @@
             this.label9.Size = new System.Drawing.Size(31, 20);
             this.label9.TabIndex = 0;
             this.label9.Text = "Từ";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "makhachhang";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã khách hàng";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "tenkhachhang";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách hàng";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "soluongdonhang";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Số lượng đơn hàng";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "tonggiatri";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tổng giá trị";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // tienfrom
-            // 
-            this.tienfrom.Location = new System.Drawing.Point(68, 42);
-            this.tienfrom.Name = "tienfrom";
-            this.tienfrom.Size = new System.Drawing.Size(133, 30);
-            this.tienfrom.TabIndex = 7;
-            // 
-            // tiento
-            // 
-            this.tiento.Location = new System.Drawing.Point(285, 41);
-            this.tiento.Name = "tiento";
-            this.tiento.Size = new System.Drawing.Size(133, 30);
-            this.tiento.TabIndex = 9;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(230, 44);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 20);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Đến";
             // 
             // thongkeform
             // 

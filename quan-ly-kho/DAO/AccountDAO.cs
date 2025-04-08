@@ -18,7 +18,7 @@ namespace quan_ly_kho.DAO
         public DataTable getAllAccount()
         {
             DataTable dataTable = new DataTable();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM taikhoan", db.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT hoten,tendangnhap,email FROM taikhoan", db.getConnection);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
             try

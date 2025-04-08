@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace quan_ly_kho.Model
 {
-    internal class chitietphieuxuat
-    {
+    
         public class chitietphieuxuatmodel
         {
             public string maphieu { get; set; }
@@ -26,4 +25,4 @@ namespace quan_ly_kho.Model
             }
         }
     }
-}
+

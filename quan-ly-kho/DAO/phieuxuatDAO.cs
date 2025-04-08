@@ -7,38 +7,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using quan_ly_kho.Model;
+using System.Windows.Forms;
 namespace quan_ly_kho.DAO
 {
-    internal class phieuxuatDAO
+    public class phieuxuatDAO
     {
         private SqlConnection con = connection.GetConnection();
 
         public int Insert(phieuxuatmodel px)
         {
-            int result = 0;
+           // int result = 0;
             try
             {
                 con.Open();
-                string sql = "INSERT INTO phieuxuat (maphieu, thoigiantao, nguoitao, tongtien, makhachhang) VALUES (@maphieu, @thoigiantao, @nguoitao, @tongtien, @makhachhang)";
+                string sql = "INSERT INTO phieuxuat (maphieu, nguoitao, thoigiantao, makhachhang, tongtien) " +
+                             "VALUES (@maphieu, @nguoitao, @thoigiantao, @makhachhang, @tongtien)";
+
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@maphieu", px.maphieu);
-                cmd.Parameters.AddWithValue("@thoigiantao", px.thoigiantao);
                 cmd.Parameters.AddWithValue("@nguoitao", px.nguoitao);
-                cmd.Parameters.AddWithValue("@tongtien", px.tongtien);
+                cmd.Parameters.AddWithValue("@thoigiantao", px.thoigiantao);
                 cmd.Parameters.AddWithValue("@makhachhang", px.makhachhang);
-                result = cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@tongtien", px.tongtien);
+
+                return cmd.ExecuteNonQuery(); // Trả về số dòng bị ảnh hưởng
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Insert phiếu xuất thất bại: " + ex.Message);
+                MessageBox.Show("Lỗi thêm phiếu xuất: " + ex.Message);
+                return 0;
             }
             finally
             {
                 con.Close();
             }
-            return result;
         }
-
         public int Update(phieuxuatmodel px)
         {
             int result = 0;

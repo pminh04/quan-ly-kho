@@ -57,6 +57,7 @@ namespace quan_ly_kho.Controller
             to = int.Parse(tk.To);
             if (tk.Loaisl == "--Chọn số lượng--")
             {
+                MessageBox.Show("Vui lòng chọn số lượng cần lọc!");
                 return;
             }
             else if (tk.Loaisl == "Số lượng nhập")
@@ -69,13 +70,13 @@ namespace quan_ly_kho.Controller
                                 "FROM sanpham sp " +
                                 "LEFT JOIN chitietphieunhap ctpn ON sp.masanpham = ctpn.masanpham " +
                                 "WHERE " +
-                                "('" + tk.Xuatxu + "' = '-- Chọn dữ liệu --' OR sp.xuatxu LIKE '%" + tk.Xuatxu + "%') " +
+                                "('" + tk.Xuatxu + "' = '-- Chọn dữ liệu --' OR sp.xuatxu LIKE N'%" + tk.Xuatxu + "%') " +
                                 "GROUP BY " +
                                 "sp.masanpham, sp.tensanpham, sp.xuatxu " +
                                 "HAVING " +
-                                "(" + from + " IS NULL OR ISNULL(SUM(ctpn.soluong), 0) >= " + from + ") " +
+                                "(" + from + " ='' OR ISNULL(SUM(ctpn.soluong), 0) >= " + from + ") " +
                                 "AND " +
-                                "(" + to + " IS NULL OR ISNULL(SUM(ctpn.soluong), 0) <= " + to + ") " +
+                                "(" + to + " ='' OR ISNULL(SUM(ctpn.soluong), 0) <= " + to + ") " +
                                 "ORDER BY " +
                                 "sp.masanpham;";
 
@@ -91,7 +92,7 @@ namespace quan_ly_kho.Controller
                                 "FROM sanpham sp " +
                                 "LEFT JOIN chitietphieuxuat ctpx ON sp.masanpham = ctpx.masanpham " +
                                 "WHERE " +
-                                "('" + tk.Xuatxu + "' = '-- Chọn dữ liệu --' OR sp.xuatxu LIKE '%" + tk.Xuatxu + "%') " +
+                                "('" + tk.Xuatxu + "' = '-- Chọn dữ liệu --' OR sp.xuatxu LIKE N'%" + tk.Xuatxu + "%') " +
                                 "GROUP BY " +
                                 "sp.masanpham, sp.tensanpham, sp.xuatxu " +
                                 "HAVING " +
@@ -129,7 +130,17 @@ namespace quan_ly_kho.Controller
             DB.show_to_table(dgv, sql);
         }
 
+        public static void show_px(DataGridView dgv)
+        {
+            string sql = "SELECT * FROM phieuxuat ORDER BY thoigiantao DESC";
+            DB.show_to_table(dgv, sql);
+        }
 
+        public static void show_xh_sp(DataGridView dgv) 
+        {
+            string sql = "SELECT masanpham, tensanpham, xuatxu, soluong, dongia FROM sanpham WHERE trangThai = 1";
+            DB.show_to_table(dgv, sql);
+        }
 
     }
 }
