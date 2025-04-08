@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using quan_ly_kho.Controller;
+using quan_ly_kho.DAO;
 
 namespace quan_ly_kho.View.phieuxuat
 {
@@ -15,6 +17,14 @@ namespace quan_ly_kho.View.phieuxuat
         public phieuxuatform()
         {
             InitializeComponent();
+            LoadTable();
+
+        }
+
+        private void LoadTable()
+        {
+            loaddata.show_px(tabctpx);
+
         }
 
         private void importexcelbtn_Click(object sender, EventArgs e)

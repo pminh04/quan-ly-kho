@@ -97,7 +97,7 @@ namespace quan_ly_kho
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (customer.id != null)
+            if (customer != null)
             {
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?",
                                            "Xác nhận xóa",
@@ -115,6 +115,11 @@ namespace quan_ly_kho
                         MessageBox.Show("Không thể xóa khách hàng này! Vui lòng kiểm tra lại.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng muốn xóa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
         }
 

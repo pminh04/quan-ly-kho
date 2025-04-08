@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using quan_ly_kho.Controller;
 
 namespace quan_ly_kho.View.xuathang
 {
@@ -19,7 +20,7 @@ namespace quan_ly_kho.View.xuathang
 
         private void xuathang_Load(object sender, EventArgs e)
         {
-
+            loaddata.show_xh_sp(tablesanpham);
         }
 
         private void tablesanpham_CellContentClick(object sender, DataGridViewCellEventArgs e)

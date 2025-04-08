@@ -40,6 +40,11 @@ namespace quan_ly_kho
 
         private void xoabtn_Click(object sender, EventArgs e)
         {
+            if (selectedId == null)
+            {
+                MessageBox.Show("Vui lòng chọn dữ liệu cần xóa.");
+                return;
+            }
             Model.nhacungcap ncc = new Model.nhacungcap(selectedId);
             DialogResult result = MessageBox.Show("Có muốn xóa không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
