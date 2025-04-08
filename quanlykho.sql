@@ -1,4 +1,4 @@
--- tạo cơ sở dữ liệu
+﻿-- tạo cơ sở dữ liệu
 create database quanlykho;
 go
 
@@ -15,23 +15,47 @@ create table taikhoan (
     hoten nvarchar(50) null,
     tendangnhap nvarchar(50) not null,
     matkhau nvarchar(60) null,
-    vaitro nvarchar(50) null,
     trangthai int null,
     email nvarchar(50) null,
     constraint pk_taikhoan primary key (tendangnhap)
 );
 
+
 -- chèn dữ liệu vào bảng `taikhoan`
-insert into taikhoan (hoten, tendangnhap, matkhau, vaitro, trangthai, email) values
-('Admin', 'admin', '$2a$06$Xy33o2NBQ2X3l.S.dRxGnOnenFxTNuGk3BDnSPpe4cVKF4/ZJXNl6', 'Admin', 1, 'sinhbaoreact2003@gmail.com'),
-(N'Hoàng Gia Bảo', 'bobo', '$2a$12$PhiTGBbHjHoB3dbS6BmCC.rzdMCBqDrdK9Y8Ae8GPcKe1RpHiWARO', N'Nhân viên xuất', 1, 'hgiabao2k3@gmail.com'),
-(N'Trần Nhật Sinh', 'sinhsinh1122', '$2a$12$89As1J0AB0yrqGjnQUHtpevc6voGyvzAd8OvzkS1vGDo3YPO2P.Ia', N'Nhân viên nhập', 1, 'transinh342@gmail.com'),
-(N'Nguyễn Thiên Ân', 'thienan', '$2a$12$myOaq0kATMzNkbxgzQEkPu8ht2K0pXOGzZMZo6nSBowq6EyoLo7tS', N'Quản lý kho', 1, 'a11611112003@gmail.com');
+insert into taikhoan (hoten, tendangnhap, matkhau, trangthai, email) values
+('Admin', 'admin', '$2a$06$Xy33o2NBQ2X3l.S.dRxGnOnenFxTNuGk3BDnSPpe4cVKF4/ZJXNl6', 1, 'sinhbaoreact2003@gmail.com'),
+(N'Hoàng Gia Bảo', 'bobo', '$2a$12$PhiTGBbHjHoB3dbS6BmCC.rzdMCBqDrdK9Y8Ae8GPcKe1RpHiWARO', 1, 'hgiabao2k3@gmail.com'),
+(N'Trần Nhật Sinh', 'sinhsinh1122', '$2a$12$89As1J0AB0yrqGjnQUHtpevc6voGyvzAd8OvzkS1vGDo3YPO2P.Ia', 1, 'transinh342@gmail.com'),
+(N'Nguyễn Thiên Ân', 'thienan', '$2a$12$myOaq0kATMzNkbxgzQEkPu8ht2K0pXOGzZMZo6nSBowq6EyoLo7tS', 1, 'a11611112003@gmail.com');
+
+-- tạo bảng `sanpham`
+create table sanpham (
+    masanpham varchar(50) primary key,
+	tensanpham nvarchar(50) not null,
+	xuatxu nvarchar(50) not null,
+	soluong int,
+	dongia numeric(10,2),
+	trangthai int,
+   
+);
+
+-- chèn dữ liệu vào bảng `sanpham`
+insert into sanpham (masanpham, tensanpham, xuatxu, soluong, dongia, trangthai) values
+('SP1', N'GẠCH ỐP', N'Việt Nam', 36, 250000, 1),
+('SP10', N'GẠCH LÓT', N'Việt Nam', 106, 350000, 1),
+('SP2', N'GẠCH LÁT ĐƯỜNG', N'Việt Nam', 78, 226000, 1),
+('SP3', N'XỐP CÁCH ÂM', N'Nhật', 53, 340000, 1),
+('SP4', N'VÒI HOA SEN',  N'Trung Quốc', 42, 203000, 1),
+('SP6', N'TỦ QUẦN ÁO',  N'Hàn', 72, 12450000, 1),
+('SP7', N'ĐIỀU HÒA',  N'Hàn', 43, 1549900, 1),
+('SP8', N'BỒN CẦU', N'Trung Quốc', 20, 534000, 1),
+('SP9', N'BỒN RỬA MẶT', N'Trung Quốc', 25, 2500000, 1)
+
 
 -- tạo bảng `chitietphieunhap`
 create table chitietphieunhap (
     maphieu nvarchar(50) not null,
-    masanpham nvarchar(50) not null,
+    masanpham varchar(50) not null,
     soluong int null,
     dongia float null,
     constraint pk_chitietphieunhap primary key (maphieu, masanpham)
@@ -47,7 +71,7 @@ insert into chitietphieunhap (maphieu, masanpham, soluong, dongia) values
 -- tạo bảng `chitietphieuxuat`
 create table chitietphieuxuat (
     maphieu nvarchar(50) not null,
-    masanpham nvarchar(50) not null,
+    masanpham varchar(50) not null,
     soluong int null,
     dongia float null,
     constraint pk_chitietphieuxuat primary key (maphieu, masanpham)
@@ -146,29 +170,6 @@ insert into phieuxuat (maphieu, thoigiantao, nguoitao, tongtien, makhachhang) va
 ('PX8', '2024-10-18 22:35:49', 'Admin', 2500000, '1'),
 ('PX9', '2024-10-18 22:48:44', 'admin', 2703000, '6');
 
--- tạo bảng `sanpham`
-create table sanpham (
-    masanpham nvarchar(50) not null,
-    tensanpham nvarchar(100) null,
-    soluong int not null default 0,
-    dongia float not null default 0,
-    xuatxu nvarchar(50) null,
-    trangthai int null,
-    constraint pk_sanpham primary key (masanpham)
-);
-
--- chèn dữ liệu vào bảng `sanpham`
-insert into sanpham (masanpham, tensanpham, soluong, dongia, xuatxu, trangthai) values
-('SP1', N'GẠCH ỐP', 36, 250000, N'Việt Nam', 1),
-('SP10', N'GẠCH LÓT', 106, 350000, N'Việt Nam', 1),
-('SP2', N'GẠCH LÁT ĐƯỜNG', 78, 226000, N'Việt Nam', 1),
-('SP3', N'XỐP CÁCH ÂM', 53, 340000, N'Nhật', 1),
-('SP4', N'VÒI HOA SEN', 42, 203000, N'Trung Quốc', 1),
-('SP5', N'TỦ BẾP', 55, 5230000, N'Trung Quốc', 1),
-('SP6', N'TỦ QUẦN ÁO', 72, 12450000, N'Hàn', 1),
-('SP7', N'ĐIỀU HÒA', 43, 15499000, N'Hàn', 1),
-('SP8', N'ĐÈN', 63, 534000, N'Hàn', 1),
-('SP9', N'GHẾ', 10, 2500000, N'Nhật', 1);
 
 -- thêm ràng buộc khóa ngoại
 alter table chitietphieunhap
@@ -181,7 +182,3 @@ alter table chitietphieuxuat
 
 commit transaction;
 go
-
-select * from sanpham
-SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
-
