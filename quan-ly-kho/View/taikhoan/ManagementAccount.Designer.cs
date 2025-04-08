@@ -35,6 +35,9 @@ namespace QLVatTu
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagementAccount));
             this.dgvAccount = new System.Windows.Forms.DataGridView();
+            this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tennguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -95,6 +98,30 @@ namespace QLVatTu
             this.dgvAccount.Size = new System.Drawing.Size(1121, 477);
             this.dgvAccount.TabIndex = 1;
             this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick_1);
+            // 
+            // hoten
+            // 
+            this.hoten.DataPropertyName = "hoten";
+            this.hoten.HeaderText = "Họ tên";
+            this.hoten.MinimumWidth = 6;
+            this.hoten.Name = "hoten";
+            this.hoten.ReadOnly = true;
+            // 
+            // tennguoidung
+            // 
+            this.tennguoidung.DataPropertyName = "tendangnhap";
+            this.tennguoidung.HeaderText = "Tên người dùng";
+            this.tennguoidung.MinimumWidth = 6;
+            this.tennguoidung.Name = "tennguoidung";
+            this.tennguoidung.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
             // panel1
             // 
