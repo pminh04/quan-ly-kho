@@ -190,7 +190,6 @@
             this.txtnguoitao.Name = "txtnguoitao";
             this.txtnguoitao.Size = new System.Drawing.Size(259, 27);
             this.txtnguoitao.TabIndex = 12;
-            this.txtnguoitao.TextChanged += new System.EventHandler(this.txtnguoitao_TextChanged);
             // 
             // label7
             // 

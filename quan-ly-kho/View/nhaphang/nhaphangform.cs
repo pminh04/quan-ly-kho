@@ -118,12 +118,22 @@ namespace quan_ly_kho.View.nhaphang
 
                 decimal dongia = Convert.ToDecimal(row.Cells["dongia"].Value);
 
-                // Lấy số lượng từ TextBox (nếu không nhập thì mặc định là 1)
                 int soluong = 1;
                 if (!string.IsNullOrEmpty(txtsoluong.Text))
                 {
-                    int.TryParse(txtsoluong.Text, out soluong);
+                    if (!int.TryParse(txtsoluong.Text, out soluong) || soluong <= 0)
+                    {
+                        MessageBox.Show("Vui lòng nhập số lượng hợp lệ (> 0).");
+                        return;
+                    }
+
+                    if (soluong > 1000) // giới hạn tối đa mỗi lần nhập
+                    {
+                        MessageBox.Show("Bạn chỉ được nhập tối đa 1000 sản phẩm mỗi lần.");
+                        return;
+                    }
                 }
+
 
                 // Gọi hàm thêm hoặc cập nhật sản phẩm vào bảng nhập hàng
                 LoadSoLuongVaoNhapHang(masanpham, soluong, dongia);

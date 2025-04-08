@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using quan_ly_kho.DAO;
 using quan_ly_kho.Model;
-using static quan_ly_kho.Model.chitietphieuxuat;
+using static quan_ly_kho.Model.chitietphieuxuatmodel;
 
 namespace quan_ly_kho.View.xuathang
 {
@@ -117,14 +117,35 @@ namespace quan_ly_kho.View.xuathang
             }
 
             DataGridViewRow row = tablesanpham.SelectedRows[0];
+            if (tablesanpham.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn sản phẩm.");
+                return;
+            }
+
+            //DataGridViewRow row = tablesanpham.SelectedRows[0];
             string masanpham = row.Cells["masanpham"].Value.ToString();
+            int soluongTon = Convert.ToInt32(row.Cells["soluong"].Value); // số lượng tồn kho
             decimal dongia = Convert.ToDecimal(row.Cells["dongia"].Value);
+
+            // Kiểm tra số lượng muốn xuất
             int soluong = 1;
             if (!string.IsNullOrEmpty(txtsoluong.Text))
             {
-                int.TryParse(txtsoluong.Text, out soluong);
+                if (!int.TryParse(txtsoluong.Text, out soluong) || soluong <= 0)
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng hợp lệ (> 0).");
+                    return;
+                }
+
+                if (soluong > soluongTon)
+                {
+                    MessageBox.Show("Số lượng xuất vượt quá số lượng tồn kho.");
+                    return;
+                }
             }
 
+            // Thêm vào bảng chi tiết phiếu xuất
             LoadSoLuongVaoXuatHang(masanpham, soluong, dongia);
         }
         private void LoadSoLuongVaoXuatHang(string masanpham, int soluong, decimal dongia)
