@@ -208,17 +208,7 @@ namespace quan_ly_kho
 
         private void mainform_Load(object sender, EventArgs e)
         {
-            sanphamform f1 = new sanphamform();
-            f1.TopLevel = false;
-            f1.FormBorderStyle = FormBorderStyle.None;
-            f1.Dock = DockStyle.Fill;
-            if (showform.Controls.Count > 0)
-            {
-                showform.Controls.Clear();
-            }
-            showform.Controls.Add(f1);
-            f1.BringToFront();
-            f1.Show();
+            
         }
     }
 }
