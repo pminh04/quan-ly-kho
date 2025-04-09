@@ -25,9 +25,9 @@ namespace quan_ly_kho.View.thongke
         {
             loaddata.show_thongke_kh(tabkh);
             loaddata.show_thongke_sp(sptab);
-            soluongsp.Text = DB.count("sanpham").ToString();
+            soluongsp.Text = DB.count("sanpham where trangthai = 1").ToString();
             soluongncc.Text = DB.count("nhacungcap").ToString();
-            soluongtk.Text = DB.count("taikhoan").ToString();
+            soluongtk.Text = DB.count("khachhang").ToString();
             loaddata.show_cbx_xuatxu(xuatxucbx);
             loaislcbx.SelectedIndex = 0;
         }
@@ -80,6 +80,24 @@ namespace quan_ly_kho.View.thongke
         private void timkiem_kh_Click(object sender, EventArgs e)
         {
             search_data_kh();
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            sanpham_tk_form sp = new sanpham_tk_form();
+            sp.Show();
+        }
+
+        private void panel3_Click(object sender, EventArgs e)
+        {
+            ncc_tk_form ncc = new ncc_tk_form();
+            ncc.Show();
+        }
+
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            taikhoan_tk_form tk = new taikhoan_tk_form();
+            tk.Show();
         }
     }
 }

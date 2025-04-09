@@ -313,6 +313,24 @@
     <Compile Include="View\taikhoan\UpdateAccount.Designer.cs">
       <DependentUpon>UpdateAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\thongke\ncc_tk_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\thongke\ncc_tk_form.Designer.cs">
+      <DependentUpon>ncc_tk_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\thongke\sanpham_tk_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\thongke\sanpham_tk_form.Designer.cs">
+      <DependentUpon>sanpham_tk_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\thongke\taikhoan_tk_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\thongke\taikhoan_tk_form.Designer.cs">
+      <DependentUpon>taikhoan_tk_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\thongke\thongkeform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -392,6 +410,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\taikhoan\UpdateAccount.resx">
       <DependentUpon>UpdateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\thongke\ncc_tk_form.resx">
+      <DependentUpon>ncc_tk_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\thongke\sanpham_tk_form.resx">
+      <DependentUpon>sanpham_tk_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\thongke\taikhoan_tk_form.resx">
+      <DependentUpon>taikhoan_tk_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\thongke\thongkeform.resx">
       <DependentUpon>thongkeform.cs</DependentUpon>

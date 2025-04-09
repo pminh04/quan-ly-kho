@@ -77,6 +77,7 @@
             this.khfrom = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -105,12 +106,12 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(4, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1622, 301);
+            this.panel1.Size = new System.Drawing.Size(1622, 182);
             this.panel1.TabIndex = 0;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(112)))), ((int)(((byte)(107)))));
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.soluongtk);
@@ -118,22 +119,29 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(323, 127);
             this.panel4.TabIndex = 2;
+            this.panel4.Click += new System.EventHandler(this.panel4_Click);
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(124, 75);
+            this.label4.Location = new System.Drawing.Point(151, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 23);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Người dùng";
+            this.label4.Text = "Khách hàng";
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 15);
+            this.pictureBox3.Location = new System.Drawing.Point(30, 15);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(96, 95);
             this.pictureBox3.TabIndex = 4;
@@ -141,10 +149,13 @@
             // 
             // soluongtk
             // 
+            this.soluongtk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.soluongtk.AutoSize = true;
             this.soluongtk.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soluongtk.ForeColor = System.Drawing.Color.White;
-            this.soluongtk.Location = new System.Drawing.Point(122, 30);
+            this.soluongtk.Location = new System.Drawing.Point(149, 30);
             this.soluongtk.Name = "soluongtk";
             this.soluongtk.Size = new System.Drawing.Size(86, 32);
             this.soluongtk.TabIndex = 3;
@@ -152,7 +163,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            this.panel3.BackColor = System.Drawing.Color.Green;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.soluongncc);
@@ -160,13 +171,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(323, 127);
             this.panel3.TabIndex = 1;
+            this.panel3.Click += new System.EventHandler(this.panel3_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(124, 75);
+            this.label1.Location = new System.Drawing.Point(146, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 23);
             this.label1.TabIndex = 5;
@@ -174,8 +189,11 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 15);
+            this.pictureBox2.Location = new System.Drawing.Point(31, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(96, 95);
             this.pictureBox2.TabIndex = 4;
@@ -183,10 +201,13 @@
             // 
             // soluongncc
             // 
+            this.soluongncc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.soluongncc.AutoSize = true;
             this.soluongncc.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soluongncc.ForeColor = System.Drawing.Color.White;
-            this.soluongncc.Location = new System.Drawing.Point(122, 30);
+            this.soluongncc.Location = new System.Drawing.Point(144, 30);
             this.soluongncc.Name = "soluongncc";
             this.soluongncc.Size = new System.Drawing.Size(86, 32);
             this.soluongncc.TabIndex = 3;
@@ -194,7 +215,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(203)))), ((int)(((byte)(0)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(157)))), ((int)(((byte)(55)))));
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.soluongsp);
@@ -202,13 +223,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(323, 127);
             this.panel2.TabIndex = 0;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(137, 75);
+            this.label2.Location = new System.Drawing.Point(136, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(177, 23);
             this.label2.TabIndex = 2;
@@ -217,7 +239,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(96, 95);
             this.pictureBox1.TabIndex = 1;
@@ -228,7 +250,7 @@
             this.soluongsp.AutoSize = true;
             this.soluongsp.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.soluongsp.ForeColor = System.Drawing.Color.White;
-            this.soluongsp.Location = new System.Drawing.Point(135, 30);
+            this.soluongsp.Location = new System.Drawing.Point(134, 30);
             this.soluongsp.Name = "soluongsp";
             this.soluongsp.Size = new System.Drawing.Size(86, 32);
             this.soluongsp.TabIndex = 0;
@@ -241,10 +263,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(4, 211);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(4, 200);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1622, 980);
+            this.tabControl1.Size = new System.Drawing.Size(1118, 531);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -252,10 +276,10 @@
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.sptab);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1614, 951);
+            this.tabPage1.Size = new System.Drawing.Size(1110, 496);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sản phẩm";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -321,7 +345,7 @@
             this.sptab.Name = "sptab";
             this.sptab.RowHeadersWidth = 51;
             this.sptab.RowTemplate.Height = 24;
-            this.sptab.Size = new System.Drawing.Size(1074, 347);
+            this.sptab.Size = new System.Drawing.Size(1074, 341);
             this.sptab.TabIndex = 1;
             // 
             // masp
@@ -428,10 +452,10 @@
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.tabkh);
             this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1614, 951);
+            this.tabPage2.Size = new System.Drawing.Size(1110, 496);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Khách hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -512,7 +536,7 @@
             this.tabkh.Name = "tabkh";
             this.tabkh.RowHeadersWidth = 51;
             this.tabkh.RowTemplate.Height = 24;
-            this.tabkh.Size = new System.Drawing.Size(1075, 372);
+            this.tabkh.Size = new System.Drawing.Size(1075, 366);
             this.tabkh.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
@@ -592,6 +616,16 @@
             this.label9.Size = new System.Drawing.Size(31, 20);
             this.label9.TabIndex = 0;
             this.label9.Text = "Từ";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1110, 496);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Phiếu";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // thongkeform
             // 
@@ -680,5 +714,6 @@
         private System.Windows.Forms.TextBox tienfrom;
         private System.Windows.Forms.TextBox tiento;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }

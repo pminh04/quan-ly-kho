@@ -52,55 +52,68 @@ namespace quan_ly_kho.Controller
 
         public static void search_thongke_sp(DataGridView dgv,Model.thongke_model_sp tk)
         {
-            int from, to;
-            from = int.Parse(tk.From);
-            to = int.Parse(tk.To);
+            //int from, to;
+            //from = int.Parse(tk.From);
+            //to = int.Parse(tk.To);
+
+            string whereClause = "('" + tk.Xuatxu + "' = '-- Chọn dữ liệu --' OR sp.xuatxu LIKE N'%" + tk.Xuatxu + "%')";
+
+            string havingClause = "";
+
+            // Nếu cả From và To đều có giá trị
+            if (!string.IsNullOrEmpty(tk.From) && !string.IsNullOrEmpty(tk.To))
+            {
+                havingClause = "ISNULL(SUM(ctpn.soluong), 0) >= " + tk.From +
+                               " OR ISNULL(SUM(ctpn.soluong), 0) <= " + tk.To;
+            }
+            else if (!string.IsNullOrEmpty(tk.From))
+            {
+                havingClause = "ISNULL(SUM(ctpn.soluong), 0) >= " + tk.From;
+            }
+            else if (!string.IsNullOrEmpty(tk.To))
+            {
+                havingClause = "ISNULL(SUM(ctpn.soluong), 0) <= " + tk.To;
+            }
+            else
+            {
+                havingClause = "1=1"; // không lọc theo số lượng
+            }
+
             if (tk.Loaisl == "--Chọn số lượng--")
             {
-                MessageBox.Show("Vui lòng chọn số lượng cần lọc!");
-                return;
+                    string sql = "SELECT sp.masanpham, sp.tensanpham, sp.xuatxu, " +
+                                    "ISNULL(SUM(ctpn.soluong), 0) AS soluongnhap " +
+                                    "FROM sanpham sp " +
+                                    "LEFT JOIN chitietphieunhap ctpn ON sp.masanpham = ctpn.masanpham " +
+                                    "WHERE " + whereClause + " " +
+                                    "GROUP BY sp.masanpham, sp.tensanpham, sp.xuatxu " +
+                                    "HAVING " + havingClause + " " +
+                                    "ORDER BY sp.masanpham;";
+                    DB.show_to_table(dgv, sql);
             }
             else if (tk.Loaisl == "Số lượng nhập")
             {
-                string sqlNhap = "SELECT " +
-                                "sp.masanpham, " +
-                                "sp.tensanpham, " +
-                                "sp.xuatxu, " +
-                                "ISNULL(SUM(ctpn.soluong), 0) AS SoLuongNhap " +
+                string sqlNhap ="SELECT sp.masanpham,sp.tensanpham,sp.xuatxu, " +
+                                "ISNULL(SUM(ctpn.soluong), 0) AS soluongnhap " +
                                 "FROM sanpham sp " +
                                 "LEFT JOIN chitietphieunhap ctpn ON sp.masanpham = ctpn.masanpham " +
-                                "WHERE " +
-                                "('" + tk.Xuatxu + "' = '-- Chọn dữ liệu --' OR sp.xuatxu LIKE N'%" + tk.Xuatxu + "%') " +
-                                "GROUP BY " +
-                                "sp.masanpham, sp.tensanpham, sp.xuatxu " +
-                                "HAVING " +
-                                "(" + from + " ='' OR ISNULL(SUM(ctpn.soluong), 0) >= " + from + ") " +
-                                "AND " +
-                                "(" + to + " ='' OR ISNULL(SUM(ctpn.soluong), 0) <= " + to + ") " +
-                                "ORDER BY " +
-                                "sp.masanpham;";
+                                "WHERE " + whereClause + " " +
+                                "GROUP BY sp.masanpham, sp.tensanpham, sp.xuatxu " +
+                                "HAVING " + havingClause + " " +
+                                "ORDER BY sp.masanpham;";
 
                 DB.show_to_table(dgv, sqlNhap);
             }
             else
             {
-                string sqlXuat = "SELECT " +
-                                "sp.masanpham, " +
-                                "sp.tensanpham, " +
-                                "sp.xuatxu, " +
-                                "ISNULL(SUM(ctpx.soluong), 0) AS SoLuongXuat " +
+                string sqlXuat = "SELECT sp.masanpham,sp.tensanpham,sp.xuatxu, " +
+                                "ISNULL(SUM(ctpx.soluong), 0) AS soluongxuat " +
                                 "FROM sanpham sp " +
                                 "LEFT JOIN chitietphieuxuat ctpx ON sp.masanpham = ctpx.masanpham " +
-                                "WHERE " +
-                                "('" + tk.Xuatxu + "' = '-- Chọn dữ liệu --' OR sp.xuatxu LIKE N'%" + tk.Xuatxu + "%') " +
-                                "GROUP BY " +
-                                "sp.masanpham, sp.tensanpham, sp.xuatxu " +
-                                "HAVING " +
-                                "('" + from + "' IS NULL OR ISNULL(SUM(ctpx.soluong), 0) >= '" + from + "') " +
-                                "AND " +
-                                "('" + to + "' IS NULL OR ISNULL(SUM(ctpx.soluong), 0) <= '" + to + "') " +
-                                "ORDER BY " +
-                                "sp.masanpham;";
+                                "WHERE " + whereClause + " " +
+                                "GROUP BY sp.masanpham, sp.tensanpham, sp.xuatxu " +
+                                "HAVING " + havingClause + " " +
+                                "ORDER BY sp.masanpham;";
 
                 DB.show_to_table(dgv, sqlXuat);
             }
@@ -139,6 +152,23 @@ namespace quan_ly_kho.Controller
         public static void show_xh_sp(DataGridView dgv) 
         {
             string sql = "SELECT masanpham, tensanpham, xuatxu, soluong, dongia FROM sanpham WHERE trangThai = 1";
+            DB.show_to_table(dgv, sql);
+        }
+
+        public static void show_sp_tk(DataGridView dgv)
+        {
+            string sql = "SELECT masanpham,tensanpham FROM sanpham WHERE trangThai = 1";
+            DB.show_to_table(dgv, sql);
+        }
+
+        public static void show_ncc_tk(DataGridView dgv)
+        {
+            string sql = "SELECT manhacungcap,tennhacungcap FROM nhacungcap";
+            DB.show_to_table(dgv, sql);
+        }
+        public static void show_kh_tk(DataGridView dgv)
+        {
+            string sql = "SELECT id,hoten FROM khachhang";
             DB.show_to_table(dgv, sql);
         }
 
