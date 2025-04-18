@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLVatTu;
+using quan_ly_kho.Controller;
 using quan_ly_kho.View.nhaphang;
 using quan_ly_kho.View.phieunhap;
 using quan_ly_kho.View.phieuxuat;
@@ -24,6 +25,11 @@ namespace quan_ly_kho
         private Color defaultColor = Color.FromArgb(0, 128, 0);
         private Color activeColor = Color.FromArgb(76, 175, 80);
         private Button[] buttons;
+
+        //drag form
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
 
         private void ChangeButtonColor(Button clickedButton)
         {
@@ -51,15 +57,44 @@ namespace quan_ly_kho
                 btn.Click += (s, e) => ChangeButtonColor(s as Button);
                 btn.BackColor = defaultColor;
             }
-            //
 
-            //timkiemcbx
-            //timkiemcbx.AutoSize = false;
-            //timkiemcbx.Size = new Size(103, 30);
-            //
+
+            //drag form
+            panel1.MouseDown += Panel1_MouseDown;
+            panel1.MouseMove += Panel1_MouseMove;
+            panel1.MouseUp += Panel1_MouseUp;
+
+            //rounded conners
+            int connerRadius = 10;
+            Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
+            this.Region = new Region(Rounded_Conners.RoundedConners(bounds, connerRadius, true, true, true, true));
         }
 
-        
+        //drag form function
+        private void Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dragging = true;
+                dragCursorPoint = Cursor.Position;
+                dragFormPoint = this.Location;
+            }
+        }
+
+        private void Panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point diff = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(diff));
+            }
+        }
+
+        private void Panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+        //
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
         {
@@ -209,6 +244,16 @@ namespace quan_ly_kho
         private void mainform_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

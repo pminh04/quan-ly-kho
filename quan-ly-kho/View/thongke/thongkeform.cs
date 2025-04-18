@@ -99,5 +99,25 @@ namespace quan_ly_kho.View.thongke
             taikhoan_tk_form tk = new taikhoan_tk_form();
             tk.Show();
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

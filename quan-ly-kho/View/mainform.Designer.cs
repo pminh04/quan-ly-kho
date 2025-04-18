@@ -57,6 +57,12 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.showform = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.minimize = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.close = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.sppanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,6 +76,9 @@
             this.title.SuspendLayout();
             this.timkiemp.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -87,9 +96,9 @@
             this.sidebar.Controls.Add(this.panel7);
             this.sidebar.Controls.Add(this.panel8);
             this.sidebar.Controls.Add(this.panel10);
-            this.sidebar.Location = new System.Drawing.Point(12, 70);
+            this.sidebar.Location = new System.Drawing.Point(11, 119);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(271, 699);
+            this.sidebar.Size = new System.Drawing.Size(271, 768);
             this.sidebar.TabIndex = 0;
             // 
             // sppanel
@@ -346,9 +355,9 @@
             this.title.Controls.Add(this.timkiemcbx);
             this.title.Controls.Add(this.label1);
             this.title.Controls.Add(this.panel9);
-            this.title.Location = new System.Drawing.Point(12, 12);
+            this.title.Location = new System.Drawing.Point(12, 61);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1502, 52);
+            this.title.Size = new System.Drawing.Size(1520, 52);
             this.title.TabIndex = 3;
             // 
             // timkiemtext
@@ -356,7 +365,7 @@
             this.timkiemtext.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timkiemtext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timkiemtext.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timkiemtext.Location = new System.Drawing.Point(603, 11);
+            this.timkiemtext.Location = new System.Drawing.Point(612, 11);
             this.timkiemtext.Name = "timkiemtext";
             this.timkiemtext.Size = new System.Drawing.Size(447, 28);
             this.timkiemtext.TabIndex = 3;
@@ -365,7 +374,7 @@
             // 
             this.timkiemp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timkiemp.Controls.Add(this.timkiembtn);
-            this.timkiemp.Location = new System.Drawing.Point(1056, 8);
+            this.timkiemp.Location = new System.Drawing.Point(1065, 8);
             this.timkiemp.Name = "timkiemp";
             this.timkiemp.Size = new System.Drawing.Size(58, 37);
             this.timkiemp.TabIndex = 0;
@@ -388,7 +397,7 @@
             this.timkiemcbx.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timkiemcbx.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timkiemcbx.FormattingEnabled = true;
-            this.timkiemcbx.Location = new System.Drawing.Point(493, 11);
+            this.timkiemcbx.Location = new System.Drawing.Point(502, 11);
             this.timkiemcbx.Name = "timkiemcbx";
             this.timkiemcbx.Size = new System.Drawing.Size(103, 28);
             this.timkiemcbx.TabIndex = 2;
@@ -402,16 +411,16 @@
             this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 37);
+            this.label1.Size = new System.Drawing.Size(276, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Quản lý kho vật tư";
+            this.label1.Text = "Chào mừng, Mr X";
             // 
             // panel9
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.button9);
-            this.panel9.Location = new System.Drawing.Point(1442, 5);
+            this.panel9.Location = new System.Drawing.Point(1460, 5);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(47, 42);
             this.panel9.TabIndex = 0;
@@ -436,10 +445,88 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.showform.BackColor = System.Drawing.Color.White;
             this.showform.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.showform.Location = new System.Drawing.Point(290, 71);
+            this.showform.Location = new System.Drawing.Point(288, 119);
             this.showform.Name = "showform";
-            this.showform.Size = new System.Drawing.Size(1222, 698);
+            this.showform.Size = new System.Drawing.Size(1240, 768);
             this.showform.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.AllowDrop = true;
+            this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.panel12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1544, 43);
+            this.panel1.TabIndex = 5;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseUp);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.SystemColors.Window;
+            this.panel11.Controls.Add(this.minimize);
+            this.panel11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel11.Location = new System.Drawing.Point(1453, 2);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(37, 38);
+            this.panel11.TabIndex = 4;
+            // 
+            // minimize
+            // 
+            this.minimize.BackColor = System.Drawing.Color.Green;
+            this.minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimize.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimize.ForeColor = System.Drawing.Color.White;
+            this.minimize.Location = new System.Drawing.Point(-14, -10);
+            this.minimize.Name = "minimize";
+            this.minimize.Size = new System.Drawing.Size(64, 54);
+            this.minimize.TabIndex = 0;
+            this.minimize.Text = "-";
+            this.minimize.UseVisualStyleBackColor = false;
+            this.minimize.Click += new System.EventHandler(this.minimize_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(199, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Quản lý kho vật tư";
+            // 
+            // panel12
+            // 
+            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel12.BackColor = System.Drawing.SystemColors.Window;
+            this.panel12.Controls.Add(this.close);
+            this.panel12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel12.Location = new System.Drawing.Point(1496, 2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(37, 38);
+            this.panel12.TabIndex = 1;
+            // 
+            // close
+            // 
+            this.close.BackColor = System.Drawing.Color.Green;
+            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close.ForeColor = System.Drawing.Color.White;
+            this.close.Location = new System.Drawing.Point(-14, -10);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(64, 54);
+            this.close.TabIndex = 0;
+            this.close.Text = "X";
+            this.close.UseVisualStyleBackColor = false;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // mainform
             // 
@@ -447,10 +534,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(1526, 781);
+            this.ClientSize = new System.Drawing.Size(1544, 899);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.showform);
             this.Controls.Add(this.title);
             this.Controls.Add(this.sidebar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1544, 828);
             this.Name = "mainform";
             this.Text = "Form1";
@@ -469,6 +558,10 @@
             this.title.PerformLayout();
             this.timkiemp.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -503,5 +596,11 @@
         private System.Windows.Forms.Button timkiembtn;
         private System.Windows.Forms.Panel timkiemp;
         public System.Windows.Forms.Panel showform;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button minimize;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button close;
     }
 }

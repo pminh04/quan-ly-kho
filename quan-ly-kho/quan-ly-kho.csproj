@@ -155,6 +155,7 @@
     <Compile Include="Controller\checkrule.cs" />
     <Compile Include="Controller\DB.cs" />
     <Compile Include="Controller\loaddata.cs" />
+    <Compile Include="Controller\Rounded_Conners.cs" />
     <Compile Include="Controller\Sua.cs" />
     <Compile Include="Controller\Them.cs" />
     <Compile Include="Controller\Xoa.cs" />
@@ -184,6 +185,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\log.Designer.cs">
+      <DependentUpon>log.cs</DependentUpon>
     </Compile>
     <Compile Include="View\khachhang\AddCustomer.cs">
       <SubType>Form</SubType>
@@ -343,6 +350,9 @@
     <Compile Include="View\xuathang\xuathangform.Designer.cs">
       <DependentUpon>xuathangform.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\log.resx">
+      <DependentUpon>log.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\khachhang\AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -468,6 +478,7 @@
     <Content Include="icons\icons1\icons8-supplier-40.png" />
     <Content Include="icons\icons1\icons8-trash-can-50.png" />
     <Content Include="icons\icons1\icons8-user-40.png" />
+    <None Include="icons\icons1\loc.png" />
     <Content Include="icons\icons2\excel.png" />
     <Content Include="icons\icons2\image-removebg-preview %281%29.png" />
     <Content Include="icons\icons2\image-removebg-preview %282%29.png" />

@@ -82,8 +82,10 @@ namespace quan_ly_kho.Controller
             if (tk.Loaisl == "--Chọn số lượng--")
             {
                     string sql = "SELECT sp.masanpham, sp.tensanpham, sp.xuatxu, " +
+                                    "ISNULL(SUM(ctpx.soluong), 0) AS soluongxuat, " +
                                     "ISNULL(SUM(ctpn.soluong), 0) AS soluongnhap " +
                                     "FROM sanpham sp " +
+                                    "LEFT JOIN chitietphieuxuat ctpx ON sp.masanpham = ctpx.mascanpham " +
                                     "LEFT JOIN chitietphieunhap ctpn ON sp.masanpham = ctpn.masanpham " +
                                     "WHERE " + whereClause + " " +
                                     "GROUP BY sp.masanpham, sp.tensanpham, sp.xuatxu " +
