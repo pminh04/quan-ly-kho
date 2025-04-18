@@ -20,7 +20,7 @@ namespace quan_ly_kho.Controller
 
         public static void show_thongke_sp(DataGridView dgv)
         {
-            string sql = "SELECT sp.masanpham, sp.tensanpham, sp.xuatxu, " +
+            string sql = "SELECT sp.masanpham, sp.tensanpham, sp.xuatxu,sp.soluong " +
                          "ISNULL(SUM(ctpn.soluong), 0) AS SoLuongNhap, " +
                          "ISNULL(SUM(ctpx.soluong), 0) AS SoLuongXuat " +
                          "FROM sanpham sp " +

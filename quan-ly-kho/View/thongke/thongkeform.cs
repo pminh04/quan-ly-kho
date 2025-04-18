@@ -55,22 +55,6 @@ namespace quan_ly_kho.View.thongke
             loaddata.search_thongke_kh(tabkh, tk_kh);
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xuatxucbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void loaislcbx_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void timkiem_sp_Click(object sender, EventArgs e)
         {
@@ -100,24 +84,7 @@ namespace quan_ly_kho.View.thongke
             tk.Show();
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
