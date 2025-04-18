@@ -16,17 +16,18 @@ create table taikhoan (
     tendangnhap nvarchar(50) not null,
     matkhau nvarchar(60) null,
     trangthai int null,
+	vaitro nvarchar not null,
     email nvarchar(50) null,
     constraint pk_taikhoan primary key (tendangnhap)
 );
 
 
 -- chèn dữ liệu vào bảng `taikhoan`
-insert into taikhoan (hoten, tendangnhap, matkhau, trangthai, email) values
-('Admin', 'admin', '$2a$06$Xy33o2NBQ2X3l.S.dRxGnOnenFxTNuGk3BDnSPpe4cVKF4/ZJXNl6', 1, 'sinhbaoreact2003@gmail.com'),
-(N'Hoàng Gia Bảo', 'bobo', '$2a$12$PhiTGBbHjHoB3dbS6BmCC.rzdMCBqDrdK9Y8Ae8GPcKe1RpHiWARO', 1, 'hgiabao2k3@gmail.com'),
-(N'Trần Nhật Sinh', 'sinhsinh1122', '$2a$12$89As1J0AB0yrqGjnQUHtpevc6voGyvzAd8OvzkS1vGDo3YPO2P.Ia', 1, 'transinh342@gmail.com'),
-(N'Nguyễn Thiên Ân', 'thienan', '$2a$12$myOaq0kATMzNkbxgzQEkPu8ht2K0pXOGzZMZo6nSBowq6EyoLo7tS', 1, 'a11611112003@gmail.com');
+insert into taikhoan (hoten, tendangnhap, matkhau, trangthai,vaitro, email) values
+('Admin', 'admin', '$2a$06$Xy33o2NBQ2X3l.S.dRxGnOnenFxTNuGk3BDnSPpe4cVKF4/ZJXNl6', 1, 'admin','pminh04@gmail.com'),
+(N'Phạm Hoàng Minh', 'pminh', '$2a$12$PhiTGBbHjHoB3dbS6BmCC.rzdMCBqDrdK9Y8Ae8GPcKe1RpHiWARO', 1, N'Nhân Viên', 'pminh@gmail.com'),
+(N'Nguyễn Thị Anh', 'nta', '$2a$12$89As1J0AB0yrqGjnQUHtpevc6voGyvzAd8OvzkS1vGDo3YPO2P.Ia', 1, N'Nhân Viên', 'nta@gmail.com'),
+(N'Bùi Mỹ Duyên', 'duyen', '$2a$12$myOaq0kATMzNkbxgzQEkPu8ht2K0pXOGzZMZo6nSBowq6EyoLo7tS', 1, N'Nhân Viên', 'duyen@gmail.com');
 
 -- tạo bảng `sanpham`
 create table sanpham (
@@ -180,6 +181,10 @@ alter table chitietphieuxuat
     add constraint fk_chitietphieuxuat_phieuxuat foreign key (maphieu) references phieuxuat (maphieu),
         constraint fk_chitietphieuxuat_sanpham foreign key (masanpham) references sanpham (masanpham);
 
+
+commit transaction;
+go
+
 create trigger trg_UpdateTrangThaiSanPham
 on sanpham
 after insert, update
@@ -195,10 +200,6 @@ begin
     from sanpham s
     inner join inserted i on s.masanpham = i.masanpham;
 end;
-commit transaction;
-go
-
-
 
 select * from sanpham
 SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
