@@ -16,14 +16,14 @@ create table taikhoan (
     tendangnhap nvarchar(50) not null,
     matkhau nvarchar(60) null,
     trangthai int null,
-	vaitro nvarchar not null,
+	vaitro nvarchar(50) not null,
     email nvarchar(50) null,
     constraint pk_taikhoan primary key (tendangnhap)
 );
 
 
 -- chèn dữ liệu vào bảng `taikhoan`
-insert into taikhoan (hoten, tendangnhap, matkhau, trangthai,vaitro, email) values
+insert into taikhoan (hoten, tendangnhap, matkhau, trangthai, vaitro, email) values
 ('Admin', 'admin', '$2a$06$Xy33o2NBQ2X3l.S.dRxGnOnenFxTNuGk3BDnSPpe4cVKF4/ZJXNl6', 1, 'admin','pminh04@gmail.com'),
 (N'Phạm Hoàng Minh', 'pminh', '$2a$12$PhiTGBbHjHoB3dbS6BmCC.rzdMCBqDrdK9Y8Ae8GPcKe1RpHiWARO', 1, N'Nhân Viên', 'pminh@gmail.com'),
 (N'Nguyễn Thị Anh', 'nta', '$2a$12$89As1J0AB0yrqGjnQUHtpevc6voGyvzAd8OvzkS1vGDo3YPO2P.Ia', 1, N'Nhân Viên', 'nta@gmail.com'),
@@ -34,6 +34,7 @@ create table sanpham (
     masanpham varchar(50) primary key,
 	tensanpham nvarchar(50) not null,
 	xuatxu nvarchar(50) not null,
+	loaisanpham nvarchar(100) not null,
 	soluong int,
 	dongia numeric(10,2),
 	trangthai int,
@@ -41,16 +42,16 @@ create table sanpham (
 );
 
 -- chèn dữ liệu vào bảng `sanpham`
-insert into sanpham (masanpham, tensanpham, xuatxu, soluong, dongia, trangthai) values
-('SP1', N'GẠCH ỐP', N'Việt Nam', 36, 250000, 1),
-('SP10', N'GẠCH LÓT', N'Việt Nam', 106, 350000, 1),
-('SP2', N'GẠCH LÁT ĐƯỜNG', N'Việt Nam', 78, 226000, 1),
-('SP3', N'XỐP CÁCH ÂM', N'Nhật', 53, 340000, 1),
-('SP4', N'VÒI HOA SEN',  N'Trung Quốc', 42, 203000, 1),
-('SP6', N'TỦ QUẦN ÁO',  N'Hàn', 72, 12450000, 1),
-('SP7', N'ĐIỀU HÒA',  N'Hàn', 43, 1549900, 1),
-('SP8', N'BỒN CẦU', N'Trung Quốc', 20, 534000, 1),
-('SP9', N'BỒN RỬA MẶT', N'Trung Quốc', 25, 2500000, 1)
+insert into sanpham (masanpham, tensanpham, xuatxu, loaisanpham, soluong, dongia, trangthai) values
+('SP1', N'GẠCH ỐP', N'Việt Nam',N'GẠCH' , 36, 250000, 1),
+('SP10', N'GẠCH LÓT', N'Việt Nam',N'GẠCH' , 106, 350000, 1),
+('SP2', N'GẠCH LÁT ĐƯỜNG', N'Việt Nam',N'GẠCH' , 78, 226000, 1),
+('SP3', N'XỐP CÁCH ÂM', N'Nhật',N'XỐP' , 53, 340000, 1),
+('SP4', N'VÒI HOA SEN',  N'Trung Quốc',N'GIA DỤNG' , 42, 203000, 1),
+('SP6', N'TỦ QUẦN ÁO',  N'Hàn',N'GIA DỤNG' , 72, 12450000, 1),
+('SP7', N'ĐIỀU HÒA',  N'Hàn',N'GIA DỤNG' , 43, 1549900, 1),
+('SP8', N'BỒN CẦU', N'Trung Quốc',N'GIA DỤNG' , 20, 534000, 1),
+('SP9', N'BỒN RỬA MẶT', N'Trung Quốc',N'GIA DỤNG' , 25, 2500000, 1)
 
 
 -- tạo bảng `chitietphieunhap`
@@ -201,6 +202,6 @@ begin
     inner join inserted i on s.masanpham = i.masanpham;
 end;
 
-select * from sanpham
-SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
+--select * from phieunhap
+--SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
 

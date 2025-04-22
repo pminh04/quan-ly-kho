@@ -822,6 +822,7 @@
             // 
             // tonkho
             // 
+            this.tonkho.DataPropertyName = "soluong";
             this.tonkho.HeaderText = "Tồn kho";
             this.tonkho.MinimumWidth = 6;
             this.tonkho.Name = "tonkho";

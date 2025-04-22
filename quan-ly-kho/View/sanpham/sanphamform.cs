@@ -34,7 +34,7 @@ namespace quan_ly_kho.View.sanpham
                 tablesanpham.Columns["masanpham"].HeaderText = "Mã sản phẩm";
                 tablesanpham.Columns["tensanpham"].HeaderText = "Tên sản phẩm";
                 tablesanpham.Columns["xuatxu"].HeaderText = "Xuất xứ";
-                tablesanpham.Columns["soluong"].HeaderText = "Số lượng";
+                tablesanpham.Columns["loaisanpham"].HeaderText = "Loại sản phẩm";
                 tablesanpham.Columns["dongia"].HeaderText = "Đơn giá";
                 tablesanpham.Columns["dongia"].DefaultCellStyle.Format = "#,##0.##";
 

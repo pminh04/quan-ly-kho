@@ -124,17 +124,14 @@
   <data name="icons8-supplier-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-supplier-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-logout-25 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\icons1\icons8-logout-25 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-in-transit-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\icons1\icons8-in-transit-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8-pdf-60" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-pdf-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-trash-can-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\icons1\icons8-trash-can-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-logout-25 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\icons1\icons8-logout-25 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-shopping-cart-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\icons1\icons8-shopping-cart-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-edit-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-edit-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +139,11 @@
   <data name="icons8-add-male-user-group-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-add-male-user-group-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-shopping-cart-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\icons1\icons8-shopping-cart-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-in-transit-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\icons1\icons8-in-transit-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-user-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\icons1\icons8-user-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-logout-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-logout-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,6 +163,9 @@
   <data name="icons8-export-excel-60" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-export-excel-60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\icons1\loc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-search-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-search-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,8 +184,8 @@
   <data name="icons8-cheque-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-cheque-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-user-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\icons1\icons8-user-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-trash-can-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\icons1\icons8-trash-can-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-add-male-user-group-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-add-male-user-group-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,7 +193,7 @@
   <data name="icons8-pdf-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons1\icons8-pdf-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\icons1\loc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="them" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\icons2\them.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

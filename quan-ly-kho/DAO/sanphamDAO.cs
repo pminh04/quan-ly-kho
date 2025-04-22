@@ -143,6 +143,27 @@ namespace quan_ly_kho.DAO
             try
             {
                 con.Open();
+                string sql = "SELECT masanpham, tensanpham, xuatxu, loaisanpham, dongia FROM sanpham WHERE trangThai = 1";
+                SqlDataAdapter da = new SqlDataAdapter(sql, con);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SelectExist thất bại: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SelectExistPhieu()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                con.Open();
                 string sql = "SELECT masanpham, tensanpham, xuatxu, soluong, dongia FROM sanpham WHERE trangThai = 1";
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
                 da.Fill(dt);

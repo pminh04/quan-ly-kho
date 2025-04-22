@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLVatTu;
 using quan_ly_kho.Controller;
+using quan_ly_kho.View;
 using quan_ly_kho.View.nhaphang;
 using quan_ly_kho.View.phieunhap;
 using quan_ly_kho.View.phieuxuat;
 using quan_ly_kho.View.sanpham;
 using quan_ly_kho.View.thongke;
 using quan_ly_kho.View.xuathang;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace quan_ly_kho
 {
@@ -48,6 +50,7 @@ namespace quan_ly_kho
         public mainform()
         {
             InitializeComponent();
+            
             //button color
             buttons = new Button[] { sanpham, nhacungcap, khachhang, nhaphang, phieunhap,xuathang,phieuxuat,thongke,taikhoan };
 
@@ -119,6 +122,7 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
         }
 
         private void nhacungcap_Click(object sender, EventArgs e)
@@ -134,6 +138,7 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
         }
 
         private void phieunhap_Click(object sender, EventArgs e)
@@ -149,6 +154,8 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
+
         }
 
         private void nhaphang_Click(object sender, EventArgs e)
@@ -164,6 +171,8 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
+
         }
 
         private void xuathang_Click(object sender, EventArgs e)
@@ -179,6 +188,8 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
+
         }
 
         private void phieuxuat_Click(object sender, EventArgs e)
@@ -194,6 +205,8 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
+
         }
 
         private void thongke_Click(object sender, EventArgs e)
@@ -209,6 +222,8 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
+
         }
 
         private void taikhoan_Click(object sender, EventArgs e)
@@ -224,6 +239,8 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
+
         }
 
         private void khachhang_Click(object sender, EventArgs e)
@@ -239,11 +256,12 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
+            search();
         }
 
         private void mainform_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void minimize_Click(object sender, EventArgs e)
@@ -253,7 +271,99 @@ namespace quan_ly_kho
 
         private void close_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                log logform = new log();
+                logform.Show();
+            }
+        }
+
+        //search
+        private void search()
+        {
+            if (showform.Controls.Count > 0)
+            {
+                Control currentControl = showform.Controls[0];
+                timkiemcbx.Visible = true;
+                timkiemtext.Visible = true;
+                timkiembtn.Visible = true;
+
+                if (currentControl is sanphamform)
+                {
+
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm", "Tên sản phẩm", "Xuất xứ", "Loại hàng" });
+                    timkiemcbx.SelectedIndex = 0;
+
+                }
+                else if (currentControl is nhacungcapform)
+                {
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã nhà cung cấp", "Tên nhà cung cấp", "Số điện thoại", "Địa chỉ" });
+                    timkiemcbx.SelectedIndex = 0;
+                }
+                else if (currentControl is ManagementCustomer)
+                {
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Tên khách hàng", "Email", "Số điện thoại", "Địa chỉ" });
+                    timkiemcbx.SelectedIndex = 0;
+                }
+                else if (currentControl is chitietphieunhapform)
+                {
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã phiếu", "Thời gian", "Người tạo", "Mã nhà cung cấp", "Tổng giá trị" });
+                    timkiemcbx.SelectedIndex = 0;
+                }
+                else if (currentControl is nhaphangform)
+                {
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm" });
+                    timkiemcbx.SelectedIndex = 0;
+                }
+                else if (currentControl is xuathangform)
+                {
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm" });
+                    timkiemcbx.SelectedIndex = 0;
+                }
+                else if (currentControl is phieuxuatform)
+                {
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã phiếu", "Thời gian", "Người tạo", "Mã khách hàng", "Tổng giá trị" });
+                    timkiemcbx.SelectedIndex = 0;
+                }
+                else if (currentControl is thongkeform)
+                {
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Visible = false;
+                    timkiemtext.Visible = false;
+                    timkiembtn.Visible = false;
+
+                }
+                else if (currentControl is ManagementAccount)
+                {
+                    timkiemcbx.Items.Clear();
+                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Tên người dùng", "Vai trò", "Email" });
+                    timkiemcbx.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn chức năng thích hợp.");
+                    timkiemcbx.Items.Clear();
+                }
+            }
+
+        }
+
+
+
+
     }
 }

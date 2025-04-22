@@ -41,7 +41,7 @@ namespace quan_ly_kho.View.thongke
                 to.Text,
                 xuatxucbx.Text
                 );
-            loaddata.search_thongke_sp(sptab, tk);
+            timkiem.search_thongke_sp(sptab, tk);
         }
         public void search_data_kh()
         {
@@ -52,7 +52,7 @@ namespace quan_ly_kho.View.thongke
                 tienfrom.Text,
                 tiento.Text
                 );
-            loaddata.search_thongke_kh(tabkh, tk_kh);
+            timkiem.search_thongke_kh(tabkh, tk_kh);
         }
 
 

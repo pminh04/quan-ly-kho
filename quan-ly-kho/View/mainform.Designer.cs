@@ -55,7 +55,7 @@
             this.timkiemcbx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
             this.showform = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -357,7 +357,7 @@
             this.title.Controls.Add(this.panel9);
             this.title.Location = new System.Drawing.Point(12, 61);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1520, 52);
+            this.title.Size = new System.Drawing.Size(1516, 52);
             this.title.TabIndex = 3;
             // 
             // timkiemtext
@@ -365,7 +365,7 @@
             this.timkiemtext.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timkiemtext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timkiemtext.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timkiemtext.Location = new System.Drawing.Point(612, 11);
+            this.timkiemtext.Location = new System.Drawing.Point(610, 11);
             this.timkiemtext.Name = "timkiemtext";
             this.timkiemtext.Size = new System.Drawing.Size(447, 28);
             this.timkiemtext.TabIndex = 3;
@@ -374,7 +374,7 @@
             // 
             this.timkiemp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timkiemp.Controls.Add(this.timkiembtn);
-            this.timkiemp.Location = new System.Drawing.Point(1065, 8);
+            this.timkiemp.Location = new System.Drawing.Point(1063, 8);
             this.timkiemp.Name = "timkiemp";
             this.timkiemp.Size = new System.Drawing.Size(58, 37);
             this.timkiemp.TabIndex = 0;
@@ -395,11 +395,12 @@
             // timkiemcbx
             // 
             this.timkiemcbx.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.timkiemcbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.timkiemcbx.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timkiemcbx.FormattingEnabled = true;
-            this.timkiemcbx.Location = new System.Drawing.Point(502, 11);
+            this.timkiemcbx.Location = new System.Drawing.Point(472, 11);
             this.timkiemcbx.Name = "timkiemcbx";
-            this.timkiemcbx.Size = new System.Drawing.Size(103, 28);
+            this.timkiemcbx.Size = new System.Drawing.Size(131, 28);
             this.timkiemcbx.TabIndex = 2;
             // 
             // label1
@@ -419,24 +420,25 @@
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.Controls.Add(this.button9);
-            this.panel9.Location = new System.Drawing.Point(1460, 5);
+            this.panel9.Controls.Add(this.logout);
+            this.panel9.Location = new System.Drawing.Point(1456, 5);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(47, 42);
             this.panel9.TabIndex = 0;
             // 
-            // button9
+            // logout
             // 
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.Location = new System.Drawing.Point(-14, -6);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(74, 52);
-            this.button9.TabIndex = 1;
-            this.button9.UseVisualStyleBackColor = false;
+            this.logout.BackColor = System.Drawing.Color.White;
+            this.logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
+            this.logout.Location = new System.Drawing.Point(-14, -6);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(74, 52);
+            this.logout.TabIndex = 1;
+            this.logout.UseVisualStyleBackColor = false;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // showform
             // 
@@ -587,7 +589,7 @@
         private System.Windows.Forms.Button phieuxuat;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button thongke;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button taikhoan;

@@ -35,9 +35,6 @@ namespace QLVatTu
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagementAccount));
             this.dgvAccount = new System.Windows.Forms.DataGridView();
-            this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tennguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -52,6 +49,7 @@ namespace QLVatTu
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tennguoidung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vaitro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.panel1.SuspendLayout();
@@ -79,6 +77,7 @@ namespace QLVatTu
             this.dgvAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hoten,
             this.tennguoidung,
+            this.vaitro,
             this.email});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -98,30 +97,6 @@ namespace QLVatTu
             this.dgvAccount.Size = new System.Drawing.Size(1121, 477);
             this.dgvAccount.TabIndex = 1;
             this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick_1);
-            // 
-            // hoten
-            // 
-            this.hoten.DataPropertyName = "hoten";
-            this.hoten.HeaderText = "Họ tên";
-            this.hoten.MinimumWidth = 6;
-            this.hoten.Name = "hoten";
-            this.hoten.ReadOnly = true;
-            // 
-            // tennguoidung
-            // 
-            this.tennguoidung.DataPropertyName = "tendangnhap";
-            this.tennguoidung.HeaderText = "Tên người dùng";
-            this.tennguoidung.MinimumWidth = 6;
-            this.tennguoidung.Name = "tennguoidung";
-            this.tennguoidung.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "Email";
-            this.email.MinimumWidth = 6;
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
             // 
             // panel1
             // 
@@ -293,6 +268,14 @@ namespace QLVatTu
             this.tennguoidung.Name = "tennguoidung";
             this.tennguoidung.ReadOnly = true;
             // 
+            // vaitro
+            // 
+            this.vaitro.DataPropertyName = "vaitro";
+            this.vaitro.HeaderText = "Vai trò";
+            this.vaitro.MinimumWidth = 6;
+            this.vaitro.Name = "vaitro";
+            this.vaitro.ReadOnly = true;
+            // 
             // email
             // 
             this.email.DataPropertyName = "email";
@@ -338,6 +321,7 @@ namespace QLVatTu
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoten;
         private System.Windows.Forms.DataGridViewTextBoxColumn tennguoidung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vaitro;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
     }
 }

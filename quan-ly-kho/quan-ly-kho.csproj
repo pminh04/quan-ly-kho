@@ -158,6 +158,7 @@
     <Compile Include="Controller\Rounded_Conners.cs" />
     <Compile Include="Controller\Sua.cs" />
     <Compile Include="Controller\Them.cs" />
+    <Compile Include="Controller\timkiem.cs" />
     <Compile Include="Controller\Xoa.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\chitietphieunhapDAO.cs" />

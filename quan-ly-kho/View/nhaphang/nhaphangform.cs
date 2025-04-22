@@ -23,7 +23,7 @@ namespace quan_ly_kho.View.nhaphang
         private void LoadTable()
         {
             sanphamDAO dao = new sanphamDAO(); // khởi tạo DAO
-            DataTable dt = dao.SelectExist();  // lấy sp có trạng thái = 1
+            DataTable dt = dao.SelectExistPhieu();  // lấy sp có trạng thái = 1
 
             if (dt != null && dt.Rows.Count > 0)
             {

@@ -23,7 +23,7 @@ namespace quan_ly_kho.View.xuathang
         private void LoadTable()
         {
             sanphamDAO dao = new sanphamDAO();
-            DataTable dt = dao.SelectExist();
+            DataTable dt = dao.SelectExistPhieu();
 
             if (dt != null && dt.Rows.Count > 0)
             {
