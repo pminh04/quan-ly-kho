@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLVatTu;
 using quan_ly_kho.Controller;
+using quan_ly_kho.Model;
 using quan_ly_kho.View;
 using quan_ly_kho.View.nhaphang;
 using quan_ly_kho.View.phieunhap;
@@ -123,6 +124,10 @@ namespace quan_ly_kho
             f1.BringToFront();
             f1.Show();
             search();
+
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm", "Tên sản phẩm", "Xuất xứ", "Loại hàng" });
+            timkiemcbx.SelectedIndex = 0;
         }
 
         private void nhacungcap_Click(object sender, EventArgs e)
@@ -297,10 +302,10 @@ namespace quan_ly_kho
 
                 if (currentControl is sanphamform)
                 {
-
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm", "Tên sản phẩm", "Xuất xứ", "Loại hàng" });
-                    timkiemcbx.SelectedIndex = 0;
+                    SanPhamModel sp = new SanPhamModel(
+                        timkiemcbx.Text,
+                        timkiemtext.Text
+                        );
 
                 }
                 else if (currentControl is nhacungcapform)
@@ -361,9 +366,5 @@ namespace quan_ly_kho
             }
 
         }
-
-
-
-
     }
 }

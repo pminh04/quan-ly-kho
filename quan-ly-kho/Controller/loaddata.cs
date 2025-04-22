@@ -81,5 +81,7 @@ namespace quan_ly_kho.Controller
             DB.show_to_table(dgv, sql);
         }
 
+
+
     }
 }

@@ -18,16 +18,40 @@ namespace quan_ly_kho.Controller
     internal class timkiem
     {
 
-        private void timkiemsp(DataGridView dgv, Model.SanPhamModel sp)
+        public static void timkiemsp(DataGridView dgv, Model.SanPhamModel sp)
         {
-            string whereClause = " AND (sp.masanpham LIKE N'%" + sp.tukhoa + "%' " +
+            string whereClause = "sp.masanpham LIKE N'%" + sp.tukhoa + "%' " +
                                  "OR sp.tensanpham LIKE N'%" + sp.tukhoa + "%' " +
                                  "OR sp.xuatxu LIKE N'%" + sp.tukhoa + "%' " +
                                  "OR sp.loaisanpham LIKE N'%" + sp.tukhoa + "%')";
             
             if (sp.loaitk == "--Chọn--")
             {
-                
+                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where"+
+                                 "sp.masanpham LIKE N'%" + sp.tukhoa + "%' " +
+                                 "OR sp.tensanpham LIKE N'%" + sp.tukhoa + "%' " +
+                                 "OR sp.xuatxu LIKE N'%" + sp.tukhoa + "%' " +
+                                 "OR sp.loaisanpham LIKE N'%" + sp.tukhoa + "%')";
+                DB.show_to_table(dgv, sql);
+            }else if (sp.loaitk == "Mã sản phẩm")
+            {
+                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where sp.masanpham LIKE N'%" + sp.tukhoa + "%'";
+                DB.show_to_table(dgv, sql);
+            }
+            else if (sp.loaitk == "Tên sản phẩm")
+            {
+                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where sp.tensanpham LIKE N'%" + sp.tukhoa + "%'";
+                DB.show_to_table(dgv, sql);
+            }
+            else if (sp.loaitk == "Xuất xứ")
+            {
+                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where sp.xuatxu LIKE N'%" + sp.tukhoa + "%' ";
+                DB.show_to_table(dgv, sql);
+            }
+            else if (sp.loaitk == "Loại hàng")
+            {
+                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where sp.loaisanpham LIKE N'%" + sp.tukhoa + "%'";
+                DB.show_to_table(dgv, sql);
             }
         }
 

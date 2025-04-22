@@ -17,6 +17,7 @@ namespace quan_ly_kho.View.sanpham
 {
     public partial class sanphamform : Form
     {
+        public DataGridView instancesp => tablesanpham;//getter
         public sanphamform()
         {
             InitializeComponent();
