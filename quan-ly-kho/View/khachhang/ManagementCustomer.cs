@@ -15,7 +15,11 @@ namespace quan_ly_kho
 {
     public partial class ManagementCustomer : Form
     {
-
+        public void Loaddgv(DataTable dt)
+        {
+            dgvCustomer.DataSource = dt;
+        }
+        //
         KhachHangDAO khachHang = new KhachHangDAO();
         Customer customer;
 

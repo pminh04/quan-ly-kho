@@ -13,6 +13,8 @@ namespace quan_ly_kho.Model
         public string nguoitao { get; set; }
         public string manhacungcap { get; set; }
         public double tongtien { get; set; }
+        public string loaitk { get; set; }
+        public string tukhoa { get; set; }
 
         public phieunhapmodel() { }
 
@@ -24,7 +26,11 @@ namespace quan_ly_kho.Model
             this.manhacungcap = manhacungcap;
             this.tongtien = tongtien;
         }
-
+        public phieunhapmodel(string loaitk,string tukhoa)
+        {
+            this.loaitk = loaitk;
+            this.tukhoa = tukhoa;
+        }
         public override string ToString()
         {
             return "[{maphieu}] NCC: {manhacungcap}, Người tạo: {nguoitao}, Tổng tiền: {tongtien}đ";

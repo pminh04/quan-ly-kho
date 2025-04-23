@@ -13,6 +13,26 @@ namespace quan_ly_kho.Controller
     {
         public static SqlConnection con = new SqlConnection("Data Source=PMinhpro;Initial Catalog=quanlykho;Persist Security Info=True;User ID=sa;Password=123456");
 
+        public static DataTable selectsearch(string sql)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand(sql, con);
+            
+            SqlDataAdapter ad = new SqlDataAdapter();
+            ad.SelectCommand = cmd;
+
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
+
+            return dt;
+        }
         public static void insert(string sql)
         {
             if (con.State == ConnectionState.Closed)

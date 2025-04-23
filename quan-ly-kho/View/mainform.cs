@@ -19,6 +19,7 @@ using quan_ly_kho.View.sanpham;
 using quan_ly_kho.View.thongke;
 using quan_ly_kho.View.xuathang;
 using static System.Net.Mime.MediaTypeNames;
+using static quan_ly_kho.Model.chitietphieunhap;
 
 namespace quan_ly_kho
 {
@@ -72,6 +73,8 @@ namespace quan_ly_kho
             int connerRadius = 10;
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
             this.Region = new Region(Rounded_Conners.RoundedConners(bounds, connerRadius, true, true, true, true));
+
+
         }
 
         //drag form function
@@ -123,11 +126,14 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
-
+            
+            //
             timkiemcbx.Items.Clear();
             timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm", "Tên sản phẩm", "Xuất xứ", "Loại hàng" });
             timkiemcbx.SelectedIndex = 0;
+            timkiemcbx.Visible = true;
+            timkiemtext.Visible = true;
+            timkiembtn.Visible = true;
         }
 
         private void nhacungcap_Click(object sender, EventArgs e)
@@ -143,7 +149,14 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
+            
+            //
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã nhà cung cấp", "Tên nhà cung cấp", "Số điện thoại", "Địa chỉ" });
+            timkiemcbx.SelectedIndex = 0;
+            timkiemcbx.Visible = true;
+            timkiemtext.Visible = true;
+            timkiembtn.Visible = true;
         }
 
         private void phieunhap_Click(object sender, EventArgs e)
@@ -159,7 +172,16 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
+            
+            //
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã phiếu", "Thời gian tạo", "Người tạo", "Mã nhà cung cấp"});
+            timkiemcbx.SelectedIndex = 0;
+            timkiemcbx.Visible = true;
+            timkiemtext.Visible = true;
+            timkiembtn.Visible = true;
+
+
 
         }
 
@@ -176,7 +198,14 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
+            
+            //
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm" });
+            timkiemcbx.SelectedIndex = 0;
+            timkiemcbx.Visible = true;
+            timkiemtext.Visible = true;
+            timkiembtn.Visible = true;
 
         }
 
@@ -193,7 +222,14 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
+            
+            //
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm" });
+            timkiemcbx.SelectedIndex = 0;
+            timkiemcbx.Visible = true;
+            timkiemtext.Visible = true;
+            timkiembtn.Visible = true;
 
         }
 
@@ -210,7 +246,14 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
+            
+            //
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã phiếu", "Thời gian tạo", "Người tạo", "Mã khách hàng"});
+            timkiemcbx.SelectedIndex = 0;
+            timkiemcbx.Visible = true;
+            timkiemtext.Visible = true;
+            timkiembtn.Visible = true;
 
         }
 
@@ -227,7 +270,12 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
+            
+            //
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Visible = false;
+            timkiemtext.Visible = false;
+            timkiembtn.Visible = false;
 
         }
 
@@ -244,8 +292,14 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
-
+            
+            //
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Tên người dùng", "Vai trò", "Email" });
+            timkiemcbx.SelectedIndex = 0;
+            timkiemcbx.Visible = true;
+            timkiemtext.Visible = true;
+            timkiembtn.Visible = true;
         }
 
         private void khachhang_Click(object sender, EventArgs e)
@@ -261,7 +315,14 @@ namespace quan_ly_kho
             showform.Controls.Add(f1);
             f1.BringToFront();
             f1.Show();
-            search();
+            
+            //
+            timkiemcbx.Items.Clear();
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã khách hàng", "Tên khách hàng", "Email", "Số điện thoại", "Địa chỉ" });
+            timkiemcbx.SelectedIndex = 0;
+            timkiemcbx.Visible = true;
+            timkiemtext.Visible = true;
+            timkiembtn.Visible = true;
         }
 
         private void mainform_Load(object sender, EventArgs e)
@@ -290,73 +351,85 @@ namespace quan_ly_kho
             }
         }
 
-        //search
-        private void search()
+
+
+        private void timkiembtn_Click(object sender, EventArgs e)
         {
             if (showform.Controls.Count > 0)
             {
                 Control currentControl = showform.Controls[0];
-                timkiemcbx.Visible = true;
-                timkiemtext.Visible = true;
-                timkiembtn.Visible = true;
 
-                if (currentControl is sanphamform)
+                if (currentControl is sanphamform spform)
                 {
                     SanPhamModel sp = new SanPhamModel(
                         timkiemcbx.Text,
                         timkiemtext.Text
                         );
+                    DataTable dt = timkiem.timkiemsp(sp);
+                    spform.Loaddgv(dt);
+                }
+                else if (currentControl is nhacungcapform nccform)
+                {
+                    nhacungcapmodel ncc = new nhacungcapmodel(
+                        timkiemcbx.Text,
+                        timkiemtext.Text
+                        );
+                    DataTable dt = timkiem.timkiemncc(ncc);
+                    nccform.Loaddgv(dt);
+                }
+                else if (currentControl is ManagementCustomer khform)
+                {
+                    Customer kh = new Customer(
+                        timkiemcbx.Text,
+                        timkiemtext.Text
+                        );
+                    DataTable dt = timkiem.timkiemkh(kh);
+                    khform.Loaddgv(dt);
+                }
+                else if (currentControl is chitietphieunhapform ctpnform)
+                {
+                    string datePicker = datepicker.Value.ToString("yyyy-MM-dd");
 
+                    chitietphieunhap.chitietphieunhapmodel ctpn = new chitietphieunhap.chitietphieunhapmodel(
+                        timkiemcbx.Text,
+                        timkiemtext.Text,
+                        datePicker
+                        );
+                    
+                    DataTable dt = timkiem.timkiemctpn(ctpn);
+                    ctpnform.Loaddgv(dt);
+
+                    if (timkiemcbx.Text == "Thời gian tạo")
+                    {
+                        timkiemtext.Visible = false;
+                        datepicker.Visible = true;
+                    }
                 }
-                else if (currentControl is nhacungcapform)
+                else if (currentControl is nhaphangform nhform)
                 {
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã nhà cung cấp", "Tên nhà cung cấp", "Số điện thoại", "Địa chỉ" });
-                    timkiemcbx.SelectedIndex = 0;
+                    phieunhapmodel pn = new phieunhapmodel(
+                        timkiemcbx.Text,
+                        timkiemtext.Text
+                        );
+                    DataTable dt = timkiem.timkiempn(pn);
+                    nhform.Loaddgv(dt);
                 }
-                else if (currentControl is ManagementCustomer)
+                else if (currentControl is xuathangform xhform)
                 {
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Tên khách hàng", "Email", "Số điện thoại", "Địa chỉ" });
-                    timkiemcbx.SelectedIndex = 0;
-                }
-                else if (currentControl is chitietphieunhapform)
-                {
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã phiếu", "Thời gian", "Người tạo", "Mã nhà cung cấp", "Tổng giá trị" });
-                    timkiemcbx.SelectedIndex = 0;
-                }
-                else if (currentControl is nhaphangform)
-                {
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm" });
-                    timkiemcbx.SelectedIndex = 0;
-                }
-                else if (currentControl is xuathangform)
-                {
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm" });
-                    timkiemcbx.SelectedIndex = 0;
+                    phieuxuatmodel px = new phieuxuatmodel(
+                        timkiemcbx.Text,
+                        timkiemtext.Text
+                        );
+                    DataTable dt = timkiem.timkiempx(px);
+                    xhform.Loaddgv(dt);
                 }
                 else if (currentControl is phieuxuatform)
                 {
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã phiếu", "Thời gian", "Người tạo", "Mã khách hàng", "Tổng giá trị" });
-                    timkiemcbx.SelectedIndex = 0;
-                }
-                else if (currentControl is thongkeform)
-                {
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Visible = false;
-                    timkiemtext.Visible = false;
-                    timkiembtn.Visible = false;
 
                 }
                 else if (currentControl is ManagementAccount)
                 {
-                    timkiemcbx.Items.Clear();
-                    timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Tên người dùng", "Vai trò", "Email" });
-                    timkiemcbx.SelectedIndex = 0;
+
                 }
                 else
                 {
@@ -364,7 +437,15 @@ namespace quan_ly_kho
                     timkiemcbx.Items.Clear();
                 }
             }
+        }
 
+        private void timkiemcbx_TextChanged(object sender, EventArgs e)
+        {
+            if (timkiemcbx.Text == "Thời gian tạo")
+            {
+                timkiemtext.Visible = false;
+                datepicker.Visible = true;
+            }
         }
     }
 }

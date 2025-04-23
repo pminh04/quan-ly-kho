@@ -12,47 +12,194 @@ using quan_ly_kho.View.sanpham;
 using quan_ly_kho.View.thongke;
 using quan_ly_kho.View.xuathang;
 using System.Windows.Forms;
+using System.Data;
 
 namespace quan_ly_kho.Controller
 {
     internal class timkiem
     {
-
-        public static void timkiemsp(DataGridView dgv, Model.SanPhamModel sp)
+        public static DataTable timkiempx(Model.phieuxuatmodel px)
         {
-            string whereClause = "sp.masanpham LIKE N'%" + sp.tukhoa + "%' " +
-                                 "OR sp.tensanpham LIKE N'%" + sp.tukhoa + "%' " +
-                                 "OR sp.xuatxu LIKE N'%" + sp.tukhoa + "%' " +
-                                 "OR sp.loaisanpham LIKE N'%" + sp.tukhoa + "%')";
+            DataTable dt = new DataTable();
+            string sql = "";
+
+            if (px.loaitk == "--Chọn--")
+            {
+                sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where" +
+                                 " masanpham LIKE N'%" + px.tukhoa + "%' " +
+                                 "OR tensanpham LIKE N'%" + px.tukhoa + "%' " +
+                                 "OR xuatxu LIKE N'%" + px.tukhoa + "%' " +
+                                 "OR loaisanpham LIKE N'%" + px.tukhoa + "%'";
+            }
+            else if (px.loaitk == "Mã sản phẩm")
+            {
+                sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where masanpham LIKE N'%" + px.tukhoa + "%'";
+            }
+
+
+            dt = DB.selectsearch(sql);
+            return dt;
+        }
+        public static DataTable timkiempn(Model.phieunhapmodel pn)
+        {
+            DataTable dt = new DataTable();
+            string sql = "";
+
+            if (pn.loaitk == "--Chọn--")
+            {
+                sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where" +
+                                 " masanpham LIKE N'%" + pn.tukhoa + "%' " +
+                                 "OR tensanpham LIKE N'%" + pn.tukhoa + "%' " +
+                                 "OR xuatxu LIKE N'%" + pn.tukhoa + "%' " +
+                                 "OR loaisanpham LIKE N'%" + pn.tukhoa + "%'";
+            }
+            else if (pn.loaitk == "Mã sản phẩm")
+            {
+                sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where masanpham LIKE N'%" + pn.tukhoa + "%'";
+            }
             
+
+            dt = DB.selectsearch(sql);
+            return dt;
+        }
+        public static DataTable timkiemkh(Model.Customer kh)
+        {
+            DataTable dt = new DataTable();
+            string sql = "";
+
+            if (kh.loaitk == "--Chọn--")
+            {
+                sql = "select * from khachhang where" +
+                                " id LIKE N'%" + kh.tukhoa + "%' " +
+                                "OR hoten LIKE N'%" + kh.tukhoa + "%' " +
+                                "OR email LIKE N'%" + kh.tukhoa + "%' " +
+                                "OR sdt LIKE N'%" + kh.tukhoa + "%' " +
+                                "OR diachi LIKE N'%" + kh.tukhoa + "%' ";
+            }
+            else if (kh.loaitk == "Mã khách hàng")
+            {
+                sql = "select * from khachhang where id LIKE N'%" + kh.tukhoa + "%'";
+            }
+            else if (kh.loaitk == "Tên khách hàng")
+            {
+                sql = "select * from khachhang where hoten LIKE N'%" + kh.tukhoa + "%'";
+            }
+            else if (kh.loaitk == "Email")
+            {
+                sql = "select * from khachhang where email LIKE N'%" + kh.tukhoa + "%' ";
+            }
+            else if (kh.loaitk == "Số điện thoại")
+            {
+                sql = "select * from khachhang where sdt LIKE N'%" + kh.tukhoa + "%'";
+
+            }
+            else if (kh.loaitk == "Địa chỉ")
+            {
+                sql = "select * from khachhang where diachi LIKE N'%" + kh.tukhoa + "%'";
+
+            }
+
+            dt = DB.selectsearch(sql);
+            return dt;
+        }
+        public static DataTable timkiemctpn(Model.chitietphieunhap.chitietphieunhapmodel ctpn)
+        {
+            DataTable dt = new DataTable();
+            string sql = "";
+
+            if (ctpn.loaitk == "--Chọn--")
+            {
+                sql = "select * from phieunhap where" +
+                                " maphieu LIKE N'%" + ctpn.tukhoa + "%' " +
+                                "OR thoigiantao LIKE N'%" + ctpn.tukhoa + "%' " +
+                                "OR nguoitao LIKE N'%" + ctpn.tukhoa + "%' " +
+                                "OR manhacungcap LIKE N'%" + ctpn.tukhoa + "%' ";
+            }
+            else if (ctpn.loaitk == "Mã phiếu")
+            {
+                sql = "select * from phieunhap where maphieu LIKE N'%" + ctpn.tukhoa + "%'";
+            }
+            else if (ctpn.loaitk == "Thời gian tạo")
+            { 
+                    sql = "select * from phieunhap where CONVERT(VARCHAR, thoigiantao, 120) LIKE '%" + ctpn.tukhoadate + "%'";
+            }
+            else if (ctpn.loaitk == "Người tạo")
+            {
+                sql = "select * from phieunhap where nguoitao LIKE N'%" + ctpn.tukhoa + "%' ";
+            }
+            else if (ctpn.loaitk == "Mã nhà cung cấp")
+            {
+                sql = "select * from phieunhap where manhacungcap LIKE N'%" + ctpn.tukhoa + "%'";
+
+            }
+
+            dt = DB.selectsearch(sql);
+            return dt;
+        }
+        public static DataTable timkiemncc(Model.nhacungcapmodel ncc)
+        {
+            DataTable dt = new DataTable();
+            string sql = "";
+            
+            if (ncc.loaitk == "--Chọn--")
+            {
+                sql = "select * from nhacungcap where" +
+                                " manhacungcap LIKE N'%" + ncc.tukhoa + "%' " +
+                                "OR tennhacungcap LIKE N'%" + ncc.tukhoa + "%' " +
+                                "OR sdt LIKE N'%" + ncc.tukhoa + "%' " +
+                                "OR diachi LIKE N'%" + ncc.tukhoa + "%'";
+            }
+            else if (ncc.loaitk == "Mã nhà cung cấp")
+            {
+                sql = "select * from nhacungcap where manhacungcap LIKE N'%" + ncc.tukhoa + "%'";
+            }
+            else if (ncc.loaitk == "Tên nhà cung cấp")
+            {
+                sql = "select * from nhacungcap where tennhacungcap LIKE N'%" + ncc.tukhoa + "%'";
+            }
+            else if (ncc.loaitk == "Số điện thoại")
+            {
+                sql = "select * from nhacungcap where sdt LIKE N'%" + ncc.tukhoa + "%' ";
+            }
+            else if (ncc.loaitk == "Địa chỉ")
+            {
+                sql = "select * from nhacungcap where diachi LIKE N'%" + ncc.tukhoa + "%'";
+
+            }
+            dt = DB.selectsearch(sql);
+            return dt;
+        }
+        public static DataTable timkiemsp(Model.SanPhamModel sp)
+        {
+            DataTable dt = new DataTable();
+            string sql = "";
+
             if (sp.loaitk == "--Chọn--")
             {
-                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where"+
-                                 "sp.masanpham LIKE N'%" + sp.tukhoa + "%' " +
-                                 "OR sp.tensanpham LIKE N'%" + sp.tukhoa + "%' " +
-                                 "OR sp.xuatxu LIKE N'%" + sp.tukhoa + "%' " +
-                                 "OR sp.loaisanpham LIKE N'%" + sp.tukhoa + "%')";
-                DB.show_to_table(dgv, sql);
+                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where"+
+                                 " masanpham LIKE N'%" + sp.tukhoa + "%' " +
+                                 "OR tensanpham LIKE N'%" + sp.tukhoa + "%' " +
+                                 "OR xuatxu LIKE N'%" + sp.tukhoa + "%' " +
+                                 "OR loaisanpham LIKE N'%" + sp.tukhoa + "%'";
             }else if (sp.loaitk == "Mã sản phẩm")
             {
-                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where sp.masanpham LIKE N'%" + sp.tukhoa + "%'";
-                DB.show_to_table(dgv, sql);
+                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where masanpham LIKE N'%" + sp.tukhoa + "%'";
             }
             else if (sp.loaitk == "Tên sản phẩm")
             {
-                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where sp.tensanpham LIKE N'%" + sp.tukhoa + "%'";
-                DB.show_to_table(dgv, sql);
+                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where tensanpham LIKE N'%" + sp.tukhoa + "%'";
             }
             else if (sp.loaitk == "Xuất xứ")
             {
-                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where sp.xuatxu LIKE N'%" + sp.tukhoa + "%' ";
-                DB.show_to_table(dgv, sql);
+                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where xuatxu LIKE N'%" + sp.tukhoa + "%' ";
             }
             else if (sp.loaitk == "Loại hàng")
             {
-                string sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where sp.loaisanpham LIKE N'%" + sp.tukhoa + "%'";
-                DB.show_to_table(dgv, sql);
+                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where loaisanpham LIKE N'%" + sp.tukhoa + "%'";
+                
             }
+            dt = DB.selectsearch(sql);
+            return dt;
         }
 
         //thongke

@@ -12,6 +12,8 @@ namespace quan_ly_kho.Model
         public string tennhacungcap { get; set; }
         public string sodienthoai { get; set; }
         public string  diachi { get; set; }
+        public string loaitk { get; set; }
+        public string tukhoa { get; set; }
 
         public nhacungcapmodel() { }
 
@@ -22,6 +24,11 @@ namespace quan_ly_kho.Model
             this.sodienthoai = sodienthoai;
             this.diachi = diachi;
             
+        }
+        public nhacungcapmodel(string loaitk,string tukhoa)
+        {
+            this.loaitk = loaitk;
+            this.tukhoa = tukhoa;
         }
         public override string ToString()
         {

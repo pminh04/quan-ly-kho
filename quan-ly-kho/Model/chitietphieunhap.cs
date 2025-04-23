@@ -14,6 +14,10 @@ namespace quan_ly_kho.Model
             public string masanpham { get; set; }
             public int soluong { get; set; }
             public float dongia { get; set; }
+            public string loaitk { get; set; }
+            public string tukhoa { get; set; }
+            public string tukhoadate { get; set; }
+
 
             public chitietphieunhapmodel() { }
 
@@ -23,6 +27,12 @@ namespace quan_ly_kho.Model
                 this.masanpham = masanpham;
                 this.soluong = soluong;
                 this.dongia = dongia;
+            }
+            public chitietphieunhapmodel(string loaitk,string tukhoa,string tukhoadate)
+            {
+                this.loaitk = loaitk;
+                this.tukhoa = tukhoa;
+                this.tukhoadate = tukhoadate;
             }
         }
 

@@ -16,10 +16,10 @@ namespace quan_ly_kho.View.phieunhap
 {
     public partial class chitietphieunhapform : Form
     {
-       
-
-
-       
+        public void Loaddgv(DataTable dt)
+        {
+            tablechitietphieunhap.DataSource = dt;
+        }
         public chitietphieunhapform()
         {
             InitializeComponent();

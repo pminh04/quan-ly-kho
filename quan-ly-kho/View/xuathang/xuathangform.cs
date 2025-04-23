@@ -15,6 +15,10 @@ namespace quan_ly_kho.View.xuathang
 {
     public partial class xuathangform: Form
     {
+        public void Loaddgv(DataTable dt)
+        {
+            tablesanpham.DataSource = dt;
+        }
         public xuathangform()
         {
             InitializeComponent();

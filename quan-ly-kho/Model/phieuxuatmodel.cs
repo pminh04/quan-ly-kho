@@ -13,6 +13,8 @@ namespace quan_ly_kho.Model
         public string nguoitao { get; set; }
         public float tongtien { get; set; }
         public string makhachhang { get; set; }
+        public string loaitk { get; set; }
+        public string tukhoa { get; set; }
 
         public phieuxuatmodel() { }
 
@@ -23,6 +25,12 @@ namespace quan_ly_kho.Model
             this.nguoitao = nguoitao;
             this.tongtien = tongtien;
             this.makhachhang = makhachhang;
+        }
+
+        public phieuxuatmodel(string loaitk, string tukhoa)
+        {
+            this.loaitk = loaitk;
+            this.tukhoa = tukhoa;
         }
     }
 }

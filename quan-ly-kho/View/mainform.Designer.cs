@@ -63,6 +63,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Button();
+            this.datepicker = new System.Windows.Forms.DateTimePicker();
             this.sidebar.SuspendLayout();
             this.sppanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -355,6 +356,7 @@
             this.title.Controls.Add(this.timkiemcbx);
             this.title.Controls.Add(this.label1);
             this.title.Controls.Add(this.panel9);
+            this.title.Controls.Add(this.datepicker);
             this.title.Location = new System.Drawing.Point(12, 61);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(1516, 52);
@@ -391,6 +393,7 @@
             this.timkiembtn.Size = new System.Drawing.Size(77, 45);
             this.timkiembtn.TabIndex = 4;
             this.timkiembtn.UseVisualStyleBackColor = true;
+            this.timkiembtn.Click += new System.EventHandler(this.timkiembtn_Click);
             // 
             // timkiemcbx
             // 
@@ -402,6 +405,7 @@
             this.timkiemcbx.Name = "timkiemcbx";
             this.timkiemcbx.Size = new System.Drawing.Size(131, 28);
             this.timkiemcbx.TabIndex = 2;
+            this.timkiemcbx.TextChanged += new System.EventHandler(this.timkiemcbx_TextChanged);
             // 
             // label1
             // 
@@ -530,6 +534,17 @@
             this.close.UseVisualStyleBackColor = false;
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
+            // datepicker
+            // 
+            this.datepicker.CustomFormat = "MM/dd/yyyy";
+            this.datepicker.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.datepicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datepicker.Location = new System.Drawing.Point(610, 11);
+            this.datepicker.Name = "datepicker";
+            this.datepicker.Size = new System.Drawing.Size(447, 28);
+            this.datepicker.TabIndex = 4;
+            this.datepicker.Visible = false;
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -604,5 +619,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button close;
+        private System.Windows.Forms.DateTimePicker datepicker;
     }
 }

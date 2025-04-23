@@ -17,7 +17,10 @@ namespace quan_ly_kho.View.sanpham
 {
     public partial class sanphamform : Form
     {
-        public DataGridView instancesp => tablesanpham;//getter
+        public void Loaddgv(DataTable dt)
+        {
+            tablesanpham.DataSource = dt;
+        }
         public sanphamform()
         {
             InitializeComponent();

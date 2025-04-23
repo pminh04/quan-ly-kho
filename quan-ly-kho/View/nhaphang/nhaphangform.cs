@@ -15,6 +15,10 @@ namespace quan_ly_kho.View.nhaphang
 {
     public partial class nhaphangform : Form
     {
+        public void Loaddgv(DataTable dt)
+        {
+            tablesanpham.DataSource = dt;
+        }
         public nhaphangform()
         {
             InitializeComponent();

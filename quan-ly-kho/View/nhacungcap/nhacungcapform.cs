@@ -15,6 +15,10 @@ namespace quan_ly_kho
     public partial class nhacungcapform : Form
     {
         string table_name = "nhacungcap";
+        public void Loaddgv(DataTable dt)
+        {
+            ncctb.DataSource = dt;
+        }
         public nhacungcapform()
         {
             InitializeComponent();

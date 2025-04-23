@@ -31,28 +31,36 @@ insert into taikhoan (hoten, tendangnhap, matkhau, trangthai, vaitro, email) val
 
 -- tạo bảng `sanpham`
 create table sanpham (
-    masanpham varchar(50) primary key,
+    masanpham varchar(50) not null,
 	tensanpham nvarchar(50) not null,
 	xuatxu nvarchar(50) not null,
-	loaisanpham nvarchar(100) not null,
 	soluong int,
-	dongia numeric(10,2),
-	trangthai int,
+	maloaihang nvarchar(25) not null
+    constraint pk_sanpham primary key (masanpham, maloaihang)
    
 );
 
 -- chèn dữ liệu vào bảng `sanpham`
-insert into sanpham (masanpham, tensanpham, xuatxu, loaisanpham, soluong, dongia, trangthai) values
-('SP1', N'GẠCH ỐP', N'Việt Nam',N'GẠCH' , 36, 250000, 1),
-('SP10', N'GẠCH LÓT', N'Việt Nam',N'GẠCH' , 106, 350000, 1),
-('SP2', N'GẠCH LÁT ĐƯỜNG', N'Việt Nam',N'GẠCH' , 78, 226000, 1),
-('SP3', N'XỐP CÁCH ÂM', N'Nhật',N'XỐP' , 53, 340000, 1),
-('SP4', N'VÒI HOA SEN',  N'Trung Quốc',N'GIA DỤNG' , 42, 203000, 1),
-('SP6', N'TỦ QUẦN ÁO',  N'Hàn',N'GIA DỤNG' , 72, 12450000, 1),
-('SP7', N'ĐIỀU HÒA',  N'Hàn',N'GIA DỤNG' , 43, 1549900, 1),
-('SP8', N'BỒN CẦU', N'Trung Quốc',N'GIA DỤNG' , 20, 534000, 1),
-('SP9', N'BỒN RỬA MẶT', N'Trung Quốc',N'GIA DỤNG' , 25, 2500000, 1)
+insert into sanpham (masanpham, tensanpham, xuatxu, maloaihang, soluong) values
+('SP1', N'GẠCH ỐP', N'Việt Nam',N'LH1' , 36),
+('SP10', N'GẠCH LÓT', N'Việt Nam',N'LH1' , 106),
+('SP2', N'GẠCH LÁT ĐƯỜNG', N'Việt Nam',N'LH1' , 78),
+('SP3', N'XỐP CÁCH ÂM', N'Nhật',N'LH2' , 53),
+('SP4', N'VÒI HOA SEN',  N'Trung Quốc',N'LH3' , 42),
+('SP6', N'TỦ QUẦN ÁO',  N'Hàn',N'LH3' , 72),
+('SP7', N'ĐIỀU HÒA',  N'Hàn',N'LH3' , 43),
+('SP8', N'BỒN CẦU', N'Trung Quốc',N'LH3' , 20),
+('SP9', N'BỒN RỬA MẶT', N'Trung Quốc',N'LH3' , 25)
 
+create table loaihang(
+	maloaihang nvarchar(50) primary key,
+	tenloaihang nvarchar(255) not null
+);
+
+insert into loaihang(maloaihang,tenloaihang) values
+('LH1', N'GẠCH'),
+('LH2',N'XỐP'),
+('LH3',N'GIA DỤNG')
 
 -- tạo bảng `chitietphieunhap`
 create table chitietphieunhap (
@@ -60,12 +68,13 @@ create table chitietphieunhap (
     masanpham varchar(50) not null,
     soluong int null,
     dongia float null,
+	tongtien float not null
     constraint pk_chitietphieunhap primary key (maphieu, masanpham)
 );
 
 -- chèn dữ liệu vào bảng `chitietphieunhap`
-insert into chitietphieunhap (maphieu, masanpham, soluong, dongia) values
-('PN1', 'SP10', 1, 23490000),
+insert into chitietphieunhap (maphieu, masanpham, soluong, dongia,tongtien) values
+('PN1', 'SP10', 2, 23490000,23490000*2),
 ('PN1', 'SP9', 1, 19490000),
 ('PN10', 'SP2', 1, 23490000),
 ('PN10', 'SP6', 1, 22990000);
@@ -76,21 +85,22 @@ create table chitietphieuxuat (
     masanpham varchar(50) not null,
     soluong int null,
     dongia float null,
+	tongtien float not null
     constraint pk_chitietphieuxuat primary key (maphieu, masanpham)
 );
 
 -- chèn dữ liệu vào bảng `chitietphieuxuat`
-insert into chitietphieuxuat (maphieu, masanpham, soluong, dongia) values
-('PX1', 'SP1', 1, 23490000),
-('PX1', 'SP10', 13, 19490000),
-('PX1', 'SP3', 1, 15000000),
-('PX10', 'SP2', 1, 20790000),
-('PX6', 'SP9', 1, 2500000),
-('PX7', 'SP6', 1, 12450000),
-('PX7', 'SP8', 1, 534000),
-('PX8', 'SP9', 1, 2500000),
-('PX9', 'SP4', 1, 203000),
-('PX9', 'SP9', 1, 2500000);
+insert into chitietphieuxuat (maphieu, masanpham, soluong, dongia,tongtien) values
+('PX1', 'SP1', 1, 23490000,23490000),
+('PX1', 'SP10', 13, 130000,1690000),
+('PX1', 'SP3', 1, 15000000,15000000),
+('PX10', 'SP2', 1, 20790000, 20790000),
+('PX6', 'SP9', 1, 2500000, 2500000),
+('PX7', 'SP6', 1, 12450000, 12450000),
+('PX7', 'SP8', 1, 534000, 534000),
+('PX8', 'SP9', 1, 2500000, 2500000),
+('PX9', 'SP4', 1, 203000, 203000),
+('PX9', 'SP9', 1, 2500000, 2500000);
 
 -- tạo bảng `khachhang`
 create table khachhang (
@@ -186,22 +196,8 @@ alter table chitietphieuxuat
 commit transaction;
 go
 
-create trigger trg_UpdateTrangThaiSanPham
-on sanpham
-after insert, update
-as
-begin
-    set nocount on;
 
-    update s
-    set trangthai = case 
-        when i.soluong > 0 then 1
-        else 0
-    end
-    from sanpham s
-    inner join inserted i on s.masanpham = i.masanpham;
-end;
-
---select * from phieunhap
+select * from phieunhap
+select * from phieunhap where CONVERT(VARCHAR, thoigiantao, 120) LIKE '%12/16/2022%'
 --SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
 

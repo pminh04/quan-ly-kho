@@ -12,7 +12,9 @@ namespace quan_ly_kho.Model
         public string hoten{ get; set; }           
         public string email { get; set; }         
         public string sdt { get; set; }   
-        public string diachi { get; set; }        
+        public string diachi { get; set; }
+        public string loaitk { get; set; }
+        public string tukhoa { get; set; }
 
         public Customer() { }
 
@@ -23,6 +25,11 @@ namespace quan_ly_kho.Model
             this.email = email;
             this.sdt = soDienThoai;
             this.diachi = diaChi;
+        }
+        public Customer(string loaitk, string tukhoa)
+        {
+            this.loaitk = loaitk;
+            this.tukhoa = tukhoa;
         }
     }
 }

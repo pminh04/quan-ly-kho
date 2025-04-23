@@ -13,6 +13,8 @@ namespace quan_ly_kho.Model
         public string matkhau { get; set; }
         public int trangthai { get; set; }
         public string email { get; set; }
+        public string loaitk { get; set; }
+        public string tukhoa { get; set; }
 
         public Account() { }
 
@@ -23,6 +25,12 @@ namespace quan_ly_kho.Model
             this.matkhau = matkhau;
             this.trangthai = trangthai;
             this.email = email;
+        }
+
+        public Account(string loaitk, string tukhoa)
+        {
+            this.loaitk = loaitk;
+            this.tukhoa = tukhoa;
         }
     }
 }
