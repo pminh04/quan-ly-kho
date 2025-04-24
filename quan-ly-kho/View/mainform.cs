@@ -295,7 +295,7 @@ namespace quan_ly_kho
             
             //
             timkiemcbx.Items.Clear();
-            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Tên người dùng", "Vai trò", "Email" });
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--","Họ tên", "Tên người dùng", "Vai trò", "Email" });
             timkiemcbx.SelectedIndex = 0;
             timkiemcbx.Visible = true;
             timkiemtext.Visible = true;
@@ -423,13 +423,33 @@ namespace quan_ly_kho
                     DataTable dt = timkiem.timkiempx(px);
                     xhform.Loaddgv(dt);
                 }
-                else if (currentControl is phieuxuatform)
+                else if (currentControl is phieuxuatform ctpxform)
                 {
+                    string datePicker = datepicker.Value.ToString("yyyy-MM-dd");
 
+                    chitietphieuxuatmodel ctpx = new chitietphieuxuatmodel(
+                        timkiemcbx.Text,
+                        timkiemtext.Text,
+                        datePicker
+                        );
+
+                    DataTable dt = timkiem.timkiemctpx(ctpx);
+                    ctpxform.Loaddgv(dt);
+
+                    if (timkiemcbx.Text == "Thời gian tạo")
+                    {
+                        timkiemtext.Visible = false;
+                        datepicker.Visible = true;
+                    }
                 }
-                else if (currentControl is ManagementAccount)
+                else if (currentControl is ManagementAccount tkform)
                 {
-
+                    Account tk = new Account(
+                        timkiemcbx.Text,
+                        timkiemtext.Text
+                        );
+                    DataTable dt = timkiem.timkiemtk(tk);
+                    tkform.Loaddgv(dt);
                 }
                 else
                 {

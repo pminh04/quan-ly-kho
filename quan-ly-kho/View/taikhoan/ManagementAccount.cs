@@ -15,6 +15,11 @@ namespace QLVatTu
 {
     public partial class ManagementAccount : Form
     {
+        public void Loaddgv(DataTable dt)
+        {
+            dgvAccount.DataSource = dt;
+        }
+        //
         AccountDAO accountDAO = new AccountDAO();
         Account account = new Account();
         public ManagementAccount()

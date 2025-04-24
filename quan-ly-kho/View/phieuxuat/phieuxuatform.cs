@@ -13,6 +13,10 @@ namespace quan_ly_kho.View.phieuxuat
 {
     public partial class phieuxuatform: Form
     {
+        public void Loaddgv(DataTable dt)
+        {
+            tabctpx.DataSource = dt;
+        }
         public phieuxuatform()
         {
             InitializeComponent();

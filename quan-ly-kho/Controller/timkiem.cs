@@ -18,6 +18,74 @@ namespace quan_ly_kho.Controller
 {
     internal class timkiem
     {
+        public static DataTable timkiemtk(Model.Account tk)
+        {
+            DataTable dt = new DataTable();
+            string sql = "";
+
+            if (tk.loaitk == "--Chọn--")
+            {
+                sql = "select hoten,tendangnhap,vaitro,email from taikhoan where" +
+                                 " hoten LIKE N'%" + tk.tukhoa + "%' " +
+                                 "OR tendangnhap LIKE N'%" + tk.tukhoa + "%' " +
+                                 "OR vaitro LIKE N'%" + tk.tukhoa + "%' " +
+                                 "OR email LIKE N'%" + tk.tukhoa + "%'";
+            }
+            else if (tk.loaitk == "Họ tên")
+            {
+                sql = "select hoten,tendangnhap,vaitro,email from taikhoan where hoten LIKE N'%" + tk.tukhoa + "%'";
+            }
+            else if (tk.loaitk == "Tên người dùng")
+            {
+                sql = "select hoten,tendangnhap,vaitro,email from taikhoan where tendangnhap LIKE N'%" + tk.tukhoa + "%'";
+            }
+            else if (tk.loaitk == "Vai trò")
+            {
+                sql = "select hoten,tendangnhap,vaitro,email from taikhoan where vaitro LIKE N'%" + tk.tukhoa + "%'";
+            }
+            else if (tk.loaitk == "Email")
+            {
+                sql = "select hoten,tendangnhap,vaitro,email from taikhoan where email LIKE N'%" + tk.tukhoa + "%'";
+            }
+
+
+            dt = DB.selectsearch(sql);
+            return dt;
+        }
+        public static DataTable timkiemctpx(Model.chitietphieuxuatmodel ctpx)
+        {
+            DataTable dt = new DataTable();
+            string sql = "";
+
+            if (ctpx.loaitk == "--Chọn--")
+            {
+                sql = "select * from phieuxuat where" +
+                                " maphieu LIKE N'%" + ctpx.tukhoa + "%' " +
+                                "OR thoigiantao LIKE N'%" + ctpx.tukhoa + "%' " +
+                                "OR nguoitao LIKE N'%" + ctpx.tukhoa + "%' " +
+                                "OR makhachhang LIKE N'%" + ctpx.tukhoa + "%' ";
+            }
+            else if (ctpx.loaitk == "Mã phiếu")
+            {
+                sql = "select * from phieuxuat where maphieu LIKE N'%" + ctpx.tukhoa + "%'";
+            }
+            else if (ctpx.loaitk == "Thời gian tạo")
+            {
+                sql = "select * from phieuxuat where CONVERT(VARCHAR, thoigiantao, 120) LIKE '%" + ctpx.tukhoadate + "%'";
+            }
+            else if (ctpx.loaitk == "Người tạo")
+            {
+                sql = "select * from phieuxuat where nguoitao LIKE N'%" + ctpx.tukhoa + "%' ";
+            }
+            else if (ctpx.loaitk == "Mã khách hàng")
+            {
+                sql = "select * from phieuxuat where makhachhang LIKE N'%" + ctpx.tukhoa + "%'";
+
+            }
+
+            dt = DB.selectsearch(sql);
+            return dt;
+        }
         public static DataTable timkiempx(Model.phieuxuatmodel px)
         {
             DataTable dt = new DataTable();

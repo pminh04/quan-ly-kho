@@ -15,6 +15,7 @@ namespace quan_ly_kho.Model
             public float dongia { get; set; }
         public string loaitk { get; set; }
         public string tukhoa { get; set; }
+        public string tukhoadate { get; set; }
 
         public chitietphieuxuatmodel() { }
 
@@ -26,10 +27,11 @@ namespace quan_ly_kho.Model
                 this.dongia = dongia;
             }
 
-        public chitietphieuxuatmodel(string loaitk, string tukhoa)
+        public chitietphieuxuatmodel(string loaitk, string tukhoa,string tukhoadate)
         {
             this.loaitk = loaitk;
             this.tukhoa = tukhoa;
+            this.tukhoadate = tukhoadate;
         }
     }
     }
