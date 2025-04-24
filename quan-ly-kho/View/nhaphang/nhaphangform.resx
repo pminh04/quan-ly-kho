@@ -117,19 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="tongtien.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dongia.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="masanpham.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="soluong.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="masanpham.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dongia.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="STT.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="tongtien.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -140,11 +137,11 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA0
-        DAAAAk1TRnQBSQFMAgEBAgEAAaABAAGgAQABFgEAARYBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFY
+        DAAAAk1TRnQBSQFMAgEBAgEAAbgBAAG4AQABFgEAARYBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFY
         AwABFgMAAQEBAAEgBQABQAEeWgADNAFUA2kB6ANcAb4UAANXAbkBBQECAQQB/wEFAQIBBAH/AQUBAgEE
         Af8BBQECAQQB/wEFAQIBBAH/AQUBAgEEAf8BBQECAQQB/wEFAQIBBAH/AQUBAgEEAf8BBQECAQQB/wEF
         AQIBBAH/AQUBAgEEAf8BBQECAQQB/wM9AWf/AAEAAzkBXwNlAeIDSAH/A28B9wNcAb4QAAEFAQIBBAH/
-        AQgBBQEHAf8sAAMBAf8BBgEDAQUB//wAAzwBZQNhAdkDKAH/AwkB/wM4Af8DaQHoEAABBQECAQQB/wNb
+        AQgBBQEHAf8sAAMBAf8BBgEDAQUB//wAAzwBZQNhAdkDKAH/AwkB/wM4Af8DaQHoEAABBQECAQQB/wNe
         Ae4vAAH/AQUBAgEEAf/UAAMwAUoDUwGiA1MBogNTAaIDUwGiA1MBogMMAQ8IAAM9AWcDYwHVAysB/wMA
         Af8DGgH/A3sB/wNpAegQAAEFAQIBBAH/A10B6gQAAQMBAQEDAf8BBQECAQQB/wQAAwQCBQECAQQB/wgA
         AQUBAgEEAf8DAgH/BAADKwH8AQUBAgEEAf/MAAM2AVgDSwGLA1sBwAN7Af8DbQH/A2sB/wNwAf8DgwH/
@@ -154,14 +151,14 @@
         Af8DYwHfA0IBchQAAQUBAgEEAf8DYAHoBAABBQECAQQB/wEFAQIBBAH/BAADBAIFAQIBBAH/CAABBQEC
         AQQB/wECAQEBAgH/BAADIQH7AQQBAQEDAf/EAAMxAUwDXwHTAzgB/wMGAf8DBQH/AxgB/wE0AjMB/wE6
         AjgB/wMtAf8DDAH/AwEB/wMLAf8DBAH/AwAB/wMeAf8DdAH/A2UB3QNDAXYYAAEFAQIBBAH/A1wB5wQA
-        AQUBAgEEAf8BBQECAQQB/wQAAwQCBQECAQQB/wgAAQUBAgEEAf8BAgEBAQIB/wQAAyoB+gEEAQEBAwH/
+        AQUBAgEEAf8BBQECAQQB/wQAAwQCBQECAQQB/wgAAQUBAgEEAf8BAgEBAQIB/wQAAy0B+gEEAQEBAwH/
         wAADKgE/A2UB3QMqAf8DAAH/AxcB/wNAAf8DZwHmA1kBuQNZAbkDWwHAA14B/wExAjAB/wMIAf8DAAH/
         AwAB/wNgAf8DYwHfA0MBdhwAAQUBAgEEAf8DYQHmBAABBQECAQQB/wEFAQIBBAH/BAADBAIFAQIBBAH/
-        CAABBQECAQQB/wECAQEBAgH/BAADKgH6AQUBAgEEAf/AAANpAegDOAH/AwUB/wMSAf8DYQHmA2EB0QNJ
+        CAABBQECAQQB/wECAQEBAgH/BAADLQH6AQUBAgEEAf/AAANpAegDOAH/AwUB/wMSAf8DYQHmA2EB0QNJ
         AYUIAAMPARMDYQHRA2EB0QNRAfcDCQH/AwAB/wN0Af8DSwGLIAABBQECAQQB/wNhAeYEAAEFAQIBBAH/
-        AQUBAgEEAf8EAAMEAgUBAgEEAf8IAAEFAQIBBAH/AQIBAQECAf8EAAM/AfgBBQECAQQB/7wAAxIBFwNn
+        AQUBAgEEAf8EAAMEAgUBAgEEAf8IAAEFAQIBBAH/AQIBAQECAf8EAANCAfgBBQECAQQB/7wAAxIBFwNn
         AeoDGQH/AwIB/wNoAf8DQgF0HAADYQHRAzYB/wMCAf8DOwH/A04BlgMMAQ8cAAEFAQIBBAH/A2EB5gQA
-        AQUBAgEEAf8BBQECAQQB/wQAAwQCBQECAQQB/wgAAQUBAgEEAf8BAgEBAQIB/wQAAz8B+AEFAQIBBAH/
+        AQUBAgEEAf8BBQECAQQB/wQAAwQCBQECAQQB/wgAAQUBAgEEAf8BAgEBAQIB/wQAA0IB+AEFAQIBBAH/
         vAAE/wMxAf8DBQH/AxkB/wOvAf8DQgF0HAADYQHRA28B/wMVAf8DAAH/A3QB/wNTAaIcAAEFAQIBBAH/
         A18B5QQAAQUBAgEEAf8BBQECAQQB/wQAAwQCBQECAQQB/wgAAQUBAgEEAf8BAgEBAQIB/wQAA0gB9gEG
         AQMBBQH/vAAD7AH/AxgB/wMAAf8DZQH/Az4BawMJAQscAAMPARMDWwHAATgCNwH/AwAB/wNoAf8DUwGi
@@ -169,8 +166,8 @@
         Af8EAANIAfYBBgEDAQUB/7wAA+QB/wMVAf8DAAH/A34B/wM5AV0kAANZAbkDRAH/AwAB/wNjAf8DUwGi
         HAABBQECAQQB/wNfAeUEAAEFAQIBBAH/AwMB/wQAAwQBBQMDAf8IAAMDAf8BAwEBAQIB/wQAA0gB9gEG
         AQMBBQH/vAAD6AH/AxUB/wMAAf8DdAH/AzkBXSQAA1kBuQNCAf8DAAH/A2QB/wNTAaIcAAEFAQIBBAH/
-        A1sB5CwAA0gB9QEEAQEBAwH/vAAD9wH/AxYB/wMAAf8DQwH/A1wBxAMwAUogAANZAbkDLgH/AwAB/wNq
-        Af8DUwGiHAABBQECAQQB/wNbAeQsAANIAfUBBgEDAQUB/7wAA0IBdANaAfIDDAH/AxMB/wOWAf8DQgF0
+        A1sB5CwAA0sB9QEEAQEBAwH/vAAD9wH/AxYB/wMAAf8DQwH/A1wBxAMwAUogAANZAbkDLgH/AwAB/wNq
+        Af8DUwGiHAABBQECAQQB/wNbAeQsAANLAfUBBgEDAQUB/7wAA0IBdANaAfIDDAH/AxMB/wOWAf8DQgF0
         HAADQgFyA10B3wMQAf8DGQH/A1sBwAMwAUoUAAEFAQIBBAH/AQUBAgEEAf8BBQECAQQB/wEFAQIBBAH/
         AQUBAgEEAf8BBQECAQQB/wEFAQIBBAH/AQUBAgEEAf8BBQECAQQB/wEFAQIBBAH/AQUBAgEEAf8BBQEC
         AQQB/wEFAQIBBAH/AQUBAgEEAf8BBQECAQQB/wEFAQIBBAH/AQUBAgEEAf8BBwEBAQYB/wEEAQEBAwH/
@@ -195,6 +192,24 @@
         Af4BHwHwBgAL
 </value>
   </data>
+  <metadata name="masp.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="maloaihang.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tensp.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="xuatxu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tenloaihang.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="sl.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="backgroundWorker2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>863, 17</value>
   </metadata>

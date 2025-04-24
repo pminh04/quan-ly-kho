@@ -188,6 +188,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="tét.cs" />
     <Compile Include="View\log.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -53,9 +53,10 @@
             this.timkiemp = new System.Windows.Forms.Panel();
             this.timkiembtn = new System.Windows.Forms.Button();
             this.timkiemcbx = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.logout = new System.Windows.Forms.Button();
+            this.datepicker = new System.Windows.Forms.DateTimePicker();
             this.showform = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -63,7 +64,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Button();
-            this.datepicker = new System.Windows.Forms.DateTimePicker();
             this.sidebar.SuspendLayout();
             this.sppanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -99,7 +99,7 @@
             this.sidebar.Controls.Add(this.panel10);
             this.sidebar.Location = new System.Drawing.Point(11, 119);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(271, 768);
+            this.sidebar.Size = new System.Drawing.Size(271, 697);
             this.sidebar.TabIndex = 0;
             // 
             // sppanel
@@ -354,7 +354,7 @@
             this.title.Controls.Add(this.timkiemtext);
             this.title.Controls.Add(this.timkiemp);
             this.title.Controls.Add(this.timkiemcbx);
-            this.title.Controls.Add(this.label1);
+            this.title.Controls.Add(this.name);
             this.title.Controls.Add(this.panel9);
             this.title.Controls.Add(this.datepicker);
             this.title.Location = new System.Drawing.Point(12, 61);
@@ -407,18 +407,19 @@
             this.timkiemcbx.TabIndex = 2;
             this.timkiemcbx.TextChanged += new System.EventHandler(this.timkiemcbx_TextChanged);
             // 
-            // label1
+            // name
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 37);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Chào mừng, Mr X";
+            this.name.AutoSize = true;
+            this.name.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(5, 5);
+            this.name.Margin = new System.Windows.Forms.Padding(5);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(182, 37);
+            this.name.TabIndex = 1;
+            this.name.Text = "Chào mừng";
+            this.name.Click += new System.EventHandler(this.name_Click);
             // 
             // panel9
             // 
@@ -444,6 +445,17 @@
             this.logout.UseVisualStyleBackColor = false;
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
+            // datepicker
+            // 
+            this.datepicker.CustomFormat = "MM/dd/yyyy";
+            this.datepicker.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.datepicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datepicker.Location = new System.Drawing.Point(610, 11);
+            this.datepicker.Name = "datepicker";
+            this.datepicker.Size = new System.Drawing.Size(447, 28);
+            this.datepicker.TabIndex = 4;
+            this.datepicker.Visible = false;
+            // 
             // showform
             // 
             this.showform.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -453,7 +465,7 @@
             this.showform.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.showform.Location = new System.Drawing.Point(288, 119);
             this.showform.Name = "showform";
-            this.showform.Size = new System.Drawing.Size(1240, 768);
+            this.showform.Size = new System.Drawing.Size(1240, 697);
             this.showform.TabIndex = 4;
             // 
             // panel1
@@ -534,29 +546,19 @@
             this.close.UseVisualStyleBackColor = false;
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
-            // datepicker
-            // 
-            this.datepicker.CustomFormat = "MM/dd/yyyy";
-            this.datepicker.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.datepicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datepicker.Location = new System.Drawing.Point(610, 11);
-            this.datepicker.Name = "datepicker";
-            this.datepicker.Size = new System.Drawing.Size(447, 28);
-            this.datepicker.TabIndex = 4;
-            this.datepicker.Visible = false;
-            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(1544, 899);
+            this.ClientSize = new System.Drawing.Size(1544, 828);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.showform);
             this.Controls.Add(this.title);
             this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(30, 30);
             this.MinimumSize = new System.Drawing.Size(1544, 828);
             this.Name = "mainform";
             this.Text = "Form1";
@@ -587,7 +589,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel title;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label name;
         private System.Windows.Forms.Panel sppanel;
         private System.Windows.Forms.Button sanpham;
         private System.Windows.Forms.Panel panel2;

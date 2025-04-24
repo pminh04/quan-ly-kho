@@ -25,7 +25,7 @@ namespace quan_ly_kho.View.thongke
         {
             loaddata.show_thongke_kh(tabkh);
             loaddata.show_thongke_sp(sptab);
-            soluongsp.Text = DB.count("sanpham where trangthai = 1").ToString();
+            soluongsp.Text = DB.count("sanpham").ToString();
             soluongncc.Text = DB.count("nhacungcap").ToString();
             soluongtk.Text = DB.count("khachhang").ToString();
             loaddata.show_cbx_xuatxu(xuatxucbx);

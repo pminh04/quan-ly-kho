@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using quan_ly_kho.Model;
 
 namespace quan_ly_kho.Controller
 {
@@ -152,19 +153,20 @@ namespace quan_ly_kho.Controller
             return count;
         }
 
-        public static void searchbyid(string t,string id,string t_id)
+        public static String searchbyid(string t, string id, string t_id)
         {
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
 
-            string sql = "select * from '" + t + "'where '" + t_id + "' = '"+ id +"'";
+            string sql = "SELECT " + t_id + " FROM " + t + " WHERE " + t_id + " = '" + id + "'";
             SqlCommand cmd = new SqlCommand(sql, con);
 
+            string result = cmd.ExecuteScalar()?.ToString();
             cmd.Dispose();
             con.Close();
-
+            return result;
         }
 
         public static bool checkPK(string id,string t,string t_id)
@@ -186,6 +188,30 @@ namespace quan_ly_kho.Controller
             else { return false; }
         }
 
+        //SHOWGIA
+
+        public static DataTable SelectByGia(String t, float giaTu, float giaDen)
+        {
+
+            DataTable dt = new DataTable();
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            string sql = "SELECT * FROM " + t + " WHERE tongtien BETWEEN @giaTu AND @giaDen";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@giaTu", giaTu);
+            cmd.Parameters.AddWithValue("@giaDen", giaDen);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt);
+
+            return dt;
+        }
+
+
+        //GỌIDUNGCHOEXXCEL
         public static DataTable get_data(string sql)
         {
             if (con.State == ConnectionState.Closed)
@@ -203,7 +229,75 @@ namespace quan_ly_kho.Controller
 
             return dt;
         }
-    }
+    
+
+        public static object selectgetdata(string sql)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+            object result = cmd.ExecuteScalar(); // dùng SELECT thì phải dùng ExecuteScalar hoặc ExecuteReader
+            cmd.Dispose();
+            con.Close();
+
+            return result;
+        }
+
+        public static bool select(Model.Account acc)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            string sql = "Select vaitro from taikhoan where tendangnhap = '" + acc.tendangnhap + "' and matkhau = '" + acc.matkhau + "' and trangthai = " + acc.trangthai;
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            string kq = (string)cmd.ExecuteScalar();
+
+            if (kq == "admin")
+            {
+                return true;
+            }
+            else { return false; }
+        }
+
+        public static string CheckLoginError(Account acc)
+        {
+            // Giả sử bạn có thể truy cập database tại đây
+            if(con.State == ConnectionState.Closed) { con.Open(); }
+                
+
+                // Kiểm tra nếu tài khoản tồn tại nhưng sai mật khẩu
+                string queryUser = "SELECT COUNT(*) FROM taikhoan WHERE tendangnhap = @username";
+                SqlCommand cmdUser = new SqlCommand(queryUser, con);
+                cmdUser.Parameters.AddWithValue("@username", acc.tendangnhap);
+
+                int userCount = (int)cmdUser.ExecuteScalar();
+                if (userCount == 0)
+                {
+                    return "Tên đăng nhập không tồn tại.";
+                }
+
+                // Kiểm tra mật khẩu
+                string queryPass = "SELECT COUNT(*) FROM taikhoan WHERE tendangnhap = @username AND matkhau = @password";
+                SqlCommand cmdPass = new SqlCommand(queryPass, con);
+                cmdPass.Parameters.AddWithValue("@username", acc.tendangnhap);
+                cmdPass.Parameters.AddWithValue("@password", acc.matkhau);
+
+                int loginSuccess = (int)cmdPass.ExecuteScalar();
+                if (loginSuccess == 0)
+                {
+                    return "Sai mật khẩu.";
+                }
+
+                return "Lỗi không xác định.";
+            }
+        }
+
 
 }
 

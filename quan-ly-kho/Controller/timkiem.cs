@@ -93,16 +93,18 @@ namespace quan_ly_kho.Controller
 
             if (px.loaitk == "--Chọn--")
             {
-                sql = "select masanpham, tensanpham,xuatxu,soluong, loaihang from sanpham where" +
+                sql = "select masanpham, tensanpham, xuatxu, soluong, lh.tenloaihang from sanpham " +
+                    "join loaihang lh on lh.maloaihang = sanpham.maloaihang where" +
                                  " masanpham LIKE N'%" + px.tukhoa + "%' " +
                                  "OR tensanpham LIKE N'%" + px.tukhoa + "%' " +
                                  "OR xuatxu LIKE N'%" + px.tukhoa + "%' " +
                                  "OR soluong LIKE N'%" + px.tukhoa + "%' " +
-                                 "OR loaihang LIKE N'%" + px.tukhoa + "%'";
+                                 "OR lh.tenloaihang LIKE N'%" + px.tukhoa + "%'";
             }
             else if (px.loaitk == "Mã sản phẩm")
             {
-                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where masanpham LIKE N'%" + px.tukhoa + "%'";
+                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham " +
+                    "join loaihang lh on lh.maloaihang = sanpham.maloaihang where masanpham LIKE N'%" + px.tukhoa + "%'";
             }
 
 
@@ -116,15 +118,16 @@ namespace quan_ly_kho.Controller
 
             if (pn.loaitk == "--Chọn--")
             {
-                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where" +
+                sql = "select masanpham, tensanpham,xuatxu,lh.tenloaihang from sanpham join loaihang lh on lh.maloaihang = sanpham.maloaihang where" +
                                  " masanpham LIKE N'%" + pn.tukhoa + "%' " +
                                  "OR tensanpham LIKE N'%" + pn.tukhoa + "%' " +
                                  "OR xuatxu LIKE N'%" + pn.tukhoa + "%' " +
-                                 "OR loaihang LIKE N'%" + pn.tukhoa + "%'";
+                                 "OR lh.tenloaihang LIKE N'%" + pn.tukhoa + "%'";
             }
             else if (pn.loaitk == "Mã sản phẩm")
             {
-                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where masanpham LIKE N'%" + pn.tukhoa + "%'";
+                sql = "select masanpham, tensanpham,xuatxu,lh.tenloaihang from sanpham join loaihang lh on lh.maloaihang = sanpham.maloaihang" +
+                    " where masanpham LIKE N'%" + pn.tukhoa + "%'";
             }
             
 
@@ -245,31 +248,37 @@ namespace quan_ly_kho.Controller
 
             if (sp.loaitk == "--Chọn--")
             {
-                 sql = "select masanpham, tensanpham,xuatxu, soluong,loaihang from sanpham where"+
+                 sql = "select masanpham, tensanpham,xuatxu, soluong,lh.tenloaihang from sanpham" +
+                    " join loaihang lh on lh.maloaihang = sanpham.maloaihang where" +
                                  " masanpham LIKE N'%" + sp.tukhoa + "%' " +
                                  "OR tensanpham LIKE N'%" + sp.tukhoa + "%' " +
                                  "OR xuatxu LIKE N'%" + sp.tukhoa + "%' " +
                                  "OR soluong LIKE N'%" + sp.tukhoa + "%' " +
-                                 "OR loaihang LIKE N'%" + sp.tukhoa + "%'";
+                                 "OR lh.tenloaihang LIKE N'%" + sp.tukhoa + "%'";
             }else if (sp.loaitk == "Mã sản phẩm")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where masanpham LIKE N'%" + sp.tukhoa + "%'";
+                 sql = "select masanpham, tensanpham,xuatxu, soluong,lh.tenloaihang from sanpham" +
+                    " join loaihang lh on lh.maloaihang = sanpham.maloaihang  where masanpham LIKE N'%" + sp.tukhoa + "%'";
             }
             else if (sp.loaitk == "Tên sản phẩm")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where tensanpham LIKE N'%" + sp.tukhoa + "%'";
+                 sql = "select masanpham, tensanpham,xuatxu, soluong,lh.tenloaihang from sanpham" +
+                    " join loaihang lh on lh.maloaihang = sanpham.maloaihang where tensanpham LIKE N'%" + sp.tukhoa + "%'";
             }
             else if (sp.loaitk == "Xuất xứ")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where xuatxu LIKE N'%" + sp.tukhoa + "%' ";
+                 sql = "select masanpham, tensanpham,xuatxu, soluong,lh.tenloaihang from sanpham" +
+                    " join loaihang lh on lh.maloaihang = sanpham.maloaihang  where xuatxu LIKE N'%" + sp.tukhoa + "%' ";
             }
-            else if (sp.loaitk == "Mã sản phẩm")
+            else if (sp.loaitk == "Số lượng")
             {
-                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where masanpham LIKE N'%" + sp.tukhoa + "%'";
+                sql = "select masanpham, tensanpham,xuatxu, soluong,lh.tenloaihang from sanpham" +
+                    " join loaihang lh on lh.maloaihang = sanpham.maloaihang where soluong LIKE N'%" + sp.tukhoa + "%'";
             }
             else if (sp.loaitk == "Loại hàng")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where loaihang LIKE N'%" + sp.tukhoa + "%'";
+                 sql = "select masanpham, tensanpham,xuatxu, soluong,lh.tenloaihang from sanpham" +
+                    " join loaihang lh on lh.maloaihang = sanpham.maloaihang where lh.tenloaihang LIKE N'%" + sp.tukhoa + "%'";
                 
             }
             dt = DB.selectsearch(sql);
@@ -308,7 +317,7 @@ namespace quan_ly_kho.Controller
 
             if (tk.Loaisl == "--Chọn số lượng--")
             {
-                string sql = "SELECT sp.masanpham, sp.tensanpham, sp.xuatxu, " +
+                string sql = "SELECT sp.masanpham, sp.tensanpham, sp.xuatxu, sp.soluong " +
                                 "ISNULL(SUM(ctpx.soluong), 0) AS soluongxuat, " +
                                 "ISNULL(SUM(ctpn.soluong), 0) AS soluongnhap " +
                                 "FROM sanpham sp " +

@@ -42,13 +42,15 @@ namespace quan_ly_kho.DAO
         {
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO taikhoan (hoten, tendangnhap, matkhau, trangthai, email)" +
-                " VALUES (@hoten, @tendangnhap, @matkhau, @trangthai, @email)", db.getConnection);
+                SqlCommand command = new SqlCommand("INSERT INTO taikhoan (hoten, tendangnhap, matkhau, trangthai, email,vaitro)" +
+                " VALUES (@hoten, @tendangnhap, @matkhau, @trangthai, @email,@vaitro)", db.getConnection);
                 command.Parameters.Add("@hoten", SqlDbType.NVarChar).Value = account.hoten;
                 command.Parameters.Add("@tendangnhap", SqlDbType.NVarChar).Value = account.tendangnhap;
                 command.Parameters.Add("@matkhau", SqlDbType.NVarChar).Value = account.matkhau;
                 command.Parameters.Add("@trangthai", SqlDbType.Int).Value = account.trangthai;
                 command.Parameters.Add("@email", SqlDbType.NVarChar).Value = account.email;
+                command.Parameters.Add("@vaitro", SqlDbType.NVarChar).Value = account.vaitro;
+
 
                 db.openConnection();
 

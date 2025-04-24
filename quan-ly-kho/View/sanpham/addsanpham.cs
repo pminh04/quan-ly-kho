@@ -86,6 +86,11 @@ namespace quan_ly_kho.View.sanpham
         {
             loadTenloaihang();
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
     
 }

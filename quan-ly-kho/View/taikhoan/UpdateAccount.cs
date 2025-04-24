@@ -41,7 +41,7 @@ namespace QLVatTu
             string tendangnhap = txtTenDN.Text.Trim();
             string email = txtEmail.Text.Trim();
             string matkhau = txtPasword.Text.Trim();
-
+            string vaitro = txtVaitro.Text.Trim();
 
 
             if (string.IsNullOrWhiteSpace(hoten))
@@ -76,7 +76,7 @@ namespace QLVatTu
             int trangthai = cboTrangthai.SelectedIndex;
 
             string hashedPassword = SecurityHelper.HashPassword(matkhau);
-            Account account = new Account(hoten, tendangnhap, hashedPassword, trangthai, email);
+            Account account = new Account(hoten, tendangnhap, hashedPassword, trangthai, email, vaitro);
 
             if (accountDAO.updateAccount(account))
             {

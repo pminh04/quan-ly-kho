@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using quan_ly_kho.Controller;
+using quan_ly_kho.Model;
 
 namespace quan_ly_kho.View
 {
@@ -97,6 +98,30 @@ namespace quan_ly_kho.View
         private void Panel1_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void dangnhap_Click(object sender, EventArgs e)
+        {
+            string hashedPassword = SecurityHelper.HashPassword(txtmk.Text);
+
+            Account acc = new Account(
+                txttk.Text,
+                hashedPassword,
+                1                
+                );
+            if (DB.select(acc) == true)
+            {
+                mainform f1 = new mainform();
+                f1.Show();
+                this.Hide();
+
+                MessageBox.Show("Đăng nhập thành công");
+            }
+            else
+            {
+                string error = DB.CheckLoginError(acc);
+                MessageBox.Show(error);
+            }
         }
     }
 }

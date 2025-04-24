@@ -60,13 +60,13 @@ namespace quan_ly_kho.Controller
 
         public static void show_xh_sp(DataGridView dgv) 
         {
-            string sql = "SELECT masanpham, tensanpham, xuatxu, soluong, dongia FROM sanpham WHERE trangThai = 1";
+            string sql = "SELECT masanpham, tensanpham, xuatxu, soluong, lh.tenloaihang FROM sanpham join loaihang lh on lh.maloaihang = sanpham.maloaihang";
             DB.show_to_table(dgv, sql);
         }
 
         public static void show_sp_tk(DataGridView dgv)
         {
-            string sql = "SELECT masanpham,tensanpham FROM sanpham WHERE trangThai = 1";
+            string sql = "ELECT masanpham, tensanpham, xuatxu, soluong, lh.tenloaihang FROM sanpham join loaihang lh on lh.maloaihang = sanpham.maloaihang";
             DB.show_to_table(dgv, sql);
         }
 
@@ -84,7 +84,7 @@ namespace quan_ly_kho.Controller
         //PHAN SANPHAM
         public static void show_sp(DataGridView dgv, string t)
         {
-            string sql = "Select masanpham, tensanpham, xuatxu, lh.tenloaihang, soluong from sanpham sp join loaihang lh on sp.maloaihang=lh.maloaihang ";
+            string sql = "Select masanpham, tensanpham, xuatxu, sp.maloaihang,lh.tenloaihang,soluong from sanpham sp join loaihang lh on sp.maloaihang=lh.maloaihang ";
             DB.show_to_table(dgv, sql);
         }
         //PHIEUNHAP
@@ -106,6 +106,19 @@ namespace quan_ly_kho.Controller
         }
         //show
 
+        public static void get_tennguoidung(Model.Account acc)
+        {
+            string sql = "Select hoten from taikhoan where taikhoan = "+acc.tendangnhap;
+            DB.insert(sql);
+  
+        }
 
+        public static string dangnhap(Model.Account acc)
+        {
+            string sql = "Select vaitro from taikhoan where tendangnhap = '" + acc.tendangnhap +"' and matkhau = '" +acc.matkhau+"' and trangthai = "+acc.trangthai;
+            object result = DB.selectgetdata(sql);
+
+            return result != null ? result.ToString() : null;
+        }
     }
 }

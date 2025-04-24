@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(chitietphieunhapform));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnxemchitiet = new System.Windows.Forms.Button();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
@@ -49,6 +49,12 @@
             this.tablechitietphieunhap = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.maphieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoigiantao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nguoitao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tennhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,7 +72,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.Location = new System.Drawing.Point(8, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(619, 127);
+            this.groupBox1.Size = new System.Drawing.Size(610, 127);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
@@ -252,23 +258,30 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tablechitietphieunhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablechitietphieunhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablechitietphieunhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tablechitietphieunhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablechitietphieunhap.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tablechitietphieunhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maphieu,
+            this.thoigiantao,
+            this.nguoitao,
+            this.manhacungcap,
+            this.tennhacungcap,
+            this.tongtien});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablechitietphieunhap.DefaultCellStyle = dataGridViewCellStyle6;
             this.tablechitietphieunhap.EnableHeadersVisualStyles = false;
             this.tablechitietphieunhap.Location = new System.Drawing.Point(8, 49);
             this.tablechitietphieunhap.Name = "tablechitietphieunhap";
@@ -290,6 +303,49 @@
             this.label3.Size = new System.Drawing.Size(205, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "CHI TIẾT PHIẾU NHẬP";
+            // 
+            // maphieu
+            // 
+            this.maphieu.DataPropertyName = "maphieu";
+            this.maphieu.HeaderText = "Mã phiếu";
+            this.maphieu.MinimumWidth = 6;
+            this.maphieu.Name = "maphieu";
+            // 
+            // thoigiantao
+            // 
+            this.thoigiantao.DataPropertyName = "thoigiantao";
+            this.thoigiantao.HeaderText = "Thời gian tạo";
+            this.thoigiantao.MinimumWidth = 6;
+            this.thoigiantao.Name = "thoigiantao";
+            // 
+            // nguoitao
+            // 
+            this.nguoitao.DataPropertyName = "nguoitao";
+            this.nguoitao.HeaderText = "Người tạo";
+            this.nguoitao.MinimumWidth = 6;
+            this.nguoitao.Name = "nguoitao";
+            // 
+            // manhacungcap
+            // 
+            this.manhacungcap.DataPropertyName = "manhacungcap";
+            this.manhacungcap.HeaderText = "Mã nhà cung cấp";
+            this.manhacungcap.MinimumWidth = 6;
+            this.manhacungcap.Name = "manhacungcap";
+            this.manhacungcap.Visible = false;
+            // 
+            // tennhacungcap
+            // 
+            this.tennhacungcap.DataPropertyName = "tennhacungcap";
+            this.tennhacungcap.HeaderText = "Tên nhà cung cấp";
+            this.tennhacungcap.MinimumWidth = 6;
+            this.tennhacungcap.Name = "tennhacungcap";
+            // 
+            // tongtien
+            // 
+            this.tongtien.DataPropertyName = "tongtien";
+            this.tongtien.HeaderText = "Tổng tiền";
+            this.tongtien.MinimumWidth = 6;
+            this.tongtien.Name = "tongtien";
             // 
             // chitietphieunhapform
             // 
@@ -332,5 +388,11 @@
         private System.Windows.Forms.Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnloc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maphieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thoigiantao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nguoitao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manhacungcap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tennhacungcap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tongtien;
     }
 }

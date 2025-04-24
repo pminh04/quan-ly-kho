@@ -50,6 +50,7 @@
             this.tensanpham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xuatxu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenloaihang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maloaihang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -206,6 +207,9 @@
             // 
             // tablesanpham
             // 
+            this.tablesanpham.AllowUserToAddRows = false;
+            this.tablesanpham.AllowUserToDeleteRows = false;
+            this.tablesanpham.AllowUserToResizeRows = false;
             this.tablesanpham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -224,6 +228,7 @@
             this.tensanpham,
             this.xuatxu,
             this.tenloaihang,
+            this.maloaihang,
             this.soluong});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -282,6 +287,14 @@
             this.tenloaihang.MinimumWidth = 6;
             this.tenloaihang.Name = "tenloaihang";
             // 
+            // maloaihang
+            // 
+            this.maloaihang.DataPropertyName = "maloaihang";
+            this.maloaihang.HeaderText = "Mã loại hàng";
+            this.maloaihang.MinimumWidth = 6;
+            this.maloaihang.Name = "maloaihang";
+            this.maloaihang.Visible = false;
+            // 
             // soluong
             // 
             this.soluong.DataPropertyName = "soluong";
@@ -328,6 +341,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tensanpham;
         private System.Windows.Forms.DataGridViewTextBoxColumn xuatxu;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenloaihang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maloaihang;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
     }
 }

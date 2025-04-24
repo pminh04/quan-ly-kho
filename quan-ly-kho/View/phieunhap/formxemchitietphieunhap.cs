@@ -11,24 +11,21 @@ using System.Windows.Forms;
 using quan_ly_kho.DAO;
 using quan_ly_kho.Model;
 using static quan_ly_kho.Model.chitietphieunhap;
+using quan_ly_kho.Controller;
 
 namespace quan_ly_kho.View.phieunhap
 {
     public partial class formxemchitietphieunhap : Form
     {
-        public formxemchitietphieunhap()
+        String table_name = "chitietphieunhap";
+        private string maphie;
+        public formxemchitietphieunhap( String maphieu)
         {
+            this.maphie = maphieu;
             InitializeComponent();
             //LoadTable();
         }
-        public void LoadData(DataTable dt)
-        {
-            tablenhaphang.DataSource = dt;
-            tablenhaphang.Columns["maphieu"].HeaderText = "Mã phiếu nhập";
-            tablenhaphang.Columns["masanpham"].HeaderText = "Mã sản phẩm";
-            tablenhaphang.Columns["soluong"].HeaderText = "Số lượng";
-            tablenhaphang.Columns["dongia"].HeaderText = "Đơn giá";
-        }
+        
         
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -43,10 +40,15 @@ namespace quan_ly_kho.View.phieunhap
 
         private void formxemchitietphieunhap_Load(object sender, EventArgs e)
         {
-            //LoadTable();
+            loaddata.show_ctpnbyma(tablechitietphieunhap, table_name, maphie);
         }
 
         private void tablenhaphang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tablenhaphang_Click(object sender, EventArgs e)
         {
 
         }

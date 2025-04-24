@@ -29,6 +29,7 @@ namespace QLVatTu
             string tendangnhap = txtTenDN.Text.Trim();
             string email = txtEmail.Text.Trim();
             string matkhau = txtMatkhau.Text.Trim();
+            string vaitro = "Nhân viên";
 
 
            
@@ -41,7 +42,7 @@ namespace QLVatTu
 
             if (string.IsNullOrWhiteSpace(tendangnhap))
             {
-                MessageBox.Show("Tên đăngn nhập không được để trống hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Tên đăng nhập không được để trống hợp lệ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenDN.Focus();
                 return;
             }
@@ -69,7 +70,7 @@ namespace QLVatTu
             }
 
             string hashedPassword = SecurityHelper.HashPassword(matkhau);
-            Account account = new Account(hoten, tendangnhap, hashedPassword, 0, email);
+            Account account = new Account(hoten, tendangnhap, hashedPassword, 1, email,vaitro);
 
             if (accountDAO.insertAccount(account))
             {

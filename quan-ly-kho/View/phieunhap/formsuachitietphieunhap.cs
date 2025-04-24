@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using quan_ly_kho.DAO;
 using quan_ly_kho.Model;
 using static quan_ly_kho.Model.chitietphieunhap;
+using quan_ly_kho.Controller;
 
 namespace quan_ly_kho.View.phieunhap
 {
@@ -19,118 +20,47 @@ namespace quan_ly_kho.View.phieunhap
     {
         private string maphieu;
         private int selectedIndex = -1;
-        private mainform _mainForm;
-
+        string table_name = "sanpham";
+        phieunhapmodel phieunhap;
         // Constructor nhận tham chiếu của mainform
-        
-        public formsuachitietphieunhap(string maphieu)
+        DataTable dtNhapHang = new DataTable();
+
+        public formsuachitietphieunhap(Model.phieunhapmodel pn)
         {
+            phieunhap = pn;
             InitializeComponent();
-            this.maphieu = maphieu;
+            dtNhapHang.Columns.Add("masanpham");
+            dtNhapHang.Columns.Add("soluong", typeof(int));
+            dtNhapHang.Columns.Add("dongia", typeof(double));
+            dtNhapHang.Columns.Add("tongtien", typeof(double));
+
+            tablenhaphang.DataSource = dtNhapHang;
+
+
         }
         public formsuachitietphieunhap(mainform mainForm)
         {
             InitializeComponent();
-            _mainForm = mainForm;
+            
         }
 
         private void formsuachitietphieunhap_Load(object sender, EventArgs e)
         {
-            LoadPhieuNhap();
-            LoadSanPham();
-            LoadChiTietPhieu();
-            LoadNhaCungCap();
+           
         }
 
-        private void LoadPhieuNhap()
-        {
-            phieunhapDAO dao = new phieunhapDAO();
-            DataTable dt = dao.SelectById(maphieu);
-            if (dt.Rows.Count > 0)
-            {
-                DataRow row = dt.Rows[0];
-                txtmaphieu.Text = row["maphieu"].ToString();
-                txtnguoitao.Text = row["nguoitao"].ToString();
-                txttongtien.Text = row["tongtien"].ToString();
-                string mancc = row["manhacungcap"].ToString();
-
-                nhacungcapDAO nccDAO = new nhacungcapDAO();
-                string tennhacungcap = nccDAO.GetTenNhaCungCapByMa(mancc);
-                cbxnhacungcap.SelectedValue = mancc;
-
-            }
-        }
         private void LoadNhaCungCap()
         {
-            nhacungcapDAO dao = new nhacungcapDAO();
-            DataTable dt = dao.GetAll();
-
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                // Thêm dòng mặc định vào DataTable
-                DataRow r = dt.NewRow();
-                r["manhacungcap"] = "";
-                r["tennhacungcap"] = "--- Chọn nhà cung cấp ---";
-                dt.Rows.InsertAt(r, 0);
-
-                cbxnhacungcap.DataSource = dt;
-                cbxnhacungcap.DisplayMember = "tennhacungcap";
-                cbxnhacungcap.ValueMember = "manhacungcap";
-                cbxnhacungcap.SelectedIndex = 0; // hiển thị dòng mặc định
-            }
-            else
-            {
-                MessageBox.Show("Không có nhà cung cấp nào trong hệ thống.");
-            }
+            string sql = "SELECT * FROM nhacungcap";
+            DB.loadcbox(cbxnhacungcap, sql, "tennhacungcap", "manhacungcap");
         }
-        private void LoadSanPham()
-        {
-            sanphamDAO dao = new sanphamDAO(); // khởi tạo DAO
-            DataTable dt = dao.SelectExist();  // lấy sp có trạng thái = 1
-
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                tablesanpham.DataSource = dt;
-                tablesanpham.Columns["masanpham"].HeaderText = "Mã sản phẩm";
-                tablesanpham.Columns["tensanpham"].HeaderText = "Tên sản phẩm";
-                tablesanpham.Columns["xuatxu"].HeaderText = "Xuất xứ";
-                tablesanpham.Columns["soluong"].HeaderText = "Số lượng";
-                tablesanpham.Columns["dongia"].HeaderText = "Đơn giá";
-                tablesanpham.Columns["dongia"].DefaultCellStyle.Format = "#,##0.##";
-
-
-
-            }
-            else
-            {
-                tablesanpham.DataSource = null;
-                MessageBox.Show("Không có dữ liệu.");
-            }
-
-        }
-
+      
         private void LoadChiTietPhieu()
         {
-            chitietphieunhapDAO dao = new chitietphieunhapDAO();
-            DataTable dt = dao.SelectByMaphieu(maphieu);
+            loaddata.show_ctpnbyma(tablenhaphang, "chitietphieunhap", txtmaphieu.Text);
 
-            foreach (DataRow row in dt.Rows)
-            {
-                int soluong = Convert.ToInt32(row["soluong"]);
-                float dongia = float.Parse(row["dongia"].ToString());
-                decimal tongtien = (decimal)(soluong * dongia);
-
-                tablenhaphang.Rows.Add(
-                    tablenhaphang.Rows.Count + 1,
-                    row["masanpham"].ToString(),
-                    soluong,
-                    dongia,
-                    tongtien
-                );
-            }
-
-            CapNhatTongTien();
-            CapNhatSTT();
+           
+            
         }
         private bool SuaPhieuNhap(phieunhapmodel pn)
         {
@@ -141,178 +71,159 @@ namespace quan_ly_kho.View.phieunhap
         }
         private void SuaChiTietPhieuNhap(string maphieu)
         {
-            chitietphieunhapDAO dao = new chitietphieunhapDAO();
+            //chitietphieunhapDAO dao = new chitietphieunhapDAO();
 
-            sanphamDAO spDAO = new sanphamDAO();
-            DataTable dtSanPham = spDAO.SelectExist();
+            //sanphamDAO spDAO = new sanphamDAO();
+            //DataTable dtSanPham = spDAO.SelectExist();
 
-            for (int i = 0; i < tablenhaphang.Rows.Count; i++)
-            {
-                DataGridViewRow row = tablenhaphang.Rows[i];
+            //for (int i = 0; i < tablenhaphang.Rows.Count; i++)
+            //{
+            //    DataGridViewRow row = tablenhaphang.Rows[i];
 
-                // Bỏ qua dòng trống cuối cùng khi thêm dữ liệu
-                if (!row.IsNewRow)
-                {
-                    chitietphieunhap ct = new chitietphieunhap();
-                    ct.maphieu = maphieu;
-                    ct.masanpham = row.Cells["masanpham"].Value.ToString();
-                    ct.soluong = Convert.ToInt32(row.Cells["soluong"].Value);
-                    ct.dongia = Convert.ToSingle(row.Cells["dongia"].Value);
-                    //dao.DeleteByMaphieu(maphieu);
-                    dao.Update(ct);
-                    DataRow[] found = dtSanPham.Select("masanpham = '" + ct.masanpham + "'");
-                    if (found.Length > 0)
-                    {
-                        int soluongHienTai = Convert.ToInt32(found[0]["soluong"]);
-                        int soluongMoi = soluongHienTai + ct.soluong;
-                        spDAO.UpdateSoLuong(ct.masanpham, soluongMoi);
-                    }
-                }
+            //    // Bỏ qua dòng trống cuối cùng khi thêm dữ liệu
+            //    if (!row.IsNewRow)
+            //    {
+            //        chitietphieunhapmodel ct = new chitietphieunhapmodel();
+            //        ct.maphieu = maphieu;
+            //        ct.masanpham = row.Cells["masanpham"].Value.ToString();
+            //        ct.soluong = Convert.ToInt32(row.Cells["soluong"].Value);
+            //        ct.dongia = Convert.ToSingle(row.Cells["dongia"].Value);
+            //        //dao.DeleteByMaphieu(maphieu);
+            //        dao.Update(ct);
+            //        DataRow[] found = dtSanPham.Select("masanpham = '" + ct.masanpham + "'");
+            //        if (found.Length > 0)
+            //        {
+            //            int soluongHienTai = Convert.ToInt32(found[0]["soluong"]);
+            //            int soluongMoi = soluongHienTai + ct.soluong;
+            //            spDAO.UpdateSoLuong(ct.masanpham, soluongMoi);
+            //        }
+            //    }
 
-            }
+            //}
         }
-        private void LoadSoLuongVaoNhapHang(string masanpham, int soluong, decimal dongia)
+
+
+        private void CapNhatThanhTien()
         {
-            bool isExist = false;
+            double tong = 0;
 
-            // Duyệt qua các dòng để kiểm tra trùng mã
-            for (int i = 0; i < tablenhaphang.Rows.Count; i++)
+            // Duyệt qua các dòng trong tablenhaphang và cộng tổng tiền
+            foreach (DataGridViewRow row in tablenhaphang.Rows)
             {
-                if (tablenhaphang.Rows[i].Cells["masanpham"].Value != null &&
-                    tablenhaphang.Rows[i].Cells["masanpham"].Value.ToString() == masanpham)
+                // Nếu dòng không phải là dòng mới (dòng trắng cuối bảng)
+                if (row.Cells["tongtien"].Value != null)
                 {
-                    // Nếu đã có, cộng dồn số lượng và cập nhật lại tổng tiền
-                    int currentSoluong = Convert.ToInt32(tablenhaphang.Rows[i].Cells["soluong"].Value);
-                    currentSoluong += soluong;
+                    tong += Convert.ToSingle(row.Cells["tongtien"].Value);
+                }
+            }
 
-                    tablenhaphang.Rows[i].Cells["soluong"].Value = currentSoluong;
-                    tablenhaphang.Rows[i].Cells["tongtien"].Value = currentSoluong * dongia;
+            // Cập nhật tổng tiền vào TextBox
+            txtthanhtien.Text = tong.ToString("N0");
+        }
 
-                    isExist = true;
+
+        private void btncapnhat_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    string maphieu = txtmaphieu.Text;
+            //    string nguoitao = txtnguoitao.Text;
+            //    DateTime thoigian = DateTime.Now;
+            //    string nhacungcap = cbxnhacungcap.SelectedValue.ToString();
+            //    if (string.IsNullOrEmpty(nhacungcap))
+            //    {
+            //        MessageBox.Show("Vui lòng chọn nhà cung cấp trước khi lưu!");
+            //        return;
+            //    }
+
+            //    float tongtien = Convert.ToSingle(txtthanhtien.Text); // lấy từ label tổng
+
+            //    Model.phieunhapmodel pn = new Model.phieunhapmodel(
+            //        maphieu,
+            //        thoigian,
+            //        nguoitao,
+            //        nhacungcap,
+            //        tongtien
+
+            //    ); Controller.Sua.sua_pn(pn);
+            //    //LuuChiTietPhieuNhap();
+            //    MessageBox.Show("Nhập hàng thành công!");
+            //    ResetFormNhapHang();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Sửa phiếu nhập thất bại!" + ex.Message);
+            //}
+        }
+        private String selectedma;
+        private String selectedten;
+        private String selectedxuatxu;
+        private String selectedmaloai;
+        private int selectedsoluong;
+        private void btnthem_Click(object sender, EventArgs e)
+        {
+            if (selectedma == null)
+            {
+                MessageBox.Show("Vui long chọn dữ liệu cần sửa.");
+                return;
+            }
+            // Kiểm tra số lượng nhập
+            if (!int.TryParse(txtsoluong.Text, out int soluong) || soluong <= 0)
+            {
+                MessageBox.Show("Số lượng phải là số nguyên dương.");
+                return;
+            }
+
+            // Kiểm tra đơn giá nhập (float)
+            if (!double.TryParse(txtdongia.Text, out double dongia) || dongia <= 0)
+            {
+                MessageBox.Show("Đơn giá phải là số dương.");
+                return;
+            }
+            bool tonTai = false;
+            foreach (DataGridViewRow row in tablenhaphang.Rows)
+            {
+                if (row.Cells["masanpham"].Value?.ToString() == selectedma)
+                {
+                    int slCu = Convert.ToInt32(row.Cells["soluong"].Value);
+                    row.Cells["soluong"].Value = slCu + soluong;
+                    row.Cells["dongia"].Value = dongia;
+                    row.Cells["tongtien"].Value = (slCu + soluong) * dongia;
+                    tonTai = true;
                     break;
                 }
             }
 
-            // Nếu chưa có thì thêm mới sau khi kiểm tra hết
-            if (!isExist)
+            if (!tonTai)
             {
-                decimal tongtien = soluong * dongia;
-                tablenhaphang.Rows.Add(
-                    tablenhaphang.Rows.Count + 1, // STT
-                    masanpham,
+
+                // Tính thành tiền (float)
+                double tongtien = dongia * soluong;
+
+                // Đẩy dữ liệu sang bảng tablenhaphang
+                dtNhapHang.Rows.Add(
+                    selectedma,
                     soluong,
                     dongia,
                     tongtien
                 );
             }
-
-            // Cập nhật tổng tiền
-            CapNhatTongTien();
-            CapNhatSTT();
-        }
-        private void CapNhatSTT()
-        {
-            int stt = 1;
-            foreach (DataGridViewRow row in tablenhaphang.Rows)
-            {
-                row.Cells["STT"].Value = stt++;  // Cập nhật lại cột STT
-            }
-        }
-        private void CapNhatTongTien()
-        {
-            decimal tong = 0;
-
-            for (int i = 0; i < tablenhaphang.Rows.Count; i++)
-            {
-                // Nếu chưa phải là dòng mới (dòng trống cuối bảng)
-                if (tablenhaphang.Rows[i].IsNewRow == false)
-                {
-                    object value = tablenhaphang.Rows[i].Cells["tongtien"].Value;
-
-                    if (value != null && value.ToString() != "")
-                    {
-                        tong += Convert.ToDecimal(value);
-                    }
-                }
-            }
-
-            txttongtien.Text = tong.ToString("N0");
-        }
-
-        private void btncapnhat_Click(object sender, EventArgs e)
-        {
-            String maphieu = txtmaphieu.Text;
-            string tennhacungcap = cbxnhacungcap.Text;
-            string nguoitao = txtnguoitao.Text;
-            DateTime thoigian = DateTime.Now;
-
-            nhacungcapDAO dao = new nhacungcapDAO();
-            string manhacungcap = dao.GetMaNhaCungCapByTen(tennhacungcap);
-            if (string.IsNullOrEmpty(manhacungcap))
-            {
-                MessageBox.Show("Vui lòng chọn nhà cung cấp trước khi lưu!");
-                return;
-            }
-
-            float tongtien = Convert.ToSingle(txttongtien.Text); // lấy từ label tổng
-
-            phieunhapmodel pn = new phieunhapmodel();
-            pn.maphieu = maphieu;
-            pn.nguoitao = nguoitao;
-            pn.thoigiantao = thoigian;
-            pn.manhacungcap = manhacungcap;
-            pn.tongtien = tongtien;
-            chitietphieunhapDAO ct = new chitietphieunhapDAO();
-
-
-            if (SuaPhieuNhap(pn))
-            {
-                SuaChiTietPhieuNhap(maphieu);
-                MessageBox.Show("Sửa thành công!");
-
-                ResetFormNhapHang();
-                // Có thể gọi hàm reset form tại đây nếu cần
-            }
-            else
-            {
-                MessageBox.Show("Lưu phiếu nhập thất bại!");
-            }
-        }
-
-        private void btnthem_Click(object sender, EventArgs e)
-        {
-            if (tablesanpham.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Bạn chưa chọn sản phẩm.");
-                return;
-            }
-            else
-            {
-                // Lấy thông tin sản phẩm từ dòng được chọn
-                DataGridViewRow row = tablesanpham.SelectedRows[0];
-                string masanpham = row.Cells["masanpham"].Value.ToString();
-
-                decimal dongia = Convert.ToDecimal(row.Cells["dongia"].Value);
-
-                // Lấy số lượng từ TextBox (nếu không nhập thì mặc định là 1)
-                int soluong = 1;
-                if (!string.IsNullOrEmpty(txtsoluong.Text))
-                {
-                    int.TryParse(txtsoluong.Text, out soluong);
-                }
-
-                // Gọi hàm thêm hoặc cập nhật sản phẩm vào bảng nhập hàng
-                LoadSoLuongVaoNhapHang(masanpham, soluong, dongia);
-            }
+            CapNhatThanhTien();
         }
 
         private void formsuachitietphieunhap_Load_1(object sender, EventArgs e)
         {
             txtsoluong.Text = "1";
-            LoadNhaCungCap();
-            LoadPhieuNhap();
-            LoadSanPham();
+            loaddata.show_sp(tablesanpham, table_name);
+            LoadNhaCungCap(); // PHẢI gọi trước khi set SelectedValue
+
+            txtmaphieu.Text = phieunhap.maphieu;
+            txtnguoitao.Text = phieunhap.nguoitao;
+            cbxnhacungcap.SelectedValue = phieunhap.manhacungcap; // Gán sau khi load nguồn dữ liệu
+            txtthanhtien.Text = phieunhap.tongtien.ToString();
+
             LoadChiTietPhieu();
+
 
         }
 
@@ -327,8 +238,8 @@ namespace quan_ly_kho.View.phieunhap
                 tablenhaphang.Rows.RemoveAt(selectedIndex);
 
                 // Cập nhật lại số thứ tự và tổng tiền
-                CapNhatSTT();
-                CapNhatTongTien();
+
+               // CapNhatThanhTien();
             }
             else
             {
@@ -343,44 +254,37 @@ namespace quan_ly_kho.View.phieunhap
         public string TaoMaPhieuNhapTuDong()
         {
             int stt = 1;
-            string maPhieu;
-            phieunhapDAO dao = new phieunhapDAO(); // hoặc this nếu đang trong DAO luôn
-
-            while (true)
+            while (DB.searchbyid("phieunhap", "MP" + stt, "maphieu") != null)
             {
-                maPhieu = "MP" + stt;
-
-                DataTable dt = dao.SelectById(maPhieu); // gọi hàm bạn đã có
-                if (dt.Rows.Count == 0)
-                {
-                    break; // không trùng, dùng mã này
-                }
-
-                stt++; // tăng nếu trùng
+                stt++;
             }
-
-            return maPhieu;
+            return "MP" + stt;
         }
         private void ResetFormNhapHang()
 
         {
-            LoadSanPham();
-            // Xóa toàn bộ dòng trong bảng nhập hàng
             tablenhaphang.Rows.Clear();
-
-            // Gán lại mã phiếu mới
             txtmaphieu.Text = TaoMaPhieuNhapTuDong();
-
-            // Reset các ô nhập liệu khác nếu cần
+            loaddata.show_sp(tablesanpham, table_name);
             txtsoluong.Text = "1";
-            txttongtien.Text = "0";
+            txtthanhtien.Text = "0";
             cbxnhacungcap.SelectedIndex = 0;
         }
+        private string selectedmasanpham;
+        private int selectedsl;
+        private double selecteddongia;
+        private double selectedtongtien;
         private void tablenhaphang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (tablenhaphang.SelectedRows.Count > 0)
+            int i = e.RowIndex;
+            if (i >= 0) // Đảm bảo chỉ xử lý khi có hàng được chọn
             {
-                selectedIndex = tablenhaphang.SelectedRows[0].Index;  // Lấy index của dòng được chọn
+                //string selectedmaphieu = tablenhaphang.Rows[i].Cells["maphieu"].Value.ToString();
+                selectedmasanpham = tablenhaphang.Rows[i].Cells["masanpham"].Value.ToString();
+                selectedsl = (int)tablenhaphang.Rows[i].Cells["soluong"].Value;
+                selecteddongia = Convert.ToSingle(tablenhaphang.Rows[i].Cells["dongia"].Value);
+                selectedtongtien = Convert.ToSingle(tablenhaphang.Rows[i].Cells["tongtien"].Value);
+
             }
         }
 
@@ -469,5 +373,19 @@ namespace quan_ly_kho.View.phieunhap
         {
 
         }
+
+        private void tablesanpham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            if (i >= 0) // Đảm bảo chỉ xử lý khi có hàng được chọn
+            {
+                selectedma = tablesanpham.Rows[i].Cells["masp"].Value.ToString();
+                selectedten = tablesanpham.Rows[i].Cells["tensp"].Value.ToString();
+                selectedxuatxu = tablesanpham.Rows[i].Cells["xuatxu"].Value.ToString();
+                selectedmaloai = tablesanpham.Rows[i].Cells["maloaihang"].Value.ToString();
+                selectedsoluong = (int)tablesanpham.Rows[i].Cells["sl"].Value;
+
+            }
+        }
     }
-    }
+}

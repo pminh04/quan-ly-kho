@@ -14,7 +14,7 @@ begin transaction;
 create table taikhoan (
     hoten nvarchar(50) null,
     tendangnhap nvarchar(50) not null,
-    matkhau nvarchar(60) null,
+    matkhau nvarchar(255) null,
     trangthai int null,
     vaitro nvarchar(50) not null,
     email nvarchar(50) null,
@@ -177,7 +177,14 @@ go
 
 
 
-select * from sanpham
+select * from taikhoan
 --select * from phieunhap where CONVERT(VARCHAR, thoigiantao, 120) LIKE '%2022-12-16%'
 --SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
 
+--SELECT sp.masanpham, sp.tensanpham, sp.xuatxu, sp.soluong, ISNULL(SUM(ctpx.soluong), 0) AS soluongxuat, ISNULL(SUM(ctpn.soluong), 0) AS soluongnhap
+--FROM sanpham sp
+--LEFT JOIN chitietphieuxuat ctpx ON sp.masanpham = ctpx.masanpham
+--LEFT JOIN chitietphieunhap ctpn ON sp.masanpham = ctpn.masanpham
+--GROUP BY sp.masanpham, sp.tensanpham, sp.xuatxu,sp.soluong
+
+--delete from taikhoan where tendangnhap = 'admin'

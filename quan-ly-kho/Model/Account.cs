@@ -15,16 +15,18 @@ namespace quan_ly_kho.Model
         public string email { get; set; }
         public string loaitk { get; set; }
         public string tukhoa { get; set; }
+        public string vaitro { get; set; }
+
 
         public Account() { }
-
-        public Account(string hoten, string tendangnhap, string matkhau, int trangthai, string email)
+        public Account(string hoten, string tendangnhap, string matkhau, int trangthai, string email,string vaitro)
         {
             this.hoten = hoten;
             this.tendangnhap = tendangnhap;
             this.matkhau = matkhau;
             this.trangthai = trangthai;
             this.email = email;
+            this.vaitro = vaitro;
         }
 
         public Account(string loaitk, string tukhoa)
@@ -32,5 +34,13 @@ namespace quan_ly_kho.Model
             this.loaitk = loaitk;
             this.tukhoa = tukhoa;
         }
+
+        public Account(string tendangnhap,string matkhau, int trangthai)
+        {
+            this.tendangnhap = tendangnhap;
+            this.matkhau = matkhau;
+            this.trangthai = trangthai;
+        }
+
     }
 }

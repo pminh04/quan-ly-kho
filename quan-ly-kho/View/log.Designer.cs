@@ -39,16 +39,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loginpart = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.quenmk = new System.Windows.Forms.Label();
+            this.txtmk = new System.Windows.Forms.TextBox();
+            this.txttk = new System.Windows.Forms.TextBox();
             this.dangnhapp = new System.Windows.Forms.Panel();
             this.dangnhap = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.minp.SuspendLayout();
             this.closep.SuspendLayout();
@@ -170,9 +170,9 @@
             // 
             this.loginpart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.loginpart.Controls.Add(this.label8);
-            this.loginpart.Controls.Add(this.label7);
-            this.loginpart.Controls.Add(this.textBox2);
-            this.loginpart.Controls.Add(this.textBox1);
+            this.loginpart.Controls.Add(this.quenmk);
+            this.loginpart.Controls.Add(this.txtmk);
+            this.loginpart.Controls.Add(this.txttk);
             this.loginpart.Controls.Add(this.dangnhapp);
             this.loginpart.Controls.Add(this.label6);
             this.loginpart.Controls.Add(this.label5);
@@ -183,37 +183,50 @@
             this.loginpart.Size = new System.Drawing.Size(506, 459);
             this.loginpart.TabIndex = 2;
             // 
-            // label7
+            // label8
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(312, 267);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 23);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Quên mật khẩu";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(57, 398);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(413, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Lưu ý: Nếu chưa có tài khoản hay liên hệ với admin";
             // 
-            // textBox2
+            // quenmk
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(188, 230);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '●';
-            this.textBox2.Size = new System.Drawing.Size(262, 27);
-            this.textBox2.TabIndex = 8;
+            this.quenmk.AutoSize = true;
+            this.quenmk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.quenmk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quenmk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quenmk.ForeColor = System.Drawing.Color.Black;
+            this.quenmk.Location = new System.Drawing.Point(312, 267);
+            this.quenmk.Name = "quenmk";
+            this.quenmk.Size = new System.Drawing.Size(138, 23);
+            this.quenmk.TabIndex = 9;
+            this.quenmk.Text = "Quên mật khẩu";
             // 
-            // textBox1
+            // txtmk
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(188, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 27);
-            this.textBox1.TabIndex = 7;
+            this.txtmk.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtmk.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmk.Location = new System.Drawing.Point(188, 230);
+            this.txtmk.Name = "txtmk";
+            this.txtmk.PasswordChar = '●';
+            this.txtmk.Size = new System.Drawing.Size(262, 27);
+            this.txtmk.TabIndex = 8;
+            // 
+            // txttk
+            // 
+            this.txttk.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txttk.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttk.Location = new System.Drawing.Point(188, 156);
+            this.txttk.Name = "txttk";
+            this.txttk.Size = new System.Drawing.Size(262, 27);
+            this.txttk.TabIndex = 7;
             // 
             // dangnhapp
             // 
@@ -236,6 +249,7 @@
             this.dangnhap.TabIndex = 7;
             this.dangnhap.Text = "Đăng nhập";
             this.dangnhap.UseVisualStyleBackColor = false;
+            this.dangnhap.Click += new System.EventHandler(this.dangnhap_Click);
             // 
             // label6
             // 
@@ -285,19 +299,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Xin chào!";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(57, 398);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(413, 20);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Lưu ý: Nếu chưa có tài khoản hay liên hệ với admin";
-            // 
             // log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -339,12 +340,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtmk;
+        private System.Windows.Forms.TextBox txttk;
         private System.Windows.Forms.Panel dangnhapp;
         private System.Windows.Forms.Button dangnhap;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label quenmk;
         private System.Windows.Forms.Label label8;
     }
 }

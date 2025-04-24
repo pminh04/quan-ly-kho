@@ -41,12 +41,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenTK = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtVaitro = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtVaitro);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.brnHuy);
             this.panel1.Controls.Add(this.btnThem);
@@ -60,7 +64,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(4, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(468, 693);
+            this.panel1.Size = new System.Drawing.Size(468, 768);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -88,7 +92,7 @@
             // 
             this.brnHuy.BackColor = System.Drawing.Color.GhostWhite;
             this.brnHuy.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnHuy.Location = new System.Drawing.Point(290, 626);
+            this.brnHuy.Location = new System.Drawing.Point(290, 709);
             this.brnHuy.Name = "brnHuy";
             this.brnHuy.Size = new System.Drawing.Size(144, 46);
             this.brnHuy.TabIndex = 11;
@@ -101,7 +105,7 @@
             this.btnThem.BackColor = System.Drawing.Color.Green;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(26, 626);
+            this.btnThem.Location = new System.Drawing.Point(26, 709);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(144, 46);
             this.btnThem.TabIndex = 10;
@@ -181,13 +185,32 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên tài khoản";
             // 
-            // AddAcountFrm
+            // txtVaitro
+            // 
+            this.txtVaitro.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVaitro.Location = new System.Drawing.Point(26, 641);
+            this.txtVaitro.Name = "txtVaitro";
+            this.txtVaitro.Size = new System.Drawing.Size(408, 34);
+            this.txtVaitro.TabIndex = 13;
+            this.txtVaitro.Text = "Nhân Viên";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 598);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 22);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Vai trò";
+            // 
+            // AddAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 710);
+            this.ClientSize = new System.Drawing.Size(480, 792);
             this.Controls.Add(this.panel1);
-            this.Name = "AddAcountFrm";
+            this.Name = "AddAccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -211,6 +234,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button brnHuy;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.TextBox txtVaitro;
+        private System.Windows.Forms.Label label6;
     }
 }
 

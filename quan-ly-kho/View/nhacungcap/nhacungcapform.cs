@@ -94,5 +94,38 @@ namespace quan_ly_kho
                 loaddata.show_ncc(ncctb, table_name);
             };
         }
+
+        private void exportexcelbtn_Click(object sender, EventArgs e)
+        {
+            string sql = "SELECT * FROM nhacungcap";
+
+            // Gọi hàm get_data() để lấy dữ liệu vào DataTable
+            DataTable dt = DB.get_data(sql);
+
+            // Các tiêu đề cột bạn muốn xuất Excel
+            string[] titles = { "Mã nhà cung cấp", "Tên nhà cung cấp", "Số điện thoại", "Địa chỉ"};
+
+            // Gọi hàm ExportToExcel để xuất dữ liệu
+            excel ex = new excel();
+            ex.ExportToExcel(dt, "Danh Sách Nhà Cung Cấp", titles);
+        }
+
+        private void importexcelbtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog { Filter = "Excel Files|*.xls;*.xlsx", Multiselect = false };
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                // Mảng tên cột tương ứng với bảng CSDL
+                string[] columnNames = { "manhacungcap", "tennhacungcap", "sdt", "diachi"};
+
+                // Tạo đối tượng của ExcelController từ Controller
+                excel excelController = new excel();
+
+                // Gọi hàm ReadExcel trong Controller để xử lý dữ liệu từ Excel
+                excelController.ReadExcel(dlg.FileName, "nhacungcap", columnNames);
+            }
+
+            loaddata.show_sp(ncctb, table_name);
+        }
     }
 }

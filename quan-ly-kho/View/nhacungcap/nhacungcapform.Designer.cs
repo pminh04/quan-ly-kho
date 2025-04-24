@@ -34,10 +34,15 @@ namespace quan_ly_kho
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.themmoip = new System.Windows.Forms.Panel();
+            this.themmoibtn = new System.Windows.Forms.Button();
             this.exportexcelp = new System.Windows.Forms.Panel();
+            this.exportexcelbtn = new System.Windows.Forms.Button();
             this.importexcelp = new System.Windows.Forms.Panel();
+            this.importexcelbtn = new System.Windows.Forms.Button();
             this.suap = new System.Windows.Forms.Panel();
+            this.suabtn = new System.Windows.Forms.Button();
             this.xoap = new System.Windows.Forms.Panel();
+            this.xoabtn = new System.Windows.Forms.Button();
             this.ncctb = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,13 +50,8 @@ namespace quan_ly_kho
             this.diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolbox = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.themmoibtn = new System.Windows.Forms.Button();
-            this.exportexcelbtn = new System.Windows.Forms.Button();
-            this.xoabtn = new System.Windows.Forms.Button();
-            this.importexcelbtn = new System.Windows.Forms.Button();
-            this.suabtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.themmoip.SuspendLayout();
             this.exportexcelp.SuspendLayout();
             this.importexcelp.SuspendLayout();
@@ -72,6 +72,21 @@ namespace quan_ly_kho
             this.themmoip.Size = new System.Drawing.Size(90, 93);
             this.themmoip.TabIndex = 2;
             // 
+            // themmoibtn
+            // 
+            this.themmoibtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.themmoibtn.Image = global::quan_ly_kho.Properties.Resources.icons8_add_male_user_group_50;
+            this.themmoibtn.Location = new System.Drawing.Point(-12, -10);
+            this.themmoibtn.Margin = new System.Windows.Forms.Padding(2);
+            this.themmoibtn.Name = "themmoibtn";
+            this.themmoibtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.themmoibtn.Size = new System.Drawing.Size(114, 110);
+            this.themmoibtn.TabIndex = 1;
+            this.themmoibtn.Text = "Thêm mới";
+            this.themmoibtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.themmoibtn.UseVisualStyleBackColor = true;
+            this.themmoibtn.Click += new System.EventHandler(this.themmoibtn_Click);
+            // 
             // exportexcelp
             // 
             this.exportexcelp.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -80,6 +95,21 @@ namespace quan_ly_kho
             this.exportexcelp.Name = "exportexcelp";
             this.exportexcelp.Size = new System.Drawing.Size(90, 93);
             this.exportexcelp.TabIndex = 6;
+            // 
+            // exportexcelbtn
+            // 
+            this.exportexcelbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportexcelbtn.Image = global::quan_ly_kho.Properties.Resources.icons8_export_excel_50;
+            this.exportexcelbtn.Location = new System.Drawing.Point(-28, -26);
+            this.exportexcelbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.exportexcelbtn.Name = "exportexcelbtn";
+            this.exportexcelbtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.exportexcelbtn.Size = new System.Drawing.Size(148, 127);
+            this.exportexcelbtn.TabIndex = 1;
+            this.exportexcelbtn.Text = "Xuất excel";
+            this.exportexcelbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.exportexcelbtn.UseVisualStyleBackColor = true;
+            this.exportexcelbtn.Click += new System.EventHandler(this.exportexcelbtn_Click);
             // 
             // importexcelp
             // 
@@ -90,6 +120,21 @@ namespace quan_ly_kho
             this.importexcelp.Size = new System.Drawing.Size(90, 93);
             this.importexcelp.TabIndex = 5;
             // 
+            // importexcelbtn
+            // 
+            this.importexcelbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importexcelbtn.Image = global::quan_ly_kho.Properties.Resources.icons8_excel_50;
+            this.importexcelbtn.Location = new System.Drawing.Point(-28, -26);
+            this.importexcelbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.importexcelbtn.Name = "importexcelbtn";
+            this.importexcelbtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.importexcelbtn.Size = new System.Drawing.Size(148, 127);
+            this.importexcelbtn.TabIndex = 1;
+            this.importexcelbtn.Text = "Nhập excel";
+            this.importexcelbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.importexcelbtn.UseVisualStyleBackColor = true;
+            this.importexcelbtn.Click += new System.EventHandler(this.importexcelbtn_Click);
+            // 
             // suap
             // 
             this.suap.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -98,6 +143,21 @@ namespace quan_ly_kho
             this.suap.Name = "suap";
             this.suap.Size = new System.Drawing.Size(90, 93);
             this.suap.TabIndex = 4;
+            // 
+            // suabtn
+            // 
+            this.suabtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suabtn.Image = global::quan_ly_kho.Properties.Resources.icons8_edit_50;
+            this.suabtn.Location = new System.Drawing.Point(-18, -26);
+            this.suabtn.Margin = new System.Windows.Forms.Padding(2);
+            this.suabtn.Name = "suabtn";
+            this.suabtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.suabtn.Size = new System.Drawing.Size(121, 123);
+            this.suabtn.TabIndex = 1;
+            this.suabtn.Text = "Sửa";
+            this.suabtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.suabtn.UseVisualStyleBackColor = true;
+            this.suabtn.Click += new System.EventHandler(this.suabtn_Click);
             // 
             // xoap
             // 
@@ -108,8 +168,26 @@ namespace quan_ly_kho
             this.xoap.Size = new System.Drawing.Size(74, 93);
             this.xoap.TabIndex = 3;
             // 
+            // xoabtn
+            // 
+            this.xoabtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xoabtn.Image = global::quan_ly_kho.Properties.Resources.icons8_trash_can_50;
+            this.xoabtn.Location = new System.Drawing.Point(-17, -25);
+            this.xoabtn.Margin = new System.Windows.Forms.Padding(2);
+            this.xoabtn.Name = "xoabtn";
+            this.xoabtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.xoabtn.Size = new System.Drawing.Size(120, 123);
+            this.xoabtn.TabIndex = 1;
+            this.xoabtn.Text = "Xóa";
+            this.xoabtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.xoabtn.UseVisualStyleBackColor = true;
+            this.xoabtn.Click += new System.EventHandler(this.xoabtn_Click);
+            // 
             // ncctb
             // 
+            this.ncctb.AllowUserToAddRows = false;
+            this.ncctb.AllowUserToDeleteRows = false;
+            this.ncctb.AllowUserToResizeRows = false;
             this.ncctb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -220,78 +298,16 @@ namespace quan_ly_kho
             this.panel1.Size = new System.Drawing.Size(1210, 627);
             this.panel1.TabIndex = 6;
             // 
-            // themmoibtn
+            // label1
             // 
-            this.themmoibtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.themmoibtn.Image = global::quan_ly_kho.Properties.Resources.icons8_add_male_user_group_50;
-            this.themmoibtn.Location = new System.Drawing.Point(-12, -10);
-            this.themmoibtn.Margin = new System.Windows.Forms.Padding(2);
-            this.themmoibtn.Name = "themmoibtn";
-            this.themmoibtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.themmoibtn.Size = new System.Drawing.Size(114, 110);
-            this.themmoibtn.TabIndex = 1;
-            this.themmoibtn.Text = "Thêm mới";
-            this.themmoibtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.themmoibtn.UseVisualStyleBackColor = true;
-            this.themmoibtn.Click += new System.EventHandler(this.themmoibtn_Click);
-            // 
-            // exportexcelbtn
-            // 
-            this.exportexcelbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportexcelbtn.Image = global::quan_ly_kho.Properties.Resources.icons8_export_excel_50;
-            this.exportexcelbtn.Location = new System.Drawing.Point(-28, -26);
-            this.exportexcelbtn.Margin = new System.Windows.Forms.Padding(2);
-            this.exportexcelbtn.Name = "exportexcelbtn";
-            this.exportexcelbtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.exportexcelbtn.Size = new System.Drawing.Size(148, 127);
-            this.exportexcelbtn.TabIndex = 1;
-            this.exportexcelbtn.Text = "Xuất excel";
-            this.exportexcelbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.exportexcelbtn.UseVisualStyleBackColor = true;
-            // 
-            // xoabtn
-            // 
-            this.xoabtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xoabtn.Image = global::quan_ly_kho.Properties.Resources.icons8_trash_can_50;
-            this.xoabtn.Location = new System.Drawing.Point(-17, -25);
-            this.xoabtn.Margin = new System.Windows.Forms.Padding(2);
-            this.xoabtn.Name = "xoabtn";
-            this.xoabtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.xoabtn.Size = new System.Drawing.Size(120, 123);
-            this.xoabtn.TabIndex = 1;
-            this.xoabtn.Text = "Xóa";
-            this.xoabtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.xoabtn.UseVisualStyleBackColor = true;
-            this.xoabtn.Click += new System.EventHandler(this.xoabtn_Click);
-            // 
-            // importexcelbtn
-            // 
-            this.importexcelbtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importexcelbtn.Image = global::quan_ly_kho.Properties.Resources.icons8_excel_50;
-            this.importexcelbtn.Location = new System.Drawing.Point(-28, -26);
-            this.importexcelbtn.Margin = new System.Windows.Forms.Padding(2);
-            this.importexcelbtn.Name = "importexcelbtn";
-            this.importexcelbtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.importexcelbtn.Size = new System.Drawing.Size(148, 127);
-            this.importexcelbtn.TabIndex = 1;
-            this.importexcelbtn.Text = "Nhập excel";
-            this.importexcelbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.importexcelbtn.UseVisualStyleBackColor = true;
-            // 
-            // suabtn
-            // 
-            this.suabtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.suabtn.Image = global::quan_ly_kho.Properties.Resources.icons8_edit_50;
-            this.suabtn.Location = new System.Drawing.Point(-18, -26);
-            this.suabtn.Margin = new System.Windows.Forms.Padding(2);
-            this.suabtn.Name = "suabtn";
-            this.suabtn.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.suabtn.Size = new System.Drawing.Size(121, 123);
-            this.suabtn.TabIndex = 1;
-            this.suabtn.Text = "Sửa";
-            this.suabtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.suabtn.UseVisualStyleBackColor = true;
-            this.suabtn.Click += new System.EventHandler(this.suabtn_Click);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(474, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "DANH SÁCH NHÀ CUNG CẤP";
             // 
             // panel2
             // 
@@ -302,17 +318,6 @@ namespace quan_ly_kho
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1210, 125);
             this.panel2.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(474, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "DANH SÁCH NHÀ CUNG CẤP";
             // 
             // nhacungcapform
             // 

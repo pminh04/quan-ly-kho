@@ -74,7 +74,8 @@ namespace quan_ly_kho
             Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
             this.Region = new Region(Rounded_Conners.RoundedConners(bounds, connerRadius, true, true, true, true));
 
-
+            //userwelcome
+            //name.Text = loaddata.get_tennguoidung(Model.Account());
         }
 
         //drag form function
@@ -466,6 +467,11 @@ namespace quan_ly_kho
                 timkiemtext.Visible = false;
                 datepicker.Visible = true;
             }
+        }
+
+        private void name_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

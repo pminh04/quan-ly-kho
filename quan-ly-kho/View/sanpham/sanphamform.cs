@@ -38,6 +38,7 @@ namespace quan_ly_kho.View.sanpham
         private String selectedten;
         private String selectedxuatxu;
         private String selectedmaloai;
+        private String selectedtenloai;
         private int selectedsoluong;
         private void tablesanpham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -48,6 +49,7 @@ namespace quan_ly_kho.View.sanpham
                   selectedten = tablesanpham.Rows[i].Cells["tensanpham"].Value.ToString();
                   selectedxuatxu = tablesanpham.Rows[i].Cells["xuatxu"].Value.ToString();
                   selectedmaloai = tablesanpham.Rows[i].Cells["maloaihang"].Value.ToString();
+                  selectedtenloai = tablesanpham.Rows[i].Cells["tenloaihang"].Value.ToString();
                   selectedsoluong = (int)tablesanpham.Rows[i].Cells["soluong"].Value;
 
             }
@@ -122,13 +124,13 @@ namespace quan_ly_kho.View.sanpham
 
         private void btnxuatexcel_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT masanpham, tensanpham, xuatxu, maloaihang, soluong FROM sanpham";
+            string sql = "SELECT masanpham, tensanpham, xuatxu, lh.tenloaihang, soluong FROM sanpham join loaihang lh on lh.maloaihang = sanpham.maloaihang";
 
             // Gọi hàm get_data() để lấy dữ liệu vào DataTable
             DataTable dt = DB.get_data(sql);
 
             // Các tiêu đề cột bạn muốn xuất Excel
-            string[] titles = { "Mã SP", "Tên SP", "Xuất xứ", "Mã loại hàng", "Số lượng" };
+            string[] titles = { "Mã SP", "Tên SP", "Xuất xứ", "Loại hàng", "Số lượng" };
 
             // Gọi hàm ExportToExcel để xuất dữ liệu
             excel ex = new excel();
