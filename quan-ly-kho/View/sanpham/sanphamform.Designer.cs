@@ -34,9 +34,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnnhapexcel = new System.Windows.Forms.Button();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnxuatexcel = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,6 +46,11 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.masanpham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tensanpham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xuatxu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenloaihang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -60,71 +65,68 @@
             this.panel5.Controls.Add(this.groupBox1);
             this.panel5.Location = new System.Drawing.Point(-1, -7);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1191, 133);
+            this.panel5.Size = new System.Drawing.Size(1191, 157);
             this.panel5.TabIndex = 5;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnnhapexcel);
+            this.groupBox1.Controls.Add(this.btnxuatexcel);
             this.groupBox1.Controls.Add(this.btnxoa);
             this.groupBox1.Controls.Add(this.btnsua);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.Location = new System.Drawing.Point(9, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(636, 127);
+            this.groupBox1.Size = new System.Drawing.Size(661, 140);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
             // 
-            // button5
+            // btnnhapexcel
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.ImageIndex = 5;
-            this.button5.ImageList = this.imageList2;
-            this.button5.Location = new System.Drawing.Point(449, 26);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(138, 95);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Nhập excel";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnnhapexcel.FlatAppearance.BorderSize = 0;
+            this.btnnhapexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnhapexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnnhapexcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnnhapexcel.ImageIndex = 4;
+            this.btnnhapexcel.ImageList = this.imageList2;
+            this.btnnhapexcel.Location = new System.Drawing.Point(485, 26);
+            this.btnnhapexcel.Name = "btnnhapexcel";
+            this.btnnhapexcel.Size = new System.Drawing.Size(116, 111);
+            this.btnnhapexcel.TabIndex = 4;
+            this.btnnhapexcel.Text = "Nhập excel";
+            this.btnnhapexcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnnhapexcel.UseVisualStyleBackColor = true;
+            this.btnnhapexcel.Click += new System.EventHandler(this.btnnhapexcel_Click);
             // 
             // imageList2
             // 
             this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList2.Images.SetKeyName(0, "them.png");
-            this.imageList2.Images.SetKeyName(1, "sửa.png");
+            this.imageList2.Images.SetKeyName(1, "icons8-trash-can-50.png");
             this.imageList2.Images.SetKeyName(2, "excel.png");
-            this.imageList2.Images.SetKeyName(3, "rác.png");
-            this.imageList2.Images.SetKeyName(4, "icons8-edit-50.png");
-            this.imageList2.Images.SetKeyName(5, "icons8-excel-50.png");
-            this.imageList2.Images.SetKeyName(6, "icons8-trash-can-50.png");
+            this.imageList2.Images.SetKeyName(3, "icons8-edit-50.png");
+            this.imageList2.Images.SetKeyName(4, "icons8-excel-50.png");
+            this.imageList2.Images.SetKeyName(5, "rác.png");
             // 
-            // button4
+            // btnxuatexcel
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.ImageIndex = 5;
-            this.button4.ImageList = this.imageList2;
-            this.button4.Location = new System.Drawing.Point(315, 26);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 95);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Xuất excel";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnxuatexcel.FlatAppearance.BorderSize = 0;
+            this.btnxuatexcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxuatexcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnxuatexcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnxuatexcel.ImageIndex = 4;
+            this.btnxuatexcel.ImageList = this.imageList2;
+            this.btnxuatexcel.Location = new System.Drawing.Point(349, 26);
+            this.btnxuatexcel.Name = "btnxuatexcel";
+            this.btnxuatexcel.Size = new System.Drawing.Size(119, 111);
+            this.btnxuatexcel.TabIndex = 3;
+            this.btnxuatexcel.Text = "Xuất excel";
+            this.btnxuatexcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnxuatexcel.UseVisualStyleBackColor = true;
+            this.btnxuatexcel.Click += new System.EventHandler(this.btnxuatexcel_Click);
             // 
             // btnxoa
             // 
@@ -132,11 +134,11 @@
             this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnxoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnxoa.ImageIndex = 6;
+            this.btnxoa.ImageIndex = 5;
             this.btnxoa.ImageList = this.imageList2;
-            this.btnxoa.Location = new System.Drawing.Point(218, 26);
+            this.btnxoa.Location = new System.Drawing.Point(227, 32);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(91, 95);
+            this.btnxoa.Size = new System.Drawing.Size(102, 105);
             this.btnxoa.TabIndex = 2;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -149,11 +151,11 @@
             this.btnsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnsua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnsua.ImageIndex = 4;
+            this.btnsua.ImageIndex = 3;
             this.btnsua.ImageList = this.imageList2;
-            this.btnsua.Location = new System.Drawing.Point(121, 26);
+            this.btnsua.Location = new System.Drawing.Point(120, 35);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(91, 95);
+            this.btnsua.Size = new System.Drawing.Size(91, 102);
             this.btnsua.TabIndex = 1;
             this.btnsua.Text = "Sửa";
             this.btnsua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -166,11 +168,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.ImageIndex = 0;
+            this.button1.ImageKey = "them.png";
             this.button1.ImageList = this.imageList2;
-            this.button1.Location = new System.Drawing.Point(14, 26);
+            this.button1.Location = new System.Drawing.Point(6, 32);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 95);
+            this.button1.Size = new System.Drawing.Size(91, 105);
             this.button1.TabIndex = 0;
             this.button1.Text = "Thêm";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -185,10 +187,11 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.tablesanpham);
-            this.panel1.Location = new System.Drawing.Point(-1, 132);
+            this.panel1.Location = new System.Drawing.Point(-1, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1191, 608);
+            this.panel1.Size = new System.Drawing.Size(1191, 584);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -216,6 +219,12 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablesanpham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablesanpham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablesanpham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.masanpham,
+            this.tensanpham,
+            this.xuatxu,
+            this.tenloaihang,
+            this.soluong});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -230,19 +239,55 @@
             this.tablesanpham.RowHeadersWidth = 51;
             this.tablesanpham.RowTemplate.Height = 24;
             this.tablesanpham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablesanpham.Size = new System.Drawing.Size(1164, 581);
+            this.tablesanpham.Size = new System.Drawing.Size(1164, 557);
             this.tablesanpham.TabIndex = 1;
             this.tablesanpham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablesanpham_CellClick);
+            this.tablesanpham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablesanpham_CellContentClick);
             // 
             // imageList1
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "timkiem.png");
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // masanpham
+            // 
+            this.masanpham.DataPropertyName = "masanpham";
+            this.masanpham.HeaderText = "Mã sản phẩm";
+            this.masanpham.MinimumWidth = 6;
+            this.masanpham.Name = "masanpham";
+            // 
+            // tensanpham
+            // 
+            this.tensanpham.DataPropertyName = "tensanpham";
+            this.tensanpham.HeaderText = "Tên sản phẩm";
+            this.tensanpham.MinimumWidth = 6;
+            this.tensanpham.Name = "tensanpham";
+            // 
+            // xuatxu
+            // 
+            this.xuatxu.DataPropertyName = "xuatxu";
+            this.xuatxu.HeaderText = "Xuất xứ";
+            this.xuatxu.MinimumWidth = 6;
+            this.xuatxu.Name = "xuatxu";
+            // 
+            // tenloaihang
+            // 
+            this.tenloaihang.DataPropertyName = "tenloaihang";
+            this.tenloaihang.HeaderText = "Loại hàng";
+            this.tenloaihang.MinimumWidth = 6;
+            this.tenloaihang.Name = "tenloaihang";
+            // 
+            // soluong
+            // 
+            this.soluong.DataPropertyName = "soluong";
+            this.soluong.HeaderText = "Số lượng";
+            this.soluong.MinimumWidth = 6;
+            this.soluong.Name = "soluong";
             // 
             // sanphamform
             // 
@@ -253,6 +298,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "sanphamform";
             this.Text = "sanpham";
+            this.Load += new System.EventHandler(this.sanphamform_Load);
             this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -266,9 +312,7 @@
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ImageList imageList2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnxoa;
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button button1;
@@ -278,5 +322,12 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btnnhapexcel;
+        private System.Windows.Forms.Button btnxuatexcel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn masanpham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tensanpham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xuatxu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenloaihang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
     }
 }

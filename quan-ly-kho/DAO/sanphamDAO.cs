@@ -45,13 +45,13 @@ namespace quan_ly_kho.DAO
             try
             {
                 con.Open();
-                string sql = "INSERT INTO sanpham (masanpham, tensanpham, xuatxu, soluong, dongia, trangthai) VALUES (@masanpham, @tensanpham, @xuatxu,@soluong, @dongia, 1)";
+                string sql = "INSERT INTO sanpham (masanpham, tensanpham, xuatxu, soluong, maloaihang) VALUES (@masanpham, @tensanpham, @xuatxu,@soluong, @maloaihang)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@masanpham", sp.masanpham);
                 cmd.Parameters.AddWithValue("@tensanpham", sp.tensanpham);
                 cmd.Parameters.AddWithValue("@xuatxu", sp.xuatxu);
                 cmd.Parameters.AddWithValue("@soluong", sp.soluong);
-                cmd.Parameters.AddWithValue("@dongia", sp.dongia);
+                cmd.Parameters.AddWithValue("@maloaihang", sp.maloaihang);
                
                 result = cmd.ExecuteNonQuery();
             }
@@ -72,14 +72,12 @@ namespace quan_ly_kho.DAO
             try
             {
                 con.Open();
-                string sql = "UPDATE sanpham SET tensanpham = @tensanpham, xuatxu=@xuatxu, soluong = @soluong, dongia = @dongia, trangthai = @trangthai WHERE masanpham = @masanpham";
+                string sql = "UPDATE sanpham SET tensanpham = @tensanpham, xuatxu=@xuatxu, maloaihang = @maloaihang WHERE masanpham = @masanpham";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@masanpham", sp.masanpham);
                 cmd.Parameters.AddWithValue("@tensanpham", sp.tensanpham);
                 cmd.Parameters.AddWithValue("@xuatxu", sp.xuatxu);
-                cmd.Parameters.AddWithValue("@soluong", sp.soluong);
-                cmd.Parameters.AddWithValue("@dongia", sp.dongia);
-                cmd.Parameters.AddWithValue("@trangthai", sp.trangthai);
+                cmd.Parameters.AddWithValue("@loaihang", sp.maloaihang);
                 result = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -143,7 +141,8 @@ namespace quan_ly_kho.DAO
             try
             {
                 con.Open();
-                string sql = "SELECT masanpham, tensanpham, xuatxu, loaisanpham, dongia FROM sanpham WHERE trangThai = 1";
+                string sql = "SELECT sp.masanpham, sp.tensanpham, sp.xuatxu, sp.soluong, lh.tenloaihang FROM sanpham sp " +
+                    "join loaihang lh on lh.maloaihang = sp.maloaihang";
                 SqlDataAdapter da = new SqlDataAdapter(sql, con);
                 da.Fill(dt);
             }

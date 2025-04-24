@@ -129,7 +129,7 @@ namespace quan_ly_kho
             
             //
             timkiemcbx.Items.Clear();
-            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm", "Tên sản phẩm", "Xuất xứ", "Loại hàng" });
+            timkiemcbx.Items.AddRange(new string[] { "--Chọn--", "Mã sản phẩm", "Tên sản phẩm", "Xuất xứ", "Số lượng", "Loại hàng" });
             timkiemcbx.SelectedIndex = 0;
             timkiemcbx.Visible = true;
             timkiemtext.Visible = true;
@@ -390,7 +390,7 @@ namespace quan_ly_kho
                 {
                     string datePicker = datepicker.Value.ToString("yyyy-MM-dd");
 
-                    chitietphieunhap.chitietphieunhapmodel ctpn = new chitietphieunhap.chitietphieunhapmodel(
+                    chitietphieunhap ctpn = new chitietphieunhap(
                         timkiemcbx.Text,
                         timkiemtext.Text,
                         datePicker

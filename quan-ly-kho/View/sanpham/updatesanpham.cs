@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using quan_ly_kho.Controller;
 using quan_ly_kho.DAO;
 using quan_ly_kho.Model;
 
@@ -14,70 +15,94 @@ namespace quan_ly_kho.View.sanpham
 {
     public partial class updatesanpham : Form
     {
-        public updatesanpham(string masanpham, string tensanpham, string xuatxu, int soluong, decimal dongia)
+
+        string table_name = "sanpham";
+        string t_id = "masanpham";
+        public updatesanpham(Model.SanPhamModel sp)
         {
+           
             InitializeComponent();
-            txtmasanpham.Text = masanpham;
-            txttensanpham.Text = tensanpham;
-            txtxuatxu.Text = xuatxu;
-            txtsoluong.Text = soluong.ToString();
-            txtdongia.Text = dongia.ToString();
+          
+
+            loadTenloaihang(); // load cbx trước
+
+            txtmasanpham.Text = sp.masanpham;
+            txttensanpham.Text = sp.tensanpham;
+            txtxuatxu.Text = sp.xuatxu;
+            cbxloaihang.SelectedValue = sp.maloaihang;
+
+            // Không cần txtsoluong nếu bạn đã ẩn nó và không sửa ở đây
+        }
+        public void loadTenloaihang()
+        {
+            string sql = "SELECT maloaihang, tenloaihang FROM loaihang";
+            DB.loadcbox(cbxloaihang, sql, "tenloaihang", "maloaihang");
         }
 
         private void btnCapnhat_Click(object sender, EventArgs e)
         {
-            SanPhamModel sp = new SanPhamModel();
+            string masp = txtmasanpham.Text.Trim();
+            string tensp = txttensanpham.Text.Trim();
+            string xuatxu = txtxuatxu.Text.Trim();
+            string maloai = cbxloaihang.SelectedValue.ToString();
+            //string dongiaText = txtdongia.Text.Trim();
+            //decimal dongia;
+            //bool isDecimal = decimal.TryParse(dongiaText, out dongia);
+            //if (!isDecimal || dongia < 0)
+            //{
+            //    MessageBox.Show("Đơn giá không hợp lệ, vui lòng nhập số dương!");
+            //    return;
+            //}
 
-            sp.masanpham = txtmasanpham.Text.Trim();
-            sp.tensanpham = txttensanpham.Text.Trim();
-            sp.xuatxu = txtxuatxu.Text.Trim();
-
-            // kiểm tra số lượng và đơn giá có hợp lệ không
-            if (int.TryParse(txtsoluong.Text.Trim(), out int soluong))
-                sp.soluong = soluong;
-            else
+            
+            Model.SanPhamModel sp = new Model.SanPhamModel(
+                masp,
+                tensp,
+                xuatxu,
+                maloai,
+                0
+ );
+            if (masp == "" || tensp == "" || xuatxu == "")
             {
-                MessageBox.Show("Số lượng không hợp lệ");
+                MessageBox.Show("Không được để trống !");
                 return;
             }
-
-            if (decimal.TryParse(txtdongia.Text.Trim(), out decimal dongia))
-                sp.dongia = dongia;
-            else
+            else if (cbxloaihang.SelectedIndex == -1)
             {
-                MessageBox.Show("Đơn giá không hợp lệ");
+                MessageBox.Show("Vui lòng chọn loại hàng");
                 return;
             }
-            sp.trangthai = 1; // mặc định đang tồn tại
-            if (string.IsNullOrWhiteSpace(txtmasanpham.Text) ||
-             string.IsNullOrWhiteSpace(txttensanpham.Text) ||
-             string.IsNullOrWhiteSpace(txtxuatxu.Text) ||
-             string.IsNullOrWhiteSpace(txtsoluong.Text) ||
-             string.IsNullOrWhiteSpace(txtdongia.Text))
+            else if (!Controller.DB.checkPK(sp.masanpham, table_name, t_id))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                MessageBox.Show("Mã không tồn tại");
+                txtmasanpham.Focus();
                 return;
             }
-            else
-            {
-                sanphamDAO dao = new sanphamDAO();
-                int kq = dao.Update(sp);
+            // Gọi DAO để thêm sản phẩm
+            Controller.Sua.sua_sp(sp);
+            MessageBox.Show("Sửa thành công!");
 
-                if (kq > 0)
-                {
-                    MessageBox.Show("Sửa thành công");
-                    this.DialogResult = DialogResult.OK; // để bên ngoài biết reload
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại");
-                }
-            }
+            this.Close();
+
         }
         private void txtmasanpham_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtdongia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updatesanpham_Load(object sender, EventArgs e)
+        {
+            //loadTenloaihang();
         }
     }
 }

@@ -7,34 +7,32 @@ using System.Windows.Forms;
 
 namespace quan_ly_kho.Model
 {
-    internal class SanPhamModel
+    public class SanPhamModel
     {
         public string masanpham { get; set; }
         public string tensanpham { get; set; }
         public string xuatxu { get; set; }
+        public string maloaihang { get; set; }
         public int soluong { get; set; }
-        public decimal dongia { get; set; }
-        public int trangthai { get; set; }
+
         public string loaitk { get; set; }
-        public string loaisanpham { get; set; }
         public string tukhoa { get; set; }
 
         public DataGridView sptab { get; set; }
         public SanPhamModel() { }
 
-        public SanPhamModel(string masanpham, string tensanpham, string xuatxu, int soluong, decimal dongia, string loaisanpham, int trangthai = 1)
+        public SanPhamModel(string masanpham, string tensanpham, string xuatxu, string maloaihang, int soluong)
+
         {
             this.masanpham = masanpham;
             this.tensanpham = tensanpham;
             this.xuatxu = xuatxu;
+            this.maloaihang = maloaihang;
             this.soluong = soluong;
-            this.dongia = dongia;
-            this.trangthai = trangthai;
-            this.loaisanpham = loaisanpham;
 
         }
 
-        public SanPhamModel(string loaitk,string tukhoa)
+        public SanPhamModel(string loaitk, string tukhoa)
         {
             this.loaitk = loaitk;
             this.tukhoa = tukhoa;
@@ -45,13 +43,7 @@ namespace quan_ly_kho.Model
             this.sptab = sptab;
         }
 
-        public override string ToString()
-        {
-            return $"[{masanpham}] {tensanpham} - {xuatxu}, SL: {soluong}, Giá: {dongia}đ";
-        }
     }
-
-    
 }
 
 

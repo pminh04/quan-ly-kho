@@ -153,7 +153,7 @@ namespace quan_ly_kho.View.phieunhap
                 // Bỏ qua dòng trống cuối cùng khi thêm dữ liệu
                 if (!row.IsNewRow)
                 {
-                    chitietphieunhapmodel ct = new chitietphieunhapmodel();
+                    chitietphieunhap ct = new chitietphieunhap();
                     ct.maphieu = maphieu;
                     ct.masanpham = row.Cells["masanpham"].Value.ToString();
                     ct.soluong = Convert.ToInt32(row.Cells["soluong"].Value);

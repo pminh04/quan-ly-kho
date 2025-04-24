@@ -81,6 +81,30 @@ namespace quan_ly_kho.Controller
             DB.show_to_table(dgv, sql);
         }
 
+        //PHAN SANPHAM
+        public static void show_sp(DataGridView dgv, string t)
+        {
+            string sql = "Select masanpham, tensanpham, xuatxu, lh.tenloaihang, soluong from sanpham sp join loaihang lh on sp.maloaihang=lh.maloaihang ";
+            DB.show_to_table(dgv, sql);
+        }
+        //PHIEUNHAP
+        public static void show_pn(DataGridView dgv, string t)
+        {
+            string sql = "Select maphieu, thoigiantao, nguoitao, pn.manhacungcap, tennhacungcap, tongtien from phieunhap pn join nhacungcap ncc on pn.manhacungcap=ncc.manhacungcap ";
+            DB.show_to_table(dgv, sql);
+        }
+        public static void show_ctpn(DataGridView dgv, string t)
+        {
+            string sql = "Select maphieu, masanpham, soluong, dongia, tongtien from chitietphieunhap ";
+            DB.show_to_table(dgv, sql);
+        }
+        //SHOWctpnTHEOMA
+        public static void show_ctpnbyma(DataGridView dgv, string t, String id)
+        {
+            string sql = "SELECT  masanpham, soluong, dongia, tongtien FROM chitietphieunhap WHERE maphieu = '" + id + "'";
+            DB.show_to_table(dgv, sql);
+        }
+        //show
 
 
     }

@@ -93,15 +93,16 @@ namespace quan_ly_kho.Controller
 
             if (px.loaitk == "--Chọn--")
             {
-                sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where" +
+                sql = "select masanpham, tensanpham,xuatxu,soluong, loaihang from sanpham where" +
                                  " masanpham LIKE N'%" + px.tukhoa + "%' " +
                                  "OR tensanpham LIKE N'%" + px.tukhoa + "%' " +
                                  "OR xuatxu LIKE N'%" + px.tukhoa + "%' " +
-                                 "OR loaisanpham LIKE N'%" + px.tukhoa + "%'";
+                                 "OR soluong LIKE N'%" + px.tukhoa + "%' " +
+                                 "OR loaihang LIKE N'%" + px.tukhoa + "%'";
             }
             else if (px.loaitk == "Mã sản phẩm")
             {
-                sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where masanpham LIKE N'%" + px.tukhoa + "%'";
+                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where masanpham LIKE N'%" + px.tukhoa + "%'";
             }
 
 
@@ -115,15 +116,15 @@ namespace quan_ly_kho.Controller
 
             if (pn.loaitk == "--Chọn--")
             {
-                sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where" +
+                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where" +
                                  " masanpham LIKE N'%" + pn.tukhoa + "%' " +
                                  "OR tensanpham LIKE N'%" + pn.tukhoa + "%' " +
                                  "OR xuatxu LIKE N'%" + pn.tukhoa + "%' " +
-                                 "OR loaisanpham LIKE N'%" + pn.tukhoa + "%'";
+                                 "OR loaihang LIKE N'%" + pn.tukhoa + "%'";
             }
             else if (pn.loaitk == "Mã sản phẩm")
             {
-                sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where masanpham LIKE N'%" + pn.tukhoa + "%'";
+                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where masanpham LIKE N'%" + pn.tukhoa + "%'";
             }
             
 
@@ -170,7 +171,7 @@ namespace quan_ly_kho.Controller
             dt = DB.selectsearch(sql);
             return dt;
         }
-        public static DataTable timkiemctpn(Model.chitietphieunhap.chitietphieunhapmodel ctpn)
+        public static DataTable timkiemctpn(Model.chitietphieunhap ctpn)
         {
             DataTable dt = new DataTable();
             string sql = "";
@@ -244,26 +245,31 @@ namespace quan_ly_kho.Controller
 
             if (sp.loaitk == "--Chọn--")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where"+
+                 sql = "select masanpham, tensanpham,xuatxu, soluong,loaihang from sanpham where"+
                                  " masanpham LIKE N'%" + sp.tukhoa + "%' " +
                                  "OR tensanpham LIKE N'%" + sp.tukhoa + "%' " +
                                  "OR xuatxu LIKE N'%" + sp.tukhoa + "%' " +
-                                 "OR loaisanpham LIKE N'%" + sp.tukhoa + "%'";
+                                 "OR soluong LIKE N'%" + sp.tukhoa + "%' " +
+                                 "OR loaihang LIKE N'%" + sp.tukhoa + "%'";
             }else if (sp.loaitk == "Mã sản phẩm")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where masanpham LIKE N'%" + sp.tukhoa + "%'";
+                 sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where masanpham LIKE N'%" + sp.tukhoa + "%'";
             }
             else if (sp.loaitk == "Tên sản phẩm")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where tensanpham LIKE N'%" + sp.tukhoa + "%'";
+                 sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where tensanpham LIKE N'%" + sp.tukhoa + "%'";
             }
             else if (sp.loaitk == "Xuất xứ")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where xuatxu LIKE N'%" + sp.tukhoa + "%' ";
+                 sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where xuatxu LIKE N'%" + sp.tukhoa + "%' ";
+            }
+            else if (sp.loaitk == "Mã sản phẩm")
+            {
+                sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where masanpham LIKE N'%" + sp.tukhoa + "%'";
             }
             else if (sp.loaitk == "Loại hàng")
             {
-                 sql = "select masanpham, tensanpham,xuatxu,loaisanpham,dongia from sanpham where loaisanpham LIKE N'%" + sp.tukhoa + "%'";
+                 sql = "select masanpham, tensanpham,xuatxu,loaihang,dongia from sanpham where loaihang LIKE N'%" + sp.tukhoa + "%'";
                 
             }
             dt = DB.selectsearch(sql);

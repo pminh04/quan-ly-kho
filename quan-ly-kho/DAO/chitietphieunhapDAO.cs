@@ -13,7 +13,7 @@ namespace quan_ly_kho.DAO
     {
         private SqlConnection con = connection.GetConnection();
 
-        public int Insert(chitietphieunhap.chitietphieunhapmodel ct)
+        public int Insert(chitietphieunhap ct)
         {
             int result = 0;
             try
@@ -102,7 +102,7 @@ namespace quan_ly_kho.DAO
             return dt;
         }
 
-        public int Update(chitietphieunhap.chitietphieunhapmodel ct)
+        public int Update(chitietphieunhap ct)
         {
             int result = 0;
             try

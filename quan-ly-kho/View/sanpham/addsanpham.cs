@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using quan_ly_kho.Controller;
 using quan_ly_kho.DAO;
 using quan_ly_kho.Model;
 
@@ -14,71 +16,75 @@ namespace quan_ly_kho.View.sanpham
 {
     public partial class addsanpham : Form
     {
+        string table_name = "sanpham";
+        string t_id = "masanpham";
+
         public addsanpham()
         {
             InitializeComponent();
+            
         }
-
+        public void loadTenloaihang()
+        {
+            string sql = "SELECT maloaihang, tenloaihang FROM loaihang";
+            DB.loadcbox(cbxloaihang, sql, "tenloaihang","maloaihang");
+        }
         private void btnthem_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtmasanpham.Text) ||
-       string.IsNullOrWhiteSpace(txttensanpham.Text) ||
-       string.IsNullOrWhiteSpace(txtxuatxu.Text) ||
-       string.IsNullOrWhiteSpace(txtsoluong.Text) ||
-       string.IsNullOrWhiteSpace(txtdongia.Text))
+            string masp = txtmasanpham.Text.Trim();
+            string tensp = txttensanpham.Text.Trim();
+            string xuatxu = txtxuatxu.Text.Trim();
+            string maloai = cbxloaihang.SelectedValue.ToString();
+            //string dongiaText = txtdongia.Text.Trim();
+            //decimal dongia;
+            //bool isDecimal = decimal.TryParse(dongiaText, out dongia);
+            //if (!isDecimal || dongia < 0)
+            //{
+            //    MessageBox.Show("Đơn giá không hợp lệ, vui lòng nhập số dương!");
+            //    return;
+            //}
+            
+            // Tạo đối tượng sản phẩm với số lượng mặc định là 0
+            Model.SanPhamModel sp = new Model.SanPhamModel(
+                masp,
+                tensp,
+                xuatxu,
+                maloai,
+                0
+ );
+            if (masp == "" || tensp == "" || xuatxu == "")
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                MessageBox.Show("Không được để trống !");
                 return;
             }
-
-            // Kiểm tra trùng mã sản phẩm
-            sanphamDAO dao = new sanphamDAO();
-            if (dao.CheckTrungMa(txtmasanpham.Text.Trim()))
+            else if (cbxloaihang.SelectedIndex == -1)
             {
-                MessageBox.Show("Mã sản phẩm đã tồn tại.");
+                MessageBox.Show("Vui lòng chọn loại hàng");
                 return;
             }
-
-            // Tạo đối tượng sản phẩm
-            SanPhamModel sp = new SanPhamModel();
-            sp.masanpham = txtmasanpham.Text.Trim();
-            sp.tensanpham = txttensanpham.Text.Trim();
-            sp.xuatxu = txtxuatxu.Text.Trim();
-
-            if (int.TryParse(txtsoluong.Text.Trim(), out int soluong))
-                sp.soluong = soluong;
-            else
+            else if (Controller.DB.checkPK(sp.masanpham, table_name, t_id))
             {
-                MessageBox.Show("Số lượng không hợp lệ");
+                MessageBox.Show("Mã bị trùng");
+                txtmasanpham.Focus();
                 return;
             }
+            // Gọi DAO để thêm sản phẩm
+            Controller.Them.them_sp(sp);
+            MessageBox.Show("Thêm mới thành công!");
 
-            if (decimal.TryParse(txtdongia.Text.Trim(), out decimal dongia))
-                sp.dongia = dongia;
-            else
-            {
-                MessageBox.Show("Đơn giá không hợp lệ");
-                return;
-            }
-
-            sp.trangthai = 1;
-
-            int kq = dao.Insert(sp);
-            if (kq > 0)
-            {
-                MessageBox.Show("Thêm thành công");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Thêm thất bại");
-            }
+            this.Close();
+           
+            
         }
 
         private void txtmasanpham_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void addsanpham_Load(object sender, EventArgs e)
+        {
+            loadTenloaihang();
         }
     }
     

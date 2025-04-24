@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing && (components != null))
+        //    {
+        //        components.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
         #region Windows Form Designer generated code
 
@@ -29,15 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxloaihang = new System.Windows.Forms.ComboBox();
             this.txtxuatxu = new System.Windows.Forms.TextBox();
-            this.txtdongia = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnCapnhat = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtsoluong = new System.Windows.Forms.TextBox();
             this.txttensanpham = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,14 +47,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbxloaihang);
             this.panel1.Controls.Add(this.txtxuatxu);
-            this.panel1.Controls.Add(this.txtdongia);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Controls.Add(this.btnCapnhat);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txtsoluong);
             this.panel1.Controls.Add(this.txttensanpham);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -64,8 +60,19 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(101, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 696);
+            this.panel1.Size = new System.Drawing.Size(460, 619);
             this.panel1.TabIndex = 4;
+            // 
+            // cbxloaihang
+            // 
+            this.cbxloaihang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbxloaihang.FormattingEnabled = true;
+            this.cbxloaihang.ItemHeight = 20;
+            this.cbxloaihang.Location = new System.Drawing.Point(27, 451);
+            this.cbxloaihang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxloaihang.Name = "cbxloaihang";
+            this.cbxloaihang.Size = new System.Drawing.Size(408, 28);
+            this.cbxloaihang.TabIndex = 17;
             // 
             // txtxuatxu
             // 
@@ -75,31 +82,14 @@
             this.txtxuatxu.Size = new System.Drawing.Size(408, 34);
             this.txtxuatxu.TabIndex = 16;
             // 
-            // txtdongia
-            // 
-            this.txtdongia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdongia.Location = new System.Drawing.Point(26, 542);
-            this.txtdongia.Name = "txtdongia";
-            this.txtdongia.Size = new System.Drawing.Size(408, 34);
-            this.txtdongia.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 505);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 22);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Đơn giá";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Green;
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(4, 0);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(453, 107);
+            this.panel3.Size = new System.Drawing.Size(460, 107);
             this.panel3.TabIndex = 12;
             // 
             // label7
@@ -117,12 +107,13 @@
             // 
             this.btnHuy.BackColor = System.Drawing.Color.GhostWhite;
             this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(251, 622);
+            this.btnHuy.Location = new System.Drawing.Point(290, 516);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(144, 46);
             this.btnHuy.TabIndex = 11;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnCapnhat
             // 
@@ -131,7 +122,7 @@
             this.btnCapnhat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(187)))), ((int)(((byte)(106)))));
             this.btnCapnhat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapnhat.ForeColor = System.Drawing.Color.White;
-            this.btnCapnhat.Location = new System.Drawing.Point(26, 622);
+            this.btnCapnhat.Location = new System.Drawing.Point(35, 516);
             this.btnCapnhat.Name = "btnCapnhat";
             this.btnCapnhat.Size = new System.Drawing.Size(144, 46);
             this.btnCapnhat.TabIndex = 10;
@@ -149,14 +140,6 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Xuất xứ";
             // 
-            // txtsoluong
-            // 
-            this.txtsoluong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsoluong.Location = new System.Drawing.Point(26, 447);
-            this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(408, 34);
-            this.txtsoluong.TabIndex = 5;
-            // 
             // txttensanpham
             // 
             this.txttensanpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,9 +154,9 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(22, 410);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 22);
+            this.label4.Size = new System.Drawing.Size(87, 22);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Số lượng";
+            this.label4.Text = "Loại hàng";
             // 
             // label3
             // 
@@ -209,10 +192,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 727);
+            this.ClientSize = new System.Drawing.Size(662, 601);
             this.Controls.Add(this.panel1);
             this.Name = "updatesanpham";
             this.Text = "updatesanpham";
+            this.Load += new System.EventHandler(this.updatesanpham_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -225,18 +209,16 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtxuatxu;
-        private System.Windows.Forms.TextBox txtdongia;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnCapnhat;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtsoluong;
         private System.Windows.Forms.TextBox txttensanpham;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtmasanpham;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxloaihang;
     }
 }

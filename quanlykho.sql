@@ -177,7 +177,7 @@ go
 
 
 
---select * from khachhang
+select * from sanpham
 --select * from phieunhap where CONVERT(VARCHAR, thoigiantao, 120) LIKE '%2022-12-16%'
 --SELECT masanpham, tensanpham,soluong,xuatxu,dongia FROM sanpham WHERE trangThai = 1
 

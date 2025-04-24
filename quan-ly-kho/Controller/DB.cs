@@ -97,8 +97,8 @@ namespace quan_ly_kho.Controller
             con.Close();
 
             DataRow r = dt.NewRow();
-            r["categoryID"] = "";
-            r["categoryName"] = "Chọn loại sách";
+            r[ma] = "";
+            r[ten] = "Chọn dữ liệu";
             dt.Rows.InsertAt(r, 0);
 
 
@@ -186,6 +186,24 @@ namespace quan_ly_kho.Controller
             else { return false; }
         }
 
+        public static DataTable get_data(string sql)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
 
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+
+            cmd.Dispose();
+            con.Close();
+
+            return dt;
+        }
     }
+
 }
+

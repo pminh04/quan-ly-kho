@@ -154,6 +154,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Controller\checkrule.cs" />
     <Compile Include="Controller\DB.cs" />
+    <Compile Include="Controller\excel.cs" />
     <Compile Include="Controller\loaddata.cs" />
     <Compile Include="Controller\Rounded_Conners.cs" />
     <Compile Include="Controller\Sua.cs" />
