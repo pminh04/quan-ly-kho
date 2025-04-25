@@ -236,7 +236,7 @@ namespace quan_ly_kho
 
         private void phieuxuat_Click(object sender, EventArgs e)
         {
-            phieuxuatform f1 = new phieuxuatform();
+            form f1 = new phieuxuatform();
             f1.TopLevel = false;
             f1.FormBorderStyle = FormBorderStyle.None;
             f1.Dock = DockStyle.Fill;
