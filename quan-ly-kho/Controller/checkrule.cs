@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace quan_ly_kho.Controller
 {
-    internal class checkrule
+    public class checkrule
     {
         public bool checkmail(string email)
         {
@@ -24,5 +24,11 @@ namespace quan_ly_kho.Controller
 
             return regex.IsMatch(dt);
         }
+
+        public static bool checkSo(string input)
+        {
+            return Regex.IsMatch(input, @"^[1-9]\d*$");
+        }
+
     }
 }

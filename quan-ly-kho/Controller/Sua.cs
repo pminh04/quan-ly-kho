@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,18 +39,46 @@ namespace quan_ly_kho.Controller
         //SUACHITIETPGIEU
         public static void sua_ctpn(Model.chitietphieunhap ctpn)
         {
-            string sql = "UPDATE chitietphieunhap SET masanpham = '" + ctpn.masanpham +
-                         "', soluong = '" + ctpn.soluong +
-                         "', dongia = '" + ctpn.dongia +
-                         "', tongtien = '" + ctpn.tongtien +
-
-  "' WHERE maphieu = '" + ctpn.maphieu + "'";
+            string sql = "UPDATE chitietphieunhap SET soluong = '" + ctpn.soluong +
+                  "', dongia = '" + ctpn.dongia +
+                  "', tongtien = '" + ctpn.tongtien +
+                  "' WHERE maphieu = '" + ctpn.maphieu + "' AND masanpham = '" + ctpn.masanpham + "'";
             DB.insert(sql);
         }
         //UPDATE SOLUONG
         public static void UpdateSoLuong(string masanpham, int soluongupdate)
         {
             string sql = "UPDATE sanpham SET soluong = soluong + " + soluongupdate + " WHERE masanpham = '" + masanpham + "'";
+            DB.insert(sql);
+        }
+        public static void UpdateSoLuongtruTheoPhieu(string maphieu)
+        {
+            // SQL để trừ số lượng sản phẩm từ bảng sanpham dựa trên số lượng trong bảng chi tiết phiếu nhập
+            string sql = @"
+        UPDATE sanpham
+        SET soluong = soluong - (
+            SELECT ISNULL(SUM(ctpn.soluong), 0) 
+            FROM chitietphieunhap ctpn
+            WHERE ctpn.maphieu = '" + maphieu + @"' 
+            AND ctpn.masanpham = sanpham.masanpham
+        )
+        WHERE EXISTS (
+            SELECT 1 
+            FROM chitietphieunhap ctpn
+            WHERE ctpn.maphieu = '" + maphieu + @"' 
+            AND ctpn.masanpham = sanpham.masanpham
+        );
+    ";
+
+            // Gọi hàm insert với SQL đã viết
+            DB.insert(sql);
+        }
+
+
+
+        public static void UpdateSoLuongtru(string masanpham, int soluongupdate)
+        {
+            string sql = "UPDATE sanpham SET soluong = soluong - " + soluongupdate + " WHERE masanpham = '" + masanpham + "'";
             DB.insert(sql);
         }
     }
